@@ -19,7 +19,7 @@ For the time being, while we are learning about components, we will be keeping t
 # Styling
 For the time being (maybe permanently if no one has issues with this style), here are a few guidelines I'd like to enforce on html and css code. They're mostly pretty obvious, but some are my personal preference:
 1. Tab once for every indent
-2. Opening and closing brackets (like <div> and </div>) should be indented the same amount
+2. Opening and closing brackets (like \<div\> and \</div\>) should be indented the same amount
 3. If you have a css class within a css class, name them accordingly. Ex: In main.html, we have main-header and within it, main-header-component. Because the component is inside main-header, we prefix it with main-header.
 4. Naming convention for files: Capital letter for each word, no spaces, no special characters.
 5. Naming convention for css classes: lowercase everything, separate words with hyphens.
