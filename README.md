@@ -7,3 +7,5 @@ Just setting up the github! I will try to get StatusHero up by tonight (4/10). F
 Test commit by Yootak Jin
 
 Test commit by Zihan (Harry) Yi
+
+Test commit by Vince Li
