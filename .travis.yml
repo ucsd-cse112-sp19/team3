@@ -1,6 +1,10 @@
 language: node_js
-install:
+node_js: 'node' # latest stable node release
+cache: npm
+
+before_install:
     - npm install -g npm@latest
+install:
     - npm install
 script:
     - npm run htmlhint
