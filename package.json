@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "htmlhint": "htmlhint --config .htmlhintrc **/\\*.html",
-    "csslint": "stylelint --config .csslintrc **/\\*.css",
-    "csslint_fix": "stylelint --config .csslintrc **/\\*.css --fix",
+    "csslint": "stylelint --config .csslintrc **/\\*.css **/\\*.html",
+    "csslint_fix": "stylelint --config .csslintrc **/\\*.css **/\\*.html --fix",
     "eslint": "eslint **/\\*.html **/\\*.js",
     "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
