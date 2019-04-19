@@ -2,6 +2,9 @@ language: node_js
 node_js: 'node' # latest stable node release
 cache: npm
 
+notifications:
+  slack: cse112-sp19-team3:vGyQXkfhyYbp46A5tXNzwUUb
+
 before_install:
     - npm install -g npm@latest
 install:
