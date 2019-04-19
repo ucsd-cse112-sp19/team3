@@ -10,6 +10,8 @@ Test commit by Vince Li
 
 Test commit by Brayden Crosta
 
+Test commit by Kaiwen Chen
+
 # Commits
 The commit format is as follows - Firstname: commit message. Very simple!
 
