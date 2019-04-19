@@ -12,6 +12,8 @@ Test commit by Brayden Crosta
 
 Test commit by Kaiwen Chen
 
+Test commit by Gabriel Ruiz
+
 # Commits
 The commit format is as follows - Firstname: commit message. Very simple!
 
