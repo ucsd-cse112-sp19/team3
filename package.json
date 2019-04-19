@@ -7,6 +7,8 @@
     "htmlhint": "htmlhint --config .htmlhintrc **/\\*.html",
     "csslint": "stylelint --config .csslintrc **/\\*.css",
     "csslint_fix": "stylelint --config .csslintrc **/\\*.css --fix",
+    "eslint": "eslint **/\\*.html **/\\*.js",
+    "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,13 @@
   },
   "homepage": "https://github.com/ucsd-cse112/team3#readme",
   "dependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
     "htmlhint": "^0.11.0",
     "stylelint": "^10.0.1"
   }

@@ -12,3 +12,4 @@ install:
 script:
     - npm run htmlhint
     - npm run csslint
+    - npm run eslint
