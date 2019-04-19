@@ -1,0 +1,21 @@
+{
+  "name": "team3",
+  "version": "1.0.0",
+  "description": "![SPECS](https://github.com/ucsd-cse112/team3/blob/master/logo.png)",
+  "main": "index.js",
+  "scripts": {
+    "htmlhint": "htmlhint --config .htmlhintrc **/\\*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucsd-cse112/team3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ucsd-cse112/team3/issues"
+  },
+  "homepage": "https://github.com/ucsd-cse112/team3#readme",
+  "dependencies": {
+    "htmlhint": "^0.11.0"
+  }
+}
