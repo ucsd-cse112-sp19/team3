@@ -1,2 +1,2 @@
-var testLog = 'test log.'
-console.log(testLog)
+const testLog = 'test log.';
+console.log(testLog);
