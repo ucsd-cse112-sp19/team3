@@ -1,10 +1,10 @@
 {
-  "extends": "standard",
+  "extends": "google",
   "env": {
     "browser": true
    },
   "parserOptions": {
-        "ecmaVersion": 3 # ECMAScript 3 is fully supported in all browsers.
+        "ecmaVersion": 6
    },
   "plugins": [
         "html"
