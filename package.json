@@ -9,7 +9,8 @@
     "csslint_fix": "stylelint --config .csslintrc **/\\*.css **/\\*.html --fix",
     "eslint": "eslint **/\\*.html **/\\*.js",
     "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "all_lint": "npm run htmlhint && npm run csslint && npm run eslint"
   },
   "repository": {
     "type": "git",
