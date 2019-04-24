@@ -30,5 +30,9 @@
     "eslint-plugin-standard": "^4.0.0",
     "htmlhint": "^0.11.0",
     "stylelint": "^10.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0"
   }
 }
