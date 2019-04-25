@@ -10,8 +10,7 @@ class CoreHello extends HTMLElement {
     const shadowRoot = this.attachShadow({mode: 'open'});
     CoreHello.template = document.createElement('template');
     const templateContent = CoreHello.template.content;
-    
-    
+
 
     // Set greeting
     let greeting = 'Hello World';
@@ -23,15 +22,16 @@ class CoreHello extends HTMLElement {
     } else if (lang === 'fr') {
       greeting = 'Bonjour le monde';
     }
-    
+
     // Set CSS
-    const isRainbow = this.getAttribute("rainbow");
+    const isRainbow = this.getAttribute('rainbow');
     let styling = `<style>@import 'CoreHello.css'</style>`;
     if (isRainbow) {
-      styling = `<style></style>`
+      styling = `<style></style>`;
     }
-    
-    CoreHello.template.innerHTML = styling + `<div class="rainbow">` + greeting + ` <slot></slot>`;
+
+    CoreHello.template.innerHTML = styling + `<div class="rainbow">` +
+    greeting + ` <slot></slot>`;
 
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
