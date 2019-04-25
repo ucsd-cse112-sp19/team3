@@ -5,10 +5,27 @@ class CoreHello extends HTMLElement {
   /** Constructor of the class */
   constructor() {
     super();
-    // Retrieve template content
-    const templateContent = CoreHello.template.content;
+    
     // Create shadow DOM and attach template content
     const shadowRoot = this.attachShadow({mode: 'open'});
+    CoreHello.template = document.createElement('template');
+    const templateContent = CoreHello.template.content;
+    
+    // Create greeting
+    var greeting = "Hello World";
+    var lang = this.getAttribute("lang");
+    if(lang === "jp") {
+      greeting = "Kon'nichiwa sekai";
+    }
+    else if(lang === "es") {
+      greeting = "Hola Mundo";
+    }
+    else if(lang === "fr") {
+      greeting = "Bonjour le monde";
+    }
+    CoreHello.template.innerHTML = greeting + ` <slot></slot>`;
+    
+    
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
@@ -19,10 +36,5 @@ class CoreHello extends HTMLElement {
 }
 
 CoreHello.template = document.createElement('template');
-CoreHello.template.innerHTML = `
-<style>
-</style>
-Hello World <slot></slot>
-`;
 
 customElements.define('core-hello', CoreHello);
