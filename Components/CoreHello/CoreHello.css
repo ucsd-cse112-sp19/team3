@@ -1,3 +1,8 @@
+.greeting {
+  font-size: 100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .rainbow {
   animation: rainbow 2.5s linear;
   animation-iteration-count: infinite;

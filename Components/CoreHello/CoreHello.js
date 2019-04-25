@@ -24,14 +24,14 @@ class CoreHello extends HTMLElement {
     }
 
     // Set CSS
-    const isRainbow = this.getAttribute('rainbow');
-    let styling = `<style>@import 'CoreHello.css'</style>`;
+    const isRainbow = this.getAttribute('rainbow') === '';
+    let styling = `<div class="greeting">`;
     if (isRainbow) {
-      styling = `<style></style>`;
+      styling = `<div class="rainbow greeting">`;
     }
 
-    CoreHello.template.innerHTML = styling + `<div class="rainbow">` +
-    greeting + ` <slot></slot>`;
+    CoreHello.template.innerHTML = `<style>@import 'CoreHello.css'</style>` +
+	styling + greeting + ` <slot></slot>`;
 
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
