@@ -11,7 +11,6 @@ class CoreHello extends HTMLElement {
     CoreHello.template = document.createElement('template');
     const templateContent = CoreHello.template.content;
 
-
     // Set greeting
     let greeting = 'Hello World';
     const lang = this.getAttribute('lang');
