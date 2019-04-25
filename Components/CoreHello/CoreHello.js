@@ -11,7 +11,7 @@ class CoreHello extends HTMLElement {
     CoreHello.template = document.createElement('template');
     const templateContent = CoreHello.template.content;
 
-    // Create greeting
+    // Set greeting
     let greeting = 'Hello World';
     const lang = this.getAttribute('lang');
     if (lang === 'jp') {
@@ -21,7 +21,16 @@ class CoreHello extends HTMLElement {
     } else if (lang === 'fr') {
       greeting = 'Bonjour le monde';
     }
-    CoreHello.template.innerHTML = greeting + ` <slot></slot>`;
+
+    // Set CSS
+    const isRainbow = this.getAttribute('rainbow') === '';
+    let styling = `<div class="greeting">`;
+    if (isRainbow) {
+      styling = `<div class="rainbow greeting">`;
+    }
+
+    CoreHello.template.innerHTML = `<style>@import 'CoreHello.css'</style>` +
+    styling + greeting + ` <slot></slot>`;
 
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
