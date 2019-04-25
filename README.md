@@ -1,6 +1,6 @@
 # Team3
 
-![SPECS](https://github.com/ucsd-cse112/team3/blob/master/logo.png)
+![SPECS](./logo.png)
 
 Test commit by Yootak Jin
 
@@ -13,6 +13,9 @@ Test commit by Brayden Crosta
 Test commit by Kaiwen Chen
 
 Test commit by Gabriel Ruiz
+
+# Docs
+[Link to Docs](./docs/index.md)
 
 # Commits
 The commit format is as follows - Firstname: commit message. Very simple!

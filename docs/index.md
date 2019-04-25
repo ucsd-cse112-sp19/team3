@@ -1,0 +1,2 @@
+# Docs
+[Commands](./commands.md)
