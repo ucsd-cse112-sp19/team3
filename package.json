@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/ucsd-cse112/team3#readme",
   "dependencies": {
-    "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-google": "^0.12.0",
     "eslint-config-standard": "^12.0.0",
@@ -36,7 +35,7 @@
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@commitlint/travis-cli": "^7.5.2",
-    "mocha": "^6.4.1",
-    "chai": "^6.4.1"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   }
 }
