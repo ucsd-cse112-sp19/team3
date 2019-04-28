@@ -14,12 +14,12 @@ describe('Array', function() {
  * @param {fn} fn is a test parameter
  * @return {string}
  */
-function once(fn) {
+function once(fn, ...args) {
   let returnValue; let called = false;
   return function() {
     if (!called) {
       called = true;
-      returnValue = fn.apply(this, rest);
+      returnValue = fn.apply(this, args);
     }
     return returnValue;
   };
