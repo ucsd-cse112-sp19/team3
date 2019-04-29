@@ -19,9 +19,10 @@ script:
     - commitlint-travis
     - ./node_modules/.bin/esdoc
     - npm run test
-    
+
 after_script:
     - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+    - ./cc-test-reporter upload-coverage -i ./coverage/lcov.info
 
 addons:
   browserstack:
