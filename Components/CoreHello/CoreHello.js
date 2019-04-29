@@ -32,7 +32,6 @@ class CoreHello extends HTMLElement {
     CoreHello.template.innerHTML = `<style>@import 'CoreHello.css'</style>` +
     styling + greeting + ` <slot></slot>`;
 
-
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
