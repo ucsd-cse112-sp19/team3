@@ -9,7 +9,8 @@
     "csslint_fix": "stylelint --config .csslintrc **/\\*.css **/\\*.html --fix",
     "eslint": "eslint **/\\*.html **/\\*.js",
     "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
-    "test": "mocha"
+    "test": "mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit",
+    "all": "npm run htmlhint && npm run csslint && npm run eslint && npm run test"
   },
   "repository": {
     "type": "git",
@@ -35,10 +36,11 @@
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@commitlint/travis-cli": "^7.5.2",
-    "esdoc": "^1.1.0",
-    "esdoc-standard-plugin": "^1.0.0"
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
+    "showroom": "^0.9.3",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "sinon": "^7.3.2"
   }
 }
