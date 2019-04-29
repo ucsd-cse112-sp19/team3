@@ -654,7 +654,7 @@
   },
   {
     "kind": "index",
-    "content": "# Team3\r\n\r\n![SPECS](./logo.png)\r\n\r\n[![Build Status](https://travis-ci.com/ucsd-cse112/team3.svg?token=N7quhPzu2SUwxwSC1Q4R&branch=master)](https://travis-ci.com/ucsd-cse112/team3)\r\n\r\n# Docs\r\n[Link to Docs](./ESDocs/index.html)\r\n",
+    "content": "# Team3\r\n\r\n![SPECS](./logo.png)\r\n\r\n[![Build Status](https://travis-ci.com/ucsd-cse112/team3.svg?token=N7quhPzu2SUwxwSC1Q4R&branch=master)](https://travis-ci.com/ucsd-cse112/team3)\r\n\r\n# Docs\r\n[Link to Docs](./index.html)\r\n",
     "longname": "C:\\Users\\crost\\Desktop\\CS\\CSE112\\team3\\README.md",
     "name": "./README.md",
     "static": true,
