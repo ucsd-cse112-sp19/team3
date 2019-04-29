@@ -14,3 +14,9 @@ script:
     - npm run csslint
     - npm run eslint
     - commitlint-travis
+
+addons:
+  browserstack:
+    username: "alexmao1"
+    access_key:
+      secure: "XiV4CmH4zknlZIPR8K/pLUKEHpRGtXP6Ho+BYwTkNpxJzLB2KH620KvYD21gXIyFjH4OEevL9jyKYNkWbggubazaJxLKiGqaabWK1Nhkxp/BntuVsWO0hxGvJ+t1N/VxLXkLCJihCS4KAJUwQ9vFv2Azt94QHsiOG8VqpYGP4dB6aeGOYQ1nQtIeaEIjjxVrUKt2f6njUyytxRSGYdLf7ThE9l7DboyLdfmS4tZWXt3PFpfu3NLLl3FJZxVBquyCT6crCmF2Jf225WNgfO0AasntjZfuzJDlEVCfumJjN05qKcT5M4iLgxC3WJJIySyBsdxcZXiMZQnZO8aem2hnYTv7VKp+aOAOQzEgTOFw0DDRSvlYV9dcDmIZzLskH52cQxrWWjeUx9EShYpR2XAMrhrs1Ui5BsSIFI4JufMlyoMaTwtGHC+AYLIZVLm4L/nrDf4I/LHsIkFKuYkMftOQQTobrZ6SAPxFpAarP5o3nJTAzdYHH67u1q0ooWEnUpZuhK6m1n35U7aEi5LlFlwFfrrg1mUtPTWo40x7ISSiqDqwMcGL0LaxkU8wu7R+BRZx15AGbh5O2lUsl3xjCXWsjKqEznfKnqYVkK5xhhylYEa6aRhF11K0rz+M3MNo7u2thk68XVLThr7g1FhpjtzpEL0BRKCQIh7+1xVl5LJOLGw="
