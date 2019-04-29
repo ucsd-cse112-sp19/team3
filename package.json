@@ -34,6 +34,8 @@
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
-    "@commitlint/travis-cli": "^7.5.2"
+    "@commitlint/travis-cli": "^7.5.2",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0"
   }
 }
