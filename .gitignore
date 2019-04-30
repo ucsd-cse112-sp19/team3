@@ -3,3 +3,5 @@ node_modules
 docs/ESDocs
 coverage
 .nyc_output
+tests_output
+*.log
