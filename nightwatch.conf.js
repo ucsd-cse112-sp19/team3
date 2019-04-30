@@ -1,9 +1,9 @@
-const nightwatch_config = {
+const nightwatchConfig = {
   src_folders: ['NightWatch.tests'],
-  selenium : {
-    "start_process" : false,
-    "host" : "hub-cloud.browserstack.com",
-    "port" : 80
+  selenium: {
+    'start_process': false,
+    'host': 'hub-cloud.browserstack.com',
+    'port': 80,
   },
 
   test_settings: {
@@ -12,17 +12,17 @@ const nightwatch_config = {
         'browserstack.user': 'rixlai1',
         'browserstack.key': process.env.BROWSERSTACK_KEY,
         'browserstack.local': true,
-        'browser': 'chrome'
-      }
-    }
-  }
+        'browser': 'chrome',
+      },
+    },
+  },
 };
 
 // Code to copy seleniumhost/port into test settings
-for(let i in nightwatch_config.test_settings){
-  const config = nightwatch_config.test_settings[i];
+/* eslint-disable-next-line */
+for (const config in nightwatch_config.test_settings) {
   config['selenium_host'] = nightwatch_config.selenium.host;
   config['selenium_port'] = nightwatch_config.selenium.port;
 }
 
-module.exports = nightwatch_config;
+module.exports = nightwatchConfig;

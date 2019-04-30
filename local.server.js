@@ -2,7 +2,6 @@
 
 const http = require('http');
 const express = require('express');
-const path = require('path');
 const app = express();
 
 app.use('/', express.static(__dirname + '/Examples'));
@@ -15,4 +14,4 @@ const server = http.createServer(app);
 const port = process.env.PORT || 3000;
 server.listen(port);
 
-console.log("Server started at %d", port);
+console.log('Server started at %d', port);
