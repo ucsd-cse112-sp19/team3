@@ -9,7 +9,7 @@
     "csslint_fix": "stylelint --config .csslintrc **/\\*.css **/\\*.html --fix",
     "eslint": "eslint **/\\*.html **/\\*.js",
     "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
-    "test": "nyc --reporter=json mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit",
+    "test": "nyc --reporter=lcovonly mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit",
     "all": "npm run htmlhint && npm run csslint && npm run eslint && npm run test"
   },
   "repository": {
