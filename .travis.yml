@@ -1,10 +1,8 @@
 language: node_js
-node_js: 'node' # latest stable node release
+node_js: node
 cache: npm
-
 notifications:
   slack: cse112-sp19-team3:vGyQXkfhyYbp46A5tXNzwUUb
-
 before_install:
     - npm install -g npm@latest
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -19,16 +17,17 @@ script:
     - commitlint-travis
     - ./node_modules/.bin/esdoc
     - npm run test
+    - npm run browserstack
 
 after_script:
     - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
 
 addons:
   browserstack:
-  username: "alexmao1"
-  access_key:
-    secure: "LmIPyt9ENAYlSDunhgYrZ1vKGgxY2r+bZssNHO/n2v4geODiNTofe7YssP1nTrP99xCqpqayRTCLXknmfe86Oq9sLlLI0JaOsuGCSOLK1FBAg36zHO8i4aZLQX6TWeLfVRh0g3w//HCoKfm7CcaUa2upsI+DVHajT4B+FyvwdVxKjYv7Wlwvv0QtIhaAgytdTRFNfFkkLF3InElqj/2Kq1yz85aznLM1P3QL+miqIfkbv9xzDr8r1KXTd/GObJ8F9AveJuB9UpXSEET6PzE7HjtBr3uzS5I9AaiHDdnHWnx2a9SvaDvdLRG3uk/mt+3PBbsckvnGutquOEmGF8l2CoI1UYe5nowESmEKPFMRIry6C9qmic2lJkijUcGNwYBTfphjaC7MA267rmDM6DcMLvUfhBGHQks/5sx3ygtg7p4EVkFghMAdwOdMz6HTjJ0WvxvBOO4uRSuqdwqZNo9CXJXmKiAD+Oo2qwaP7iyess+tq0qa+4OkGjWacXeciN928zzz3umrGMmwQAfFEKe1boLyBei3Vd3totzrRJaLC/0nVA4JyhRjghNb473rRudlLv+hUGf7pYVX4+e/UCaQ1mcCJsq2r13zwpjBA6fS4GqLp2BTtJs1l5AKUyxU5YYM6igBE3UGOhzBiplCb8h3L1mDrXFL1/97U5JNJ3XAVIU="
-
+    username: rixlai1
+    access_key:
+      secure: qNTBFrxqcUA5x032UmKW7fnr7IzeVzDrRFUTypFgWnx4S9IKFmsES0L1Y9mBD2IjNSrvkIDjKGUBKIP8HfCwgS7wDqdqPjmRIawIelMvVmYMZtBl5w4jIzYKdgsUvK2HzAK5UNSnR4FAN3sOUofEmyinSnK0bo8a4HbMw7WAjp5IZ9n/HW/w/BZF5yrAXEWYm8wLLY9uATg9zv6PIg3HJRMJJp9jlu70Klcbi+bkttF+Kp96LOUAeHCuZ0pfPl+saogAVkJpm1mSd4dQxjYu8DKL6jq6JK8mnKw6QRUXXMGZnsBex49Uuqx/rlpZNb+luFiFnPS0VxmH5XFDSrIAzM7YOVABo+1MnrziO3y6TBi2VxhO8bTK6q+22a2ZwydwsLNO5hyYbnMZlfAMQuQF8+Bv6e0/5/MMmJamlgbjaoPy0xmFRHwrRBxcMfU72wib5FU53St7NBYBNYrqd49sV/x/CYXt6lDs/SjDfQifGxiGSsMb99ttH6ecAUDXUlTRxcqpS6aapW/8+e6Lk+M8inQZ94mYGTvS+JnN4ZTEFrwskzs70ouF/udijKWIFpeGVC0QuCK+QN8Tqi6f6O7kYPlaItbmXE5XQA6G9XlOvSiXexCR1Vd0xEj45U+50665MXwZQFiXflNxIZ4L5I8tMjttQxzD/yThV58bguRbRsY=
 env:
   global:
-    CC_TEST_REPORTER_ID=e44311501b10676704e6161fe012dd1cb0c52584c6c1e9cb96dfe8978ddc3dec
+  - CC_TEST_REPORTER_ID=e44311501b10676704e6161fe012dd1cb0c52584c6c1e9cb96dfe8978ddc3dec
+  - secure: pu0fPGd5+EmjSu0R26KriIBPmLmmMFswxLtvkeuk46Xl66Pc/h4TE4PUQHK+n5eI+IFhHAfmNHvRoq3txT+o+OAmK3VcXyzSRn1/8UaX6qbiO84/dgHpEw5yZugNnQZp97uKedKZG2w5WFwL3ZitqUIRvdi8lOD0Z24EWYxcbJaiUHn8r7ZzHR4NtNHzbAdLh+SpRKOJfslbwOvNXmzeGNr02zhYLpDdXCaRcBF5kr4t2RBG+DuLlVDE3HcQ9qWAHkmf7yFAOXJ3LFveZsKUv61Q6plSABQyPeXBjn8V+N05WZj5fYgXplGMXCIhFJ9+m5hkmWOwkOydbYUk1/bxV5ACJTroVq9qGflrE1xpdC/cabUc8t0W9uLevbAZen9+244wSJGJlHvEQDRCj3P02SINNbCv9Af1vrLCXpXoV7/eupOuMtTEorpR3pU2T5BHaE2E5UKurKwTSL57pDhnThv1RzdkaiO8IQolFHd2hk6JWGHxY+RJjY0ua22+xskKpFf0+1BUdgm5RiHiLaY7+d3fz8toMaCplBasOg4R0LfSFlHHi8TZtAmOSPR+cuBOt62efYa0WxQzkucXbGWoMlYN1ySX3Q/S057TjOUn9JLRkluhRKEwyrdf/VYsr+oTNDyBqEljBNML5NBKbmAGhdGSdcFImePpMN89CzgbUsU=
