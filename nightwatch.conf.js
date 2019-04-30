@@ -20,9 +20,9 @@ const nightwatchConfig = {
 
 // Code to copy seleniumhost/port into test settings
 /* eslint-disable-next-line */
-for (const config in nightwatch_config.test_settings) {
-  config['selenium_host'] = nightwatch_config.selenium.host;
-  config['selenium_port'] = nightwatch_config.selenium.port;
+for (const config in nightwatchConfig.test_settings) {
+  config['selenium_host'] = nightwatchConfig.selenium.host;
+  config['selenium_port'] = nightwatchConfig.selenium.port;
 }
 
 module.exports = nightwatchConfig;
