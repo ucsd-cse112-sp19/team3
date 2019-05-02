@@ -5,4 +5,5 @@
 [![Build Status](https://travis-ci.com/ucsd-cse112/team3.svg?token=N7quhPzu2SUwxwSC1Q4R&branch=master)](https://travis-ci.com/ucsd-cse112/team3)
 
 # Docs
-[Link to Docs](./docs/index.md)
+[Commands](./commands.md)  
+[Documentation](https://ucsd-cse112.github.io/team3/)

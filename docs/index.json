@@ -569,7 +569,7 @@
     "name": "Components/CoreHello/CoreHello.js",
     "content": "'use strict';\r\n\r\n/** Class for Core Hello component */\r\nclass CoreHello extends HTMLElement {\r\n  /** Constructor of the class */\r\n  constructor() {\r\n    super();\r\n\r\n    // Create shadow DOM and attach template content\r\n    const shadowRoot = this.attachShadow({mode: 'open'});\r\n    CoreHello.template = document.createElement('template');\r\n    const templateContent = CoreHello.template.content;\r\n\r\n    // Set greeting\r\n    let greeting = 'Hello World';\r\n    const lang = this.getAttribute('lang');\r\n    if (lang === 'jp') {\r\n      greeting = 'Kon\\'nichiwa sekai';\r\n    } else if (lang === 'es') {\r\n      greeting = 'Hola Mundo';\r\n    } else if (lang === 'fr') {\r\n      greeting = 'Bonjour le monde';\r\n    }\r\n\r\n    // Import CSS\r\n    const importStyle = `<style>.greeting {\r\n                  font-size: 100px;\r\n                  font-family: 'Franklin Gothic Medium',\r\n                  'Arial Narrow', Arial, sans-serif;\r\n                }\r\n\r\n                .rainbow {\r\n                  animation: rainbow 2.5s linear;\r\n                  animation-iteration-count: infinite;\r\n                }\r\n\r\n                @keyframes rainbow {\r\n                  100%,\r\n                  0% {\r\n                color: rgb(255, 0, 0);\r\n                  }\r\n\r\n                  8% {\r\n                color: rgb(255, 127, 0);\r\n                  }\r\n\r\n                  16% {\r\n                color: rgb(255, 255, 0);\r\n                  }\r\n\r\n                  25% {\r\n                color: rgb(127, 255, 0);\r\n                  }\r\n\r\n                  33% {\r\n                color: rgb(0, 255, 0);\r\n                  }\r\n\r\n                  41% {\r\n                color: rgb(0, 255, 127);\r\n                  }\r\n\r\n                  50% {\r\n                color: rgb(0, 255, 255);\r\n                  }\r\n\r\n                  58% {\r\n                color: rgb(0, 127, 255);\r\n                  }\r\n\r\n                  66% {\r\n                color: rgb(0, 0, 255);\r\n                  }\r\n\r\n                  75% {\r\n                color: rgb(127, 0, 255);\r\n                  }\r\n\r\n                  83% {\r\n                color: rgb(255, 0, 255);\r\n                  }\r\n\r\n                  91% {\r\n                color: rgb(255, 0, 127);\r\n                  }\r\n                }</style>`;\r\n\r\n    // Set CSS\r\n    const isRainbow = this.hasAttribute('rainbow');\r\n    let styling = `<div class=\"greeting\">`;\r\n    if (isRainbow) {\r\n      styling = `<div class=\"rainbow greeting\">`;\r\n    }\r\n\r\n    CoreHello.template.innerHTML = importStyle +\r\n    styling + greeting + ` <slot></slot>`;\r\n\r\n\r\n    shadowRoot.appendChild(templateContent.cloneNode(true));\r\n  }\r\n\r\n  /** Element attached on DOM */\r\n  connectedCallback() {\r\n    // code\r\n  }\r\n}\r\n\r\nCoreHello.template = document.createElement('template');\r\n\r\ncustomElements.define('core-hello', CoreHello);\r\n",
     "static": true,
-    "longname": "C:/Users/BCrosta/Desktop/CS/CSE 112/team3/Components/CoreHello/CoreHello.js",
+    "longname": "C:/Users/crost/Desktop/CS/CSE112/team3/Components/CoreHello/CoreHello.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -627,7 +627,7 @@
     "name": "Components/Main/Main.js",
     "content": "/**\r\n * @desc This is a test log.\r\n * */\r\n\r\nconst testLog = 'test log.';\r\nconsole.log(testLog);\r\n",
     "static": true,
-    "longname": "C:/Users/BCrosta/Desktop/CS/CSE 112/team3/Components/Main/Main.js",
+    "longname": "C:/Users/crost/Desktop/CS/CSE112/team3/Components/Main/Main.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -654,8 +654,8 @@
   },
   {
     "kind": "index",
-    "content": "# Team3\r\n\r\n![SPECS](./logo.png)\r\n\r\n[![Build Status](https://travis-ci.com/ucsd-cse112/team3.svg?token=N7quhPzu2SUwxwSC1Q4R&branch=master)](https://travis-ci.com/ucsd-cse112/team3)\r\n\r\n# Docs\r\n[Link to Docs](./docs/index.md)\r\n",
-    "longname": "C:\\Users\\BCrosta\\Desktop\\CS\\CSE 112\\team3\\README.md",
+    "content": "# Team3\r\n\r\n![SPECS](./logo.png)\r\n\r\n[![Build Status](https://travis-ci.com/ucsd-cse112/team3.svg?token=N7quhPzu2SUwxwSC1Q4R&branch=master)](https://travis-ci.com/ucsd-cse112/team3)\r\n\r\n# Docs\r\n[Commands](./commands.md)  \r\n[Documentation](https://ucsd-cse112.github.io/team3/)\r\n",
+    "longname": "C:\\Users\\crost\\Desktop\\CS\\CSE112\\team3\\README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
@@ -663,7 +663,7 @@
   {
     "kind": "packageJSON",
     "content": "{\r\n  \"name\": \"team3\",\r\n  \"version\": \"1.0.0\",\r\n  \"description\": \"![SPECS](https://github.com/ucsd-cse112/team3/blob/master/logo.png)\",\r\n  \"main\": \"index.js\",\r\n  \"scripts\": {\r\n    \"htmlhint\": \"htmlhint --config .htmlhintrc **/\\\\*.html\",\r\n    \"csslint\": \"stylelint --config .csslintrc **/\\\\*.css **/\\\\*.html\",\r\n    \"csslint_fix\": \"stylelint --config .csslintrc **/\\\\*.css **/\\\\*.html --fix\",\r\n    \"eslint\": \"eslint **/\\\\*.html **/\\\\*.js\",\r\n    \"eslint_fix\": \"eslint **/\\\\*.html **/\\\\*.js --fix\",\r\n    \"test\": \"nyc --reporter=lcovonly mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit\",\r\n    \"browserstack\": \"node ./local.runner.js\",\r\n    \"all\": \"npm run htmlhint && npm run csslint && npm run eslint && npm run test\"\r\n  },\r\n  \"repository\": {\r\n    \"type\": \"git\",\r\n    \"url\": \"git+https://github.com/ucsd-cse112/team3.git\"\r\n  },\r\n  \"bugs\": {\r\n    \"url\": \"https://github.com/ucsd-cse112/team3/issues\"\r\n  },\r\n  \"homepage\": \"https://github.com/ucsd-cse112/team3#readme\",\r\n  \"devDependencies\": {\r\n    \"@commitlint/cli\": \"^7.5.2\",\r\n    \"@commitlint/config-conventional\": \"^7.5.0\",\r\n    \"@commitlint/travis-cli\": \"^7.5.2\",\r\n    \"browserstack-local\": \"^1.3.7\",\r\n    \"chai\": \"^4.2.0\",\r\n    \"esdoc\": \"^1.1.0\",\r\n    \"esdoc-standard-plugin\": \"^1.0.0\",\r\n    \"eslint\": \"^5.16.0\",\r\n    \"eslint-config-google\": \"^0.12.0\",\r\n    \"eslint-config-standard\": \"^12.0.0\",\r\n    \"eslint-plugin-html\": \"^5.0.3\",\r\n    \"eslint-plugin-import\": \"^2.17.2\",\r\n    \"eslint-plugin-node\": \"^8.0.1\",\r\n    \"eslint-plugin-promise\": \"^4.1.1\",\r\n    \"eslint-plugin-standard\": \"^4.0.0\",\r\n    \"express\": \"^4.16.4\",\r\n    \"htmlhint\": \"^0.11.0\",\r\n    \"http-server\": \"^0.11.1\",\r\n    \"mocha\": \"^6.1.4\",\r\n    \"nightwatch\": \"^1.0.19\",\r\n    \"nyc\": \"^14.0.0\",\r\n    \"puppeteer-to-istanbul\": \"^1.2.2\",\r\n    \"showroom\": \"^0.9.3\",\r\n    \"sinon\": \"^7.3.2\",\r\n    \"stylelint\": \"^10.0.1\"\r\n  }\r\n}\r\n",
-    "longname": "C:\\Users\\BCrosta\\Desktop\\CS\\CSE 112\\team3\\package.json",
+    "longname": "C:\\Users\\crost\\Desktop\\CS\\CSE112\\team3\\package.json",
     "name": "package.json",
     "static": true,
     "access": "public"

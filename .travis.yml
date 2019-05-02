@@ -11,7 +11,7 @@ before_install:
 install:
     - npm install
 script:
-    - rm -rf ./docs/ESDocs
+    - rm -rf ./docs
     - npm run htmlhint
     - npm run csslint
     - npm run eslint
