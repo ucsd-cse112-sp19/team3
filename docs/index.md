@@ -1,2 +1,0 @@
-# Docs
-[Commands](./commands.md)
