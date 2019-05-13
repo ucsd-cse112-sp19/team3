@@ -48,5 +48,51 @@ describe('CoreHello', function() {
             assert.equal(text, 'test2');
           });
     });
+
+    it('should be able to display Japanese', function() {
+      return showroom.setProperty('innerHTML', `おはよう`)
+          .then(function() {
+            return showroom.getTextContent(component);
+          })
+          .then(function(text) {
+            assert.equal(text, 'おはよう');
+          });
+
+    });
+
+    it('should be able to display Korean', function() {
+      return showroom.setProperty('innerHTML', `여보세요`)
+          .then(function() {
+            return showroom.getTextContent(component);
+          })
+          .then(function(text) {
+            assert.equal(text, '여보세요');
+          });
+
+    });
+
+    it('should be able to display Spanish', function() {
+      return showroom.setProperty('innerHTML', `Buenos días`)
+          .then(function() {
+            return showroom.getTextContent(component);
+          })
+          .then(function(text) {
+            assert.equal(text, 'Buenos días');
+          });
+
+    });
+
+    it('should be able to display French', function() {
+      return showroom.setProperty('innerHTML', `Ça va`)
+          .then(function() {
+            return showroom.getTextContent(component);
+          })
+          .then(function(text) {
+            assert.equal(text, 'Ça va');
+          });
+
+    });
+
+
   });
 });
