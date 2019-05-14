@@ -48,7 +48,9 @@ describe('CoreHello', function() {
             assert.equal(text, 'test2');
           });
     });
+  });
 
+  describe('Internationalization', function() {
     it('should be able to display Japanese', function() {
       return showroom.setProperty('innerHTML', `おはよう`)
           .then(function() {
@@ -57,7 +59,6 @@ describe('CoreHello', function() {
           .then(function(text) {
             assert.equal(text, 'おはよう');
           });
-
     });
 
     it('should be able to display Korean', function() {
@@ -68,7 +69,6 @@ describe('CoreHello', function() {
           .then(function(text) {
             assert.equal(text, '여보세요');
           });
-
     });
 
     it('should be able to display Spanish', function() {
@@ -79,7 +79,6 @@ describe('CoreHello', function() {
           .then(function(text) {
             assert.equal(text, 'Buenos días');
           });
-
     });
 
     it('should be able to display French', function() {
@@ -90,9 +89,6 @@ describe('CoreHello', function() {
           .then(function(text) {
             assert.equal(text, 'Ça va');
           });
-
     });
-
-
   });
 });
