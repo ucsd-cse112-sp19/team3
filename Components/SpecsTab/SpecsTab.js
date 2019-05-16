@@ -1,12 +1,9 @@
-/* eslint-disable max-len */
-/* eslint-disable no-var */
-/* eslint-disable require-jsdoc */
 (function() {
   'use strict';
 
   let selected_ = null;
 
-  /** Class for Core Hello component */
+  /** Class for SpecsTab component */
   class SpecsTab extends HTMLElement {
   /** Constructor of the class */
     constructor() {
@@ -59,6 +56,7 @@
               font-weight: 700;
               background: white;
               box-shadow: none;
+              color: #00BFFF;
             }
             #tabs ::slotted(:hover) {
               color: #00BFFF;
@@ -81,17 +79,27 @@
         `;
     }
 
+    /**
+     * A getter of which index of tab we select.
+     * @return {int} The selected index of tabs.
+     */
     get selected() {
       return selected_;
     }
-    set selected(idx) {
-      selected_ = idx;
-      this._selectTab(idx);
-      // Updated the element's selected attribute value when
-      // backing property changes.
-      this.setAttribute('selected', idx);
+
+    /**
+     * A setter of what we select
+     * @param{int} index of tabs we select
+     */
+    set selected(index) {
+      selected_ = index;
+      this._selectTab(index);
+      this.setAttribute('selected', index);
     }
 
+    /**
+     * Callback after we successfully connect the component
+     */
     connectedCallback() {
       this.setAttribute('role', 'tablist');
       const tabsSlot = this.shadowRoot.querySelector('#tabsSlot');
@@ -109,47 +117,29 @@
 
       // Save refer to we can remove listeners later.
       this._boundOnTitleClick = this._onTitleClick.bind(this);
-      this._boundOnKeyDown = this._onKeyDown.bind(this);
       tabsSlot.addEventListener('click', this._boundOnTitleClick);
-      tabsSlot.addEventListener('keydown', this._boundOnKeyDown);
 
       this.selected = this._findFirstSelectedTab() || 0;
     }
 
-    disconnectedCallback() {
-      const tabsSlot = this.shadowRoot.querySelector('#tabsSlot');
-      tabsSlot.removeEventListener('click', this._boundOnTitleClick);
-      tabsSlot.removeEventListener('keydown', this._boundOnKeyDown);
-    }
-
+    /**
+     * A listener that gets invoked when we click title
+     * @param{e} e is an exception
+     */
     _onTitleClick(e) {
+      console.log('on title click');
       if (e.target.slot === 'title') {
         this.selected = this.tabs.indexOf(e.target);
         e.target.focus();
       }
     }
 
-    _onKeyDown(e) {
-      switch (e.code) {
-        case 'ArrowUp':
-        case 'ArrowLeft':
-          e.preventDefault();
-          var idx = this.selected - 1;
-          idx = idx < 0 ? this.tabs.length - 1 : idx;
-          this.tabs[idx].click();
-          break;
-        case 'ArrowDown':
-        case 'ArrowRight':
-          e.preventDefault();
-          var idx = this.selected + 1;
-          this.tabs[idx % this.tabs.length].click();
-          break;
-        default:
-          break;
-      }
-    }
+    /**
+     * A getter of what we select.
+     * @return{int} selectedIdx
+     */
     _findFirstSelectedTab() {
-      console.log('HERE findfirstselectedtab!');
+      console.log('find first selected tab!');
       let selectedIdx;
       for (const [i, tab] of this.tabs.entries()) {
         tab.setAttribute('role', 'tab');
@@ -162,7 +152,12 @@
       return selectedIdx;
     }
 
+    /**
+     * A listener that keeps track of which tab is currently selected
+     * @param{int} idx of tabs we select
+     */
     _selectTab(idx = null) {
+      console.log('select tab');
       for (let i = 0, tab; tab = this.tabs[i]; ++i) {
         const select = i === idx;
         tab.setAttribute('tabindex', select ? 0 : -1);
