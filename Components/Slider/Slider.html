@@ -1,18 +1,25 @@
-<p>The slider with default value 0 within range of 0 to 100: </p>
-<div class="slidecontainer">
-    <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-</div>
+<!DOCTYPE html>
 
-<p>Customized initial value of 50 within range of 0 to 100: </p>
-<div class="slidecontainer">
-    <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-</div>
+<h1> Default value of 0 within range from 0 to 100 </h1>
+<custom-slider></custom-slider>
 
-<p>The slider within the range of 0 to 1: </p>
-<div class="slidecontainer">
-    <input type="range" min="0" max="1" value="0" class="slider" id="myRange">
-</div>
+<h1> Value of 50 within range from 5 to 105 </h1>
+<custom-slider min="5" max="105" value="50"></custom-slider>
 
+<h1> Have the slider disabled </h1>
+<custom-slider min="5" max="105" value="50" disabled></custom-slider>
+
+<h1> Show the Input Box </h1>
+<custom-slider min="5" max="105" value="50" show_input disabled></custom-slider>
+
+<h1> Enable the slider and enter 105 </h1>
+<custom-slider min="5" max="105" value="50" show_input></custom-slider>
+
+<h1> Change the size of the input box to Large </h1>
+<custom-slider min="5" max="105" value="50" size="L" show_input></custom-slider>
+
+<script src="Slider.js">
+</script>
 
 
 
