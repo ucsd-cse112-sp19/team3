@@ -106,5 +106,4 @@ class CoreHello extends HTMLElement {
 }
 
 CoreHello.template = document.createElement('template');
-
 customElements.define('core-hello', CoreHello);
