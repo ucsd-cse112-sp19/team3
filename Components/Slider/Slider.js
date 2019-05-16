@@ -14,33 +14,40 @@ class CustomSlider extends HTMLElement {
     // Import CSS
     const importStyle = `<style>
     </style>`;
-    
-    //Attributes
+
+    // Attributes
     let value = 0;
     let min = 0;
     let max = 100;
     let disabled = '';
     if (this.hasAttribute('value')) {
-        value = this.getAttribute('value');
+      value = this.getAttribute('value');
     }
     if (this.hasAttribute('min')) {
-        min = this.getAttribute('min');
+      min = this.getAttribute('min');
     }
     if (this.hasAttribute('max')) {
-        max = this.getAttribute('max');
+      max = this.getAttribute('max');
     }
     if (this.hasAttribute('disabled')) {
-        disabled = 'disabled';
+      disabled = 'disabled';
     }
-    
+
 
     // Set HTML
 
     CustomSlider.template.innerHTML = importStyle +
     `<div class="slidecontainer">`+
         `<form>
-            <input type="range" name="amountRange" min=` + min + ` max=` + max + `  value=` + value + ` oninput="this.form.amountInput.value=this.value" ` + disabled + `/>
-            <input type="number" name="amountInput" min=` + min + ` max=` + max + `  value=` + value + ` oninput="this.form.amountRange.value=this.value" ` + disabled + `/>
+            <input type="range" name="amountRange" min=` + min + ` max=` + max +
+            `  value=` + value +
+            ` oninput="this.form.amountInput.value=this.value" `
+            + disabled + `/>
+            <input type="number" name="amountInput" min=` + min + ` max=`
+            + max +
+            `  value=` + value +
+            ` oninput="this.form.amountRange.value=this.value" ` +
+            disabled + `/>
         </form>
     </div>`;
 
@@ -50,7 +57,7 @@ class CustomSlider extends HTMLElement {
 
   /** Element attached on DOM */
   connectedCallback() {
-      
+
   }
 }
 
