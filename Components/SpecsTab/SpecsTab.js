@@ -1,6 +1,7 @@
 (function() {
   'use strict';
 
+  /* a global value to keep track of which tab is currently selected*/
   let selected_ = null;
 
   /** Class for SpecsTab component */
@@ -31,7 +32,7 @@
               background: white;
               border-radius: 3px;
               padding: 16px;
-              height: 150px;
+              height: 100px;
               overflow: auto;
             }
             #tabs {
@@ -101,7 +102,11 @@
      * Callback after we successfully connect the component
      */
     connectedCallback() {
+      // Automatically differentiate tab and panel
       this.setAttribute('role', 'tablist');
+
+      console.log(this);
+
       const tabsSlot = this.shadowRoot.querySelector('#tabsSlot');
       const panelsSlot = this.shadowRoot.querySelector('#panelsSlot');
       this.tabs = tabsSlot.assignedNodes({flatten: true});
@@ -109,8 +114,11 @@
         return el.nodeType === Node.ELEMENT_NODE;
       });
 
+      console.log(this);
+
       // Add aria role="tabpanel" to each content panel.
       for (const [, panel] of this.panels.entries()) {
+        console.log(panel);
         panel.setAttribute('role', 'tabpanel');
         panel.setAttribute('tabindex', 0);
       }
@@ -119,12 +127,13 @@
       this._boundOnTitleClick = this._onTitleClick.bind(this);
       tabsSlot.addEventListener('click', this._boundOnTitleClick);
 
+      // If user doesn't select any tab, default to index 0 one as selected
       this.selected = this._findFirstSelectedTab() || 0;
     }
 
     /**
      * A listener that gets invoked when we click title
-     * @param{e} e is an exception
+     * @param{e} e is passed in in case of an exception
      */
     _onTitleClick(e) {
       console.log('on title click');
