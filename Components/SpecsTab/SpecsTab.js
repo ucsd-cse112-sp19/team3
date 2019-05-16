@@ -4,16 +4,14 @@
 (function() {
   'use strict';
 
-  // Feature detect
-  if (!(window.customElements && document.body.attachShadow)) {
-    document.querySelector('fancy-tabs').innerHTML = '<b>Your browser doesn\'t support Shadow DOM and Custom Elements v1.</b>';
-    return;
-  }
   let selected_ = null;
 
-  customElements.define('fancy-tabs', class extends HTMLElement {
+  /** Class for Core Hello component */
+  class SpecsTab extends HTMLElement {
+  /** Constructor of the class */
     constructor() {
-      super(); // always call super() first in the ctor.
+      super();
+
       // Create shadow DOM for the component.
       const shadowRoot = this.attachShadow({mode: 'open'});
       shadowRoot.innerHTML = `
@@ -21,52 +19,54 @@
             :host {
               display: inline-block;
               width: 650px;
-              font-family: 'Roboto Slab';
+              font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+              color: #333;
+              font-weight: 300;
               contain: content;
             }
             :host([background]) {
-              background: var(--background-color, #9E9E9E);
-              border-radius: 10px;
-              padding: 10px;
+              overflow: hidden;
+              border: 1px solid #ccc;
+              background-color: #f1f1f1;
             }
             #panels {
               box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
               background: white;
               border-radius: 3px;
               padding: 16px;
-              height: 250px;
+              height: 150px;
               overflow: auto;
             }
             #tabs {
               display: inline-flex;
               -webkit-user-select: none;
               user-select: none;
+              font-family: "Comic Sans MS", cursive, sans-serif;
             }
             #tabs slot {
-              display: inline-flex; /* Safari bug. Treats <slot> as a parent */
+              display: inline-flex;
             }
             #tabs ::slotted(*) {
-              font: 400 16px/22px 'Roboto';
-              padding: 16px 8px;
-              margin: 0;
-              text-align: center;
-              width: 100px;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              overflow: hidden;
+              background-color: inherit;
+              float: left;
+              outline: none;
               cursor: pointer;
-              border-top-left-radius: 3px;
-              border-top-right-radius: 3px;
-              background: linear-gradient(#fafafa, #eee);
-              border: none; /* if the user users a <button> */
+              padding: 14px 16px;
+              transition: 0.3s;
+              border: 0;
             }
             #tabs ::slotted([aria-selected="true"]) {
-              font-weight: 600;
+              font-weight: 700;
               background: white;
               box-shadow: none;
             }
+            #tabs ::slotted(:hover) {
+              color: #00BFFF;
+            }
             #tabs ::slotted(:focus) {
-              z-index: 1; /* make sure focus ring doesn't get buried */
+              color: #00BFFF;
+              background: white;
+              border-style: solid;
             }
             #panels ::slotted([aria-hidden="true"]) {
               display: none;
@@ -149,6 +149,7 @@
       }
     }
     _findFirstSelectedTab() {
+      console.log('HERE findfirstselectedtab!');
       let selectedIdx;
       for (const [i, tab] of this.tabs.entries()) {
         tab.setAttribute('role', 'tab');
@@ -169,5 +170,7 @@
         this.panels[i].setAttribute('aria-hidden', !select);
       }
     }
-  });
+  }
+
+  customElements.define('specs-tab', SpecsTab);
 })();
