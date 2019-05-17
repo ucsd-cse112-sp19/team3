@@ -7,6 +7,3 @@
 # Docs
 [Commands](./commands.md)  
 [Documentation](https://ucsd-cse112.github.io/team3/)
-
-# Test commit
-(Gabe pipeline test, will remove)
