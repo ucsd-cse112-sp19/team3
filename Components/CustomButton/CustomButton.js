@@ -14,35 +14,6 @@ class CustomButton extends HTMLElement {
         // default style; user styling performed by updateStyle() below
         CustomButton.template.innerHTML = `
             <style>
-                /* custom CSS variables to distinguish certain values */
-                :host {
-                    --active-text-color: #000000;
-                    --active-background-color: #cccccc;
-                    --active-border-color: #000000;
-                    --hover-text-color: #000000;
-                    --hover-background-color: #bbbbbb;
-                    --hover-border-color: #000000;
-                }
-                /* default button style */
-                button {
-                    color: #bbbbbb;
-                    background-color: #000000;
-                    border: solid #bbbbbb;
-                    display: block;
-                    width: 80px; /* 16:9 ratio */
-                    height: 45px;
-                    outline: none;
-                }
-                button:hover {
-                    color: var(--hover-text-color);
-                    background-color: var(--hover-background-color);
-                    border-color: var(--hover-border-color);
-                }
-                button:active {
-                    color: var(--active-text-color);
-                    background-color: var(--active-background-color);
-                    border-color: var(--active-border-color);
-                }
             </style>
             <button><slot></slot></button>
         `
@@ -50,11 +21,13 @@ class CustomButton extends HTMLElement {
     }
 
     /* List of attributes supported by the component.
-     * Component listens for changes to these attributes\
+     * Component listens for changes to these attributes
      * and handles it using attributeChangedCallback(). */
     static get observedAttributes() {
         return [
+            'style',
             'text-color',
+            'background-color',
             'border-color',
             'font',
             'width',
@@ -92,8 +65,12 @@ class CustomButton extends HTMLElement {
     }
 
     /* Getters and setters for observed attributes because WHY NOT */
+    get style()                    { return this.getAttribute('style') }
+    set style(val)                 { this.setAttribute('style', val) }
     get textColor()                { return this.getAttribute('text-color') }
     set textColor(val)             { this.setAttribute('text-color', val) }
+    get backgroundColor()          { return this.getAttribute('background-color') }
+    set backgroundColor(val)       { this.setAttribute('background-color', val) }
     get borderColor()              { return this.getAttribute('border-color') }
     set borderColor(val)           { this.setAttribute('border-color', val) }
     get font()                     { return this.getAttribute('font') }
@@ -130,24 +107,35 @@ class CustomButton extends HTMLElement {
 
         const shadow = this.shadowRoot
 
-        shadow.querySelector('style').textContent += `
+        shadow.querySelector('style').textContent = `
+            :host {
+                --active-text-color: ${this.activeTextColor ? this.activeTextColor : '#000000'};
+                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#cccccc'};
+                --active-border-color: ${this.activeBorderColor ? this.activeBorderColor : '#000000'};
+                --hover-text-color: ${this.hoverTextColor ? this.hoverTextColor : '#000000'};
+                --hover-background-color: ${this.hoverBackgroundColor ? this.hoverBackgroundColor : '#bbbbbb'};
+                --hover-border-color: ${this.hoverBorderColor  ? this.hoverBorderColor : '#000000'};
+            }
             button {
-                ${this.getAttribute('style')};
-                color: ${this.getAttribute('text-color')};
-                border-color: ${this.getAttribute('border-color')};
-                font-family: ${this.getAttribute('font')};
-                width: ${this.getAttribute('width')};
-                height: ${this.getAttribute('height')};
+                ${this.style};
+                color: ${this.textColor ? this.textColor : '#bbbbbb'};
+                background-color: ${this.backgroundColor ? this.backgroundColor : '#000000'};
+                border: solid ${this.borderColor ? this.borderColor : '#bbbbbb'};
+                font-family: ${this.font ? this.font : 'Trebuchet MS'};
+                display: block;
+                width: ${this.width ? this.width : '80px'};
+                height: ${this.height ? this.height : '45px'};
+                outline: none;
             }
             button:active {
-                color: ${this.getAttribute('active-text-color')};
-                background-color: ${this.getAttribute('active-background-color')};
-                border-color: ${this.getAttribute('active-border-color')};
+                color: var(--active-text-color);
+                background-color: var(--active-background-color);
+                border-color: var(--active-border-color);
             }
             button:hover {
-                color: ${this.getAttribute('hover-text-color')};
-                background-color: ${this.getAttribute('hover-background-color')};
-                border-color: ${this.getAttribute('hover-border-color')};
+                color: var(--hover-text-color);
+                background-color: var(--hover-background-color);
+                border-color: var(--hover-border-color);
             }
             :host([rounded]) > button {
                 border-radius: 100px;
