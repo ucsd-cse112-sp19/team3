@@ -1,7 +1,7 @@
 'use strict'
 
 /** Class for Custom Button component */
-class CustomButton extends HTMLElement {
+class CustomPopover extends HTMLElement {
     /** Constructor of the class */
     constructor() {
         super()
@@ -13,12 +13,14 @@ class CustomButton extends HTMLElement {
 
         // all styling performed by updateStyle() below
         CustomButton.template.innerHTML = `
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
             <style></style>
-            <div><button type='button'><slot></slot></button></div>
+            <a style='text-decoration: none'>
+            <button type='button'><slot></slot></button>
+            </a>
         `
         shadowRoot.appendChild(templateContent.cloneNode(true))
     }
@@ -43,7 +45,8 @@ class CustomButton extends HTMLElement {
             'active-border-color',
             'rounded',
             'circle',
-            'disabled'
+            'disabled',
+            'href'
         ]
     }
 
@@ -58,13 +61,13 @@ class CustomButton extends HTMLElement {
         console.log('custom-button removed')
     }
 
-    /* Handles attribute changes on the fly.
-     * I suspect we don't need parameters, the way we're doing it? */
+    /* Handles attribute changes on the fly. */
     attributeChangedCallback(attr, oldValue, newValue) {
-        console.log('A custom-button attribute was changed')
-        // if we start supporting non-style attributes, 
-        // e.g. href, should have an if-else here. (inject an <a> tag)
-        this.updateStyle()
+        console.log('custom-button attribute ' + attr + ' was changed')
+        if(attr === 'href')
+            this.shadowRoot.querySelector('a').setAttribute('href', newValue)
+        else
+            this.updateStyle()
     }
 
     /* Getters and setters for observed attributes because WHY NOT */
@@ -95,6 +98,7 @@ class CustomButton extends HTMLElement {
     get activeBorderColor()        { return this.getAttribute('active-border-color') }
     set activeBorderColor(val)     { this.setAttribute('active-border-color', val) }
     get rounded()                  { return this.getAttribute('rounded') }
+    get isRounded()                { return this.hasAttribute('rounded') }
     set rounded(val)               { this.setAttribute('rounded', val) }
     get circle()                   { return this.getAttribute('circle') }
     set circle(val)                { this.setAttribute('circle', val) }
@@ -133,19 +137,16 @@ class CustomButton extends HTMLElement {
                 display: block;
                 width: ${this.width ? this.width : '96px'};
                 height: ${this.height ? this.height : '54px'};
-                outline: none;
             }
             button:hover {
                 color: var(--hover-text-color);
                 background-color: var(--hover-background-color);
                 border-color: var(--hover-border-color);
-                outline: none;
             }
             button:active {
                 color: var(--active-text-color);
                 background-color: var(--active-background-color);
                 border-color: var(--active-border-color);
-                outline: none;
             }
             :host([rounded]) > button {
                 border-radius: 100px;
