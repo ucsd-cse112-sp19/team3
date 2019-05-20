@@ -1,7 +1,7 @@
 'use strict'
 
 /** Class for Custom Button component */
-class CustomPopover extends HTMLElement {
+class CustomButton extends HTMLElement {
     /** Constructor of the class */
     constructor() {
         super()
