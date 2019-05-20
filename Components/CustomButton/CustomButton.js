@@ -11,11 +11,14 @@ class CustomButton extends HTMLElement {
         CustomButton.template = document.createElement('template')
         const templateContent = CustomButton.template.content
 
-        // default style; user styling performed by updateStyle() below
+        // all styling performed by updateStyle() below
         CustomButton.template.innerHTML = `
-            <style>
-            </style>
-            <button><slot></slot></button>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <style></style>
+            <div><button type='button'><slot></slot></button></div>
         `
         shadowRoot.appendChild(templateContent.cloneNode(true))
     }
@@ -32,12 +35,12 @@ class CustomButton extends HTMLElement {
             'font',
             'width',
             'height',
-            'active-text-color',
-            'active-background-color',
-            'active-border-color',
             'hover-text-color',
             'hover-background-color',
             'hover-border-color',
+            'active-text-color',
+            'active-background-color',
+            'active-border-color',
             'rounded',
             'circle',
             'disabled'
@@ -60,7 +63,7 @@ class CustomButton extends HTMLElement {
     attributeChangedCallback(attr, oldValue, newValue) {
         console.log('A custom-button attribute was changed')
         // if we start supporting non-style attributes, 
-        // e.g. href, should have an if-else here.
+        // e.g. href, should have an if-else here. (inject an <a> tag)
         this.updateStyle()
     }
 
@@ -79,18 +82,18 @@ class CustomButton extends HTMLElement {
     set width(val)                 { this.setAttribute('width', val) }
     get height()                   { return this.getAttribute('height') }
     set height(val)                { this.setAttribute('height', val) }
-    get activeTextColor()          { return this.getAttribute('active-text-color') }
-    set activeTextColor(val)       { this.setAttribute('active-text-color', val) }
-    get activeBackgroundColor()    { return this.getAttribute('active-background-color') }
-    set activeBackgroundColor(val) { this.setAttribute('active-background-color', val) }
-    get activeBorderColor()        { return this.getAttribute('active-border-color') }
-    set activeBorderColor(val)     { this.setAttribute('active-border-color', val) }
     get hoverTextColor()           { return this.getAttribute('hover-text-color') }
     set hoverTextColor(val)        { this.setAttribute('hover-text-color', val) }
     get hoverBackgroundColor()     { return this.getAttribute('hover-background-color') }
     set hoverBackgroundColor(val)  { this.setAttribute('hover-background-color', val) }
     get hoverBorderColor()         { return this.getAttribute('hover-border-color') }
     set hoverBorderColor(val)      { this.setAttribute('hover-border-color', val) }
+    get activeTextColor()          { return this.getAttribute('active-text-color') }
+    set activeTextColor(val)       { this.setAttribute('active-text-color', val) }
+    get activeBackgroundColor()    { return this.getAttribute('active-background-color') }
+    set activeBackgroundColor(val) { this.setAttribute('active-background-color', val) }
+    get activeBorderColor()        { return this.getAttribute('active-border-color') }
+    set activeBorderColor(val)     { this.setAttribute('active-border-color', val) }
     get rounded()                  { return this.getAttribute('rounded') }
     set rounded(val)               { this.setAttribute('rounded', val) }
     get circle()                   { return this.getAttribute('circle') }
@@ -107,35 +110,42 @@ class CustomButton extends HTMLElement {
 
         const shadow = this.shadowRoot
 
+        // pass class attribute into the component
+        const btn = shadow.querySelector('button')
+        btn.setAttribute('class', this.getAttribute('class'))
+
+        // provides default styles in case the user doesn't provide one
         shadow.querySelector('style').textContent = `
             :host {
-                --active-text-color: ${this.activeTextColor ? this.activeTextColor : '#000000'};
-                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#cccccc'};
-                --active-border-color: ${this.activeBorderColor ? this.activeBorderColor : '#000000'};
                 --hover-text-color: ${this.hoverTextColor ? this.hoverTextColor : '#000000'};
-                --hover-background-color: ${this.hoverBackgroundColor ? this.hoverBackgroundColor : '#bbbbbb'};
+                --hover-background-color: ${this.hoverBackgroundColor ? this.hoverBackgroundColor : '#cccccc'};
                 --hover-border-color: ${this.hoverBorderColor  ? this.hoverBorderColor : '#000000'};
+                --active-text-color: ${this.activeTextColor ? this.activeTextColor : '#000000'};
+                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#dddddd'};
+                --active-border-color: ${this.activeBorderColor ? this.activeBorderColor : '#000000'};
             }
             button {
                 ${this.style};
-                color: ${this.textColor ? this.textColor : '#bbbbbb'};
+                color: ${this.textColor ? this.textColor : '#cccccc'};
                 background-color: ${this.backgroundColor ? this.backgroundColor : '#000000'};
-                border: solid ${this.borderColor ? this.borderColor : '#bbbbbb'};
-                font-family: ${this.font ? this.font : 'Trebuchet MS'};
+                border: solid ${this.borderColor ? this.borderColor : '#cccccc'};
+                font-family: ${this.font ? this.font : 'Lucida Console'};
                 display: block;
-                width: ${this.width ? this.width : '80px'};
-                height: ${this.height ? this.height : '45px'};
+                width: ${this.width ? this.width : '96px'};
+                height: ${this.height ? this.height : '54px'};
+                outline: none;
+            }
+            button:hover {
+                color: var(--hover-text-color);
+                background-color: var(--hover-background-color);
+                border-color: var(--hover-border-color);
                 outline: none;
             }
             button:active {
                 color: var(--active-text-color);
                 background-color: var(--active-background-color);
                 border-color: var(--active-border-color);
-            }
-            button:hover {
-                color: var(--hover-text-color);
-                background-color: var(--hover-background-color);
-                border-color: var(--hover-border-color);
+                outline: none;
             }
             :host([rounded]) > button {
                 border-radius: 100px;
@@ -147,6 +157,9 @@ class CustomButton extends HTMLElement {
             }
             :host([disabled]) > button {
                 cursor: not-allowed;
+            }
+            :host > button:focus {
+                outline: none;
             }
         `
     }
