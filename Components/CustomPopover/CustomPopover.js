@@ -1,18 +1,18 @@
 'use strict'
 
-/** Class for Custom Button component */
-class CustomButton extends HTMLElement {
+/** Class for Custom Popover component */
+class CustomPopover extends HTMLElement {
     /** Constructor of the class */
     constructor() {
         super()
 
         // Create shadow DOM and attach template content
         const shadowRoot = this.attachShadow({mode: 'open'})
-        CustomButton.template = document.createElement('template')
-        const templateContent = CustomButton.template.content
+        CustomPopover.template = document.createElement('template')
+        const templateContent = CustomPopover.template.content
 
         // all styling performed by updateStyle() below
-        CustomButton.template.innerHTML = `
+        CustomPopover.template.innerHTML = `
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -52,18 +52,18 @@ class CustomButton extends HTMLElement {
 
     /* Called when element rendered in DOM */
     connectedCallback() {
-        console.log('Rendered custom-button')
+        console.log('Rendered custom-popover')
         this.updateStyle()
     }
 
     /* Called when element destroyed */
     disconnectedCallback() {
-        console.log('custom-button removed')
+        console.log('custom-popover removed')
     }
 
     /* Handles attribute changes on the fly. */
     attributeChangedCallback(attr, oldValue, newValue) {
-        console.log('custom-button attribute ' + attr + ' was changed')
+        console.log('custom-popover attribute ' + attr + ' was changed')
         if(attr === 'href')
             this.shadowRoot.querySelector('a').setAttribute('href', newValue)
         else
@@ -106,11 +106,11 @@ class CustomButton extends HTMLElement {
     set disabled(val)              { this.setAttribute('disabled', val) }
 
     // Updates the style by taking user attributes, including 'style' and our own
-    // API of special attributes, and passing them to the CSS for the button.
+    // API of special attributes, and passing them to the CSS for the popover.
     // If the user styles an attribute (e.g. font color) using both direct CSS
     // and our custom attribute (text-color), it will prioritize the custom attribute.
     updateStyle() {
-        console.log('Updating custom-button styles')    
+        console.log('Updating custom-popover styles')    
 
         const shadow = this.shadowRoot
 
@@ -166,5 +166,5 @@ class CustomButton extends HTMLElement {
     }
 }
      
-CustomButton.template = document.createElement('template')
-customElements.define('custom-button', CustomButton)
+CustomPopover.template = document.createElement('template')
+customElements.define('custom-popover', CustomPopover)
