@@ -124,22 +124,22 @@ class CustomButton extends HTMLElement {
         // provides default styles in case the user doesn't provide one
         shadow.querySelector('style').textContent = `
             :host {
-                --hover-text-color: ${this.hoverTextColor ? this.hoverTextColor : '#000000'};
-                --hover-background-color: ${this.hoverBackgroundColor ? this.hoverBackgroundColor : '#cccccc'};
-                --hover-border-color: ${this.hoverBorderColor  ? this.hoverBorderColor : '#000000'};
-                --active-text-color: ${this.activeTextColor ? this.activeTextColor : '#000000'};
-                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#eeeeee'};
-                --active-border-color: ${this.activeBorderColor ? this.activeBorderColor : '#000000'};
+                --hover-text-color: ${this.hoverTextColor ? this.hoverTextColor : '#ffffff'};
+                --hover-background-color: ${this.hoverBackgroundColor ? this.hoverBackgroundColor : '#1f57a4'};
+                --hover-border-color: ${this.hoverBorderColor  ? this.hoverBorderColor : '#c8daf4'};
+                --active-text-color: ${this.activeTextColor ? this.activeTextColor : '#ffffff'};
+                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#25467a'};
+                --active-border-color: ${this.activeBorderColor ? this.activeBorderColor : '#ffffff'};
             }
             button {
                 ${this.style};
-                color: ${this.textColor ? this.textColor : '#cccccc'};
-                background-color: ${this.backgroundColor ? this.backgroundColor : '#000000'};
-                border: solid ${this.borderColor ? this.borderColor : '#cccccc'};
-                font-family: ${this.font ? this.font : 'Lucida Console'};
+                color: ${this.textColor ? this.textColor : '#ffffff'};
+                background-color: ${this.backgroundColor ? this.backgroundColor : '#2d74da'};
+                border: solid ${this.borderColor ? this.borderColor : '#cccccc'} 1px;
+                font-family: ${this.font ? this.font : 'Georgia'};
                 display: block;
-                width: ${this.width ? this.width : '96px'};
-                height: ${this.height ? this.height : '54px'};
+                width: ${this.width ? this.width : '90px'};
+                height: ${this.height ? this.height : '45px'};
             }
             button:hover {
                 color: var(--hover-text-color);
@@ -150,6 +150,7 @@ class CustomButton extends HTMLElement {
                 color: var(--active-text-color);
                 background-color: var(--active-background-color);
                 border-color: var(--active-border-color);
+                box-shadow: ${this.activeBackgroundColor ? '0px 0px 0px 3px this.activeBackgroundColor inset, 0px 0px 0px 4px white inset' : '0px 0px 0px 3px #25467a inset, 0px 0px 0px 4px white inset'};  
             }
             button:focus {
                 outline: none;
