@@ -98,7 +98,6 @@ class CustomButton extends HTMLElement {
     get activeBorderColor()        { return this.getAttribute('active-border-color') }
     set activeBorderColor(val)     { this.setAttribute('active-border-color', val) }
     get rounded()                  { return this.getAttribute('rounded') }
-    get isRounded()                { return this.hasAttribute('rounded') }
     set rounded(val)               { this.setAttribute('rounded', val) }
     get circle()                   { return this.getAttribute('circle') }
     set circle(val)                { this.setAttribute('circle', val) }
