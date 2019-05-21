@@ -39,4 +39,36 @@ describe('CustomButton', function() {
     });
   });
 
+  describe('Color of the button', async() => {
+    it('Testing background color of the button', async() => {
+      //const color = await showroom.getAttribute('background-color')
+      //console.log(color)
+      await showroom.setAttribute('background-color', 'pink')
+      const background_color = await showroom.getAttribute('background-color')
+      assert.deepEqual(background_color, 'pink')
+    });
+
+    it('Testing border color of the button', async() => {
+      await showroom.setAttribute('border-color', 'black')
+      const border_color = await showroom.getAttribute('border-color')
+      assert.deepEqual(border_color, 'black')
+    });
+  });
+
+  describe('Font of the button', async() => {
+    it('Testing font style of the button', async() => {
+      //const color = await showroom.getAttribute('background-color')
+      //console.log(color)
+      await showroom.setAttribute('font', 'Comic Sans MS')
+      const font = await showroom.getAttribute('font')
+      assert.deepEqual(font, 'Comic Sans MS')
+    });
+
+    it('Testing text color of the button', async() => {
+      await showroom.setAttribute('text-color', 'lime')
+      const text_color = await showroom.getAttribute('text-color')
+      assert.deepEqual(text_color, 'lime')
+    });
+  });
+
 });
