@@ -18,15 +18,27 @@
             display: flex;
             justify-content: center;
         }
-        td.sa {
-            width:20%;
+        td {
+            padding: auto
         }
-        table.center {
+        button.center {
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+        td.sa {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .center {
             margin-left: auto;
             margin-right: auto;
         }
-        h2.margin-left {
+        .margin-left {
             margin-left: 10%;
+        }
+        td {
+            padding: auto;
         }
     </style>
 </head>
@@ -36,32 +48,38 @@
         <div class="main-header-component">
             <h1>Team 3's Revolutionary New Button Component!</h1>
         </div>
-        <div>
-            <h2 class='margin-left'>Special Attributes:</h2>
+
+            <h2 class='center'>Special Attributes:</h2>
             <table class='special-attributes center'>
             <tr>
                 <td class='sa'><h2>text-color</h2></td>
                 <td class='sa'><h2>background-color</h2></td>
                 <td class='sa'><h2>border-color</h2></td>
-                <td class='sa'><h2>rounded</h2></td>
+                <td class='sa'><h2>font</h2></td>
             </tr>
             <tr>
                 <td class='sa'><custom-button text-color='lime' hover-text-color='lime' active-text-color='lime' hover-border-color='#cccccc' hover-background-color='#000000' active-background-color='#000000' active-border-color='#cccccc'>Click Me</custom-button></td>
                 <td class='sa'><custom-button background-color='lime' hover-background-color='lime' active-background-color='lime' border-color='black' hover-border-color='black' active-border-color='black' text-color='black' hover-text-color='black' active-text-color='black'>Click Me</custom-button></td>
                 <td class='sa'><custom-button border-color='lime' hover-border-color='lime' active-border-color='lime'>Click Me</custom-button></td>
+                <td class='sa'><custom-button font='Comic Sans MS'>Click Me</custom-button></td>
+            </tr>
+            <tr>
+                <td class='sa'><h2>rounded</h2></td>
+                <td class='sa'><h2>circle</h2></td>
+                <td class='sa'><h2>href</h2></td>
+                <td class='sa'><h2>disabled</h2></td>
+            </tr>
+            <tr>
                 <td class='sa'><custom-button rounded>Click Me</custom-button></td>
-            </tr>
-            <tr>
-                <td><h2>circle</h2></td>
-                <td><h2>href</h2></td>
-            </tr>
-            <tr>
-                <td><custom-button circle>Click Me</custom-button></td>
-                <td><custom-button href='https://stackoverflow.com'>Click Me</custom-button></td>
+                <td class='sa'><custom-button circle>Click Me</custom-button></td>
+                <td class='sa'><custom-button href='https://stackoverflow.com'>Click Me</custom-button></td>
+                <td class='sa'><custom-button disabled></custom-button></td>
             </tr>
 
             </table>
-            <h2 class='margin-left'>Bootstrap Support!</h2>
+
+            <br />
+            <h2 class='center'>Bootstrap Support!</h2>
             <table class='center'><tr>
             <td><custom-button class='btn-primary' width='112px' height='63px'>Primary</custom-button></td>
             <td><custom-button class='btn-secondary' width='112px' height='63px'>Secondary</custom-button></td>
@@ -71,7 +89,7 @@
             <td><custom-button class='btn-danger' width='112px' height='63px'>Danger</custom-button></td>
             <td><custom-button class='btn-dark' width='112px' height='63px'>Dark</custom-button></td>
             </tr></table>
-        </div>
+
     </div>
 </body>
 

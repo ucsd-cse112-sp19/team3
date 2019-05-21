@@ -165,13 +165,15 @@ class CustomButton extends HTMLElement {
                     height: 70px;
                     border-radius: 100%;
                 }
-        `
-        if(this.hasAttribute('disabled'))
-        shadow.querySelector('style').textContent += `
-            button {
-                cursor: not-allowed;
-            }
-        `
+            `
+        if(this.hasAttribute('disabled')) {
+            shadow.querySelector('button').setAttribute('disabled', true)
+            shadow.querySelector('style').textContent += `
+                button {
+                    cursor: not-allowed;
+                }
+            `
+        }
     }
 }
      
