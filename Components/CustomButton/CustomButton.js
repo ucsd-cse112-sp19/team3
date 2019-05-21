@@ -200,16 +200,16 @@ class CustomButton extends HTMLElement {
                     activeBackgroundColor = '#ff0000'
                     activeBorderColor = '#000000'
                     break
-                case 'halloween':
-                    textColor = '#000000'
-                    backgroundColor = '#ffa500'
-                    borderColor = '#000000'
-                    hoverTextColor = '#ffa500'
-                    hoverBackgroundColor = '#000000'
-                    hoverBorderColor = '#ffa500'
-                    activeTextColor = '##ffa500'
-                    activeBackgroundColor = '#222222'
-                    activeBorderColor = '#ffa500'
+                case 'desert':
+                    textColor = '#a52a2a'
+                    backgroundColor = '#ffdead'
+                    borderColor = '#a52a2a'
+                    hoverTextColor = '#ffdead'
+                    hoverBackgroundColor = '#a52a2a'
+                    hoverBorderColor = '#ffdead'
+                    activeTextColor = '#ffdead'
+                    activeBackgroundColor = '#c54a4a'
+                    activeBorderColor = '#ffdead'
                     break
                 case 'ocean':
                     textColor = '#7fffd4'
@@ -233,16 +233,16 @@ class CustomButton extends HTMLElement {
                     activeBackgroundColor = '#ff34b3'
                     activeBorderColor = '#ffff00'
                     break
-                case 'desert':
-                    textColor = '#a52a2a'
-                    backgroundColor = '#ffdead'
-                    borderColor = '#a52a2a'
-                    hoverTextColor = '#ffdead'
-                    hoverBackgroundColor = '#a52a2a'
-                    hoverBorderColor = '#ffdead'
-                    activeTextColor = '#ffdead'
-                    activeBackgroundColor = '#c54a4a'
-                    activeBorderColor = '#ffdead'
+                case 'forest':
+                    textColor = '#52ed32'
+                    backgroundColor = '#a52a2a'
+                    borderColor = '#52ed32'
+                    hoverTextColor = '#a52a2a'
+                    hoverBackgroundColor = '#52ed32'
+                    hoverBorderColor = '#a52a2a'
+                    activeTextColor = '#a52a2a'
+                    activeBackgroundColor = '#72ff52'
+                    activeBorderColor = '#a52a2a'
                     break
                 case 'ghost':
                     textColor = '#aaaaaa'
