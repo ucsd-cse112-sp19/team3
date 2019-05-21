@@ -13,18 +13,9 @@
             flex-direction: column;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-
         .main-header-component {
             display: flex;
             justify-content: center;
-        }
-        td {
-            padding: auto
-        }
-        button.center {
-            text-align: center;
-            display: block;
-            margin: auto;
         }
         td.sa {
             padding-left: 20px;
@@ -34,12 +25,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .margin-left {
-            margin-left: 10%;
-        }
-        td {
-            padding: auto;
-        }
     </style>
 </head>
 <body>
@@ -48,9 +33,9 @@
         <div class="main-header-component">
             <h1>Team 3's Revolutionary New Button Component!</h1>
         </div>
-
+            <h2 class='center'>&lt;custom-button&gt;</h2>
             <h2 class='center'>Special Attributes:</h2>
-            <table class='special-attributes center'>
+            <table class='center'>
             <tr>
                 <td class='sa'><h2>text-color</h2></td>
                 <td class='sa'><h2>background-color</h2></td>
@@ -58,15 +43,15 @@
                 <td class='sa'><h2>font</h2></td>
             </tr>
             <tr>
-                <td class='sa'><custom-button text-color='lime' hover-text-color='lime' active-text-color='lime' hover-border-color='#cccccc' hover-background-color='#000000' active-background-color='#000000' active-border-color='#cccccc'>Click Me</custom-button></td>
-                <td class='sa'><custom-button background-color='lime' hover-background-color='lime' active-background-color='lime' border-color='black' hover-border-color='black' active-border-color='black' text-color='black' hover-text-color='black' active-text-color='black'>Click Me</custom-button></td>
-                <td class='sa'><custom-button border-color='lime' hover-border-color='lime' active-border-color='lime'>Click Me</custom-button></td>
+                <td class='sa'><custom-button text-color='hotpink' hover-text-color='black' active-text-color='black' hover-border-color='black' hover-background-color='hotpink' active-background-color='#ff89d4' active-border-color='black'>Click Me</custom-button></td>
+                <td class='sa'><custom-button background-color='hotpink' hover-background-color='black' active-background-color='#222222' border-color='black' hover-border-color='hotpink' active-border-color='hotpink' text-color='black' hover-text-color='hotpink' active-text-color='hotpink'>Click Me</custom-button></td>
+                <td class='sa'><custom-button border-color='hotpink' hover-border-color='hotpink' active-border-color='hotpink'>Click Me</custom-button></td>
                 <td class='sa'><custom-button font='Comic Sans MS'>Click Me</custom-button></td>
             </tr>
             <tr>
                 <td class='sa'><h2>rounded</h2></td>
                 <td class='sa'><h2>circle</h2></td>
-                <td class='sa'><h2>href</h2></td>
+                <td class='sa'><h2>href (link)</h2></td>
                 <td class='sa'><h2>disabled</h2></td>
             </tr>
             <tr>
@@ -75,21 +60,47 @@
                 <td class='sa'><custom-button href='https://stackoverflow.com'>Click Me</custom-button></td>
                 <td class='sa'><custom-button disabled></custom-button></td>
             </tr>
-
             </table>
-
+            <br />
+            <h2 class='center'>Themes:</h2>
+            <table class='special-attributes center'>
+            <tr>
+                <td class='sa'><h2>mad-queen</h2></td>
+                <td class='sa'><h2>halloween</h2></td>
+                <td class='sa'><h2>ocean</h2></td>
+                <td class='sa'><h2>pink-lemonade</h2></td>
+            </tr>
+            <tr>
+                <td class='sa'><custom-button theme='mad-queen'>Click Me</custom-button></td>
+                <td class='sa'><custom-button theme='halloween'>Click Me</custom-button></td>
+                <td class='sa'><custom-button theme='ocean'>Click Me</custom-button></td>
+                <td class='sa'><custom-button theme='pink-lemonade'>Click Me</custom-button></td>
+            </tr>
+            <tr>
+                <td class='sa'><h2>desert</h2></td>
+                <td class='sa'><h2>ghost</h2></td>
+                <td class='sa'><h2>flame</h2></td>
+                <td class='sa'><h2>triton</h2></td>
+            </tr>
+            <tr>
+                <td class='sa'><custom-button theme='desert'>Click Me</custom-button></td>
+                <td class='sa'><custom-button theme='ghost'>Click Me</custom-button></td>
+                <td class='sa'><custom-button theme='flame'>Click Me</custom-button></td>
+                <td class='sa'><custom-button theme='triton'>Click Me</custom-button></td>
+            </tr>
+            </table>
             <br />
             <h2 class='center'>Bootstrap Support!</h2>
             <table class='center'><tr>
-            <td><custom-button class='btn-primary' width='112px' height='63px'>Primary</custom-button></td>
-            <td><custom-button class='btn-secondary' width='112px' height='63px'>Secondary</custom-button></td>
-            <td><custom-button class='btn-success' width='112px' height='63px'>Success</custom-button></td>
-            <td><custom-button class='btn-info' width='112px' height='63px'>Info</custom-button></td>
-            <td><custom-button class='btn-warning' width='112px' height='63px'>Warning</custom-button></td>
-            <td><custom-button class='btn-danger' width='112px' height='63px'>Danger</custom-button></td>
-            <td><custom-button class='btn-dark' width='112px' height='63px'>Dark</custom-button></td>
+                <td><custom-button class='btn-primary' width='112px' height='63px'>Primary</custom-button></td>
+                <td><custom-button class='btn-secondary' width='112px' height='63px'>Secondary</custom-button></td>
+                <td><custom-button class='btn-success' width='112px' height='63px'>Success</custom-button></td>
+                <td><custom-button class='btn-info' width='112px' height='63px'>Info</custom-button></td>
+                <td><custom-button class='btn-warning' width='112px' height='63px'>Warning</custom-button></td>
+                <td><custom-button class='btn-danger' width='112px' height='63px'>Danger</custom-button></td>
+                <td><custom-button class='btn-dark' width='112px' height='63px'>Dark</custom-button></td>
             </tr></table>
-
+            <br /><br />
     </div>
 </body>
 

@@ -46,7 +46,8 @@ class CustomButton extends HTMLElement {
             'rounded',
             'circle',
             'disabled',
-            'href'
+            'href',
+            'theme'
         ]
     }
 
@@ -64,7 +65,7 @@ class CustomButton extends HTMLElement {
     /* Handles attribute changes on the fly. */
     attributeChangedCallback(attr, oldValue, newValue) {
         console.log('custom-button attribute ' + attr + ' was changed')
-        if(attr === 'href')
+        if (attr === 'href')
             this.shadowRoot.querySelector('a').setAttribute('href', newValue)
         else
             this.updateStyle()
@@ -103,6 +104,8 @@ class CustomButton extends HTMLElement {
     set circle(val)                { this.setAttribute('circle', val) }
     get disabled()                 { return this.getAttribute('disabled') }
     set disabled(val)              { this.setAttribute('disabled', val) }
+    get theme()                    { return this.getAttribute('theme') }
+    set theme(val)                 { this.setAttribute('theme', val) }
 
     // Updates the style by taking user attributes, including 'style' and our own
     // API of special attributes, and passing them to the CSS for the button.
@@ -115,7 +118,7 @@ class CustomButton extends HTMLElement {
 
         // pass class attribute into the component
         const btn = shadow.querySelector('button')
-        if(this.hasAttribute('class'))
+        if (this.hasAttribute('class'))
             btn.setAttribute('class', this.getAttribute('class'))
 
         // provides default styles in case the user doesn't provide one
@@ -125,7 +128,7 @@ class CustomButton extends HTMLElement {
                 --hover-background-color: ${this.hoverBackgroundColor ? this.hoverBackgroundColor : '#cccccc'};
                 --hover-border-color: ${this.hoverBorderColor  ? this.hoverBorderColor : '#000000'};
                 --active-text-color: ${this.activeTextColor ? this.activeTextColor : '#000000'};
-                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#dddddd'};
+                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#eeeeee'};
                 --active-border-color: ${this.activeBorderColor ? this.activeBorderColor : '#000000'};
             }
             button {
@@ -152,13 +155,13 @@ class CustomButton extends HTMLElement {
                 outline: none;
             }
         `
-        if(this.hasAttribute('rounded'))
+        if (this.hasAttribute('rounded'))
             shadow.querySelector('style').textContent += `
                 button {
                     border-radius: 100px;
                 }
             `
-        if(this.hasAttribute('circle'))
+        if (this.hasAttribute('circle'))
             shadow.querySelector('style').textContent += `
                 button {
                     width: 70px;
@@ -166,11 +169,131 @@ class CustomButton extends HTMLElement {
                     border-radius: 100%;
                 }
             `
-        if(this.hasAttribute('disabled')) {
+        if (this.hasAttribute('disabled')) {
             shadow.querySelector('button').setAttribute('disabled', true)
             shadow.querySelector('style').textContent += `
                 button {
                     cursor: not-allowed;
+                }
+            `
+        }
+        if (this.hasAttribute('theme')) {
+            let textColor = ''
+            let backgroundColor = ''
+            let borderColor = ''
+            let hoverTextColor = ''
+            let hoverBackgroundColor = ''
+            let hoverBorderColor = ''
+            let activeTextColor = ''
+            let activeBackgroundColor = ''
+            let activeBorderColor = ''
+
+            switch (this.theme) {
+                case 'mad-queen':
+                    textColor = '#dd0000'
+                    backgroundColor = '#000000'
+                    borderColor = '#dd0000'
+                    hoverTextColor = '#000000'
+                    hoverBackgroundColor = '#dd0000'
+                    hoverBorderColor = '#000000'
+                    activeTextColor = '#000000'
+                    activeBackgroundColor = '#ff0000'
+                    activeBorderColor = '#000000'
+                    break
+                case 'halloween':
+                    textColor = '#000000'
+                    backgroundColor = '#ffa500'
+                    borderColor = '#000000'
+                    hoverTextColor = '#ffa500'
+                    hoverBackgroundColor = '#000000'
+                    hoverBorderColor = '#ffa500'
+                    activeTextColor = '##ffa500'
+                    activeBackgroundColor = '#222222'
+                    activeBorderColor = '#ffa500'
+                    break
+                case 'ocean':
+                    textColor = '#7fffd4'
+                    backgroundColor = '#00379b'
+                    borderColor = '#7fffd4'
+                    hoverTextColor = '#00379b'
+                    hoverBackgroundColor = '#7fffd4'
+                    hoverBorderColor = '#00379b'
+                    activeTextColor = '#00379b'
+                    activeBackgroundColor = '#9ffff4'
+                    activeBorderColor = '#00379b'
+                    break
+                case 'pink-lemonade':
+                    textColor = '#ff1493'
+                    backgroundColor = '#ffff00'
+                    borderColor = '#ff1493'
+                    hoverTextColor = '#ffff00'
+                    hoverBackgroundColor = '#ff1493'
+                    hoverBorderColor = '#ffff00'
+                    activeTextColor = '#ffff00'
+                    activeBackgroundColor = '#ff34b3'
+                    activeBorderColor = '#ffff00'
+                    break
+                case 'desert':
+                    textColor = '#a52a2a'
+                    backgroundColor = '#ffdead'
+                    borderColor = '#a52a2a'
+                    hoverTextColor = '#ffdead'
+                    hoverBackgroundColor = '#a52a2a'
+                    hoverBorderColor = '#ffdead'
+                    activeTextColor = '#ffdead'
+                    activeBackgroundColor = '#c54a4a'
+                    activeBorderColor = '#ffdead'
+                    break
+                case 'ghost':
+                    textColor = '#aaaaaa'
+                    backgroundColor = '#ffffff'
+                    borderColor = '#aaaaaa'
+                    hoverTextColor = '#ffffff'
+                    hoverBackgroundColor = '#aaaaaa'
+                    hoverBorderColor = '#ffffff'
+                    activeTextColor = '#ffffff'
+                    activeBackgroundColor = '#cccccc'
+                    activeBorderColor = '#ffffff'
+                    break
+                case 'flame':
+                    textColor = '#ffbb00'
+                    backgroundColor = '#ff2400'
+                    borderColor = '#ffbb00'
+                    hoverTextColor = '#ff2400'
+                    hoverBackgroundColor = '#ffbb00'
+                    hoverBorderColor = '#ff2400'
+                    activeTextColor = '#ff2400'
+                    activeBackgroundColor = '#ffdb00'
+                    activeBorderColor = '#ff2400'
+                    break
+                case 'triton':
+                    textColor = '#ffd700'
+                    backgroundColor = '#000080'
+                    borderColor = '#ffd700'
+                    hoverTextColor = '#000080 '
+                    hoverBackgroundColor = '#ffd700'
+                    hoverBorderColor = '#000080 '
+                    activeTextColor = '#000080 '
+                    activeBackgroundColor = '#fff700'
+                    activeBorderColor = '#000080 '
+                    break
+                default:
+            }
+            shadow.querySelector('style').textContent += `
+                button {
+                    color: ${textColor};
+                    background-color: ${backgroundColor};
+                    border-color: ${borderColor};
+                }
+                button:hover {
+                    color: ${hoverTextColor};
+                    background-color: ${hoverBackgroundColor};
+                    border-color: ${hoverBorderColor};
+                }
+                button:active {
+                    color: ${activeTextColor};
+                    background-color: ${activeBackgroundColor};
+                    border-color: ${activeBorderColor};
                 }
             `
         }
