@@ -116,7 +116,8 @@ class CustomButton extends HTMLElement {
 
         // pass class attribute into the component
         const btn = shadow.querySelector('button')
-        btn.setAttribute('class', this.getAttribute('class'))
+        if(this.hasAttribute('class'))
+            btn.setAttribute('class', this.getAttribute('class'))
 
         // provides default styles in case the user doesn't provide one
         shadow.querySelector('style').textContent = `
@@ -148,19 +149,28 @@ class CustomButton extends HTMLElement {
                 background-color: var(--active-background-color);
                 border-color: var(--active-border-color);
             }
-            :host([rounded]) > button {
-                border-radius: 100px;
-            }
-            :host([circle]) > button {
-                width: 70px;
-                height: 70px;
-                border-radius: 100%;
-            }
-            :host([disabled]) > button {
-                cursor: not-allowed;
-            }
-            :host > button:focus {
+            button:focus {
                 outline: none;
+            }
+        `
+        if(this.hasAttribute('rounded'))
+            shadow.querySelector('style').textContent += `
+                button {
+                    border-radius: 100px;
+                }
+            `
+        if(this.hasAttribute('circle'))
+            shadow.querySelector('style').textContent += `
+                button {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 100%;
+                }
+        `
+        if(this.hasAttribute('disabled'))
+        shadow.querySelector('style').textContent += `
+            button {
+                cursor: not-allowed;
             }
         `
     }
