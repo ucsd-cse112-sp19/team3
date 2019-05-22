@@ -71,4 +71,13 @@ describe('CustomButton', function() {
     });
   });
 
+  describe('href functionality', async() => {
+    it('Testing the href', async() => {
+      await showroom.setAttribute('href', 'https://stackoverflow.com')
+      const get_href = await showroom.getAttribute('href')
+      assert.deepEqual(get_href, 'https://stackoverflow.com')
+    });
+
+  });
+
 });
