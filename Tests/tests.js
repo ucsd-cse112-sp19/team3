@@ -1,4 +1,4 @@
 'use strict';
 
-//require('./CoreHello');
+require('./CoreHello');
 require('./Button');
