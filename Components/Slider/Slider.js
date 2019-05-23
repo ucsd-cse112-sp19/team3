@@ -161,7 +161,7 @@ class CustomSlider extends HTMLElement {
     let max = 100;
     let disabled = '';
     let showInput = '';
-    let inputClass = 'small-input';	
+    let inputClass = 'small-input';
 
     // Store the value of the attribute value
     if (this.hasAttribute('value')) {
@@ -189,23 +189,24 @@ class CustomSlider extends HTMLElement {
     }
     // store the value of
     if (this.hasAttribute('size')) {
-      let sizeStr = this.getAttribute('size');
-      if (sizeStr == 'L')
+      const sizeStr = this.getAttribute('size');
+      if (sizeStr == 'L') {
         inputClass = 'large-input';
-      else if(sizeStr == 'M')
+      } else if (sizeStr == 'M') {
         inputClass = 'medium-input';
+      }
     }
 
     // indicate whether need to show input box
     if (this.hasAttribute('showInput')) {
-      showInput =  `<br/><input type="number" name="amountInput" min=` + min + ` max=`
+      showInput = `<br/><input type="number" name="amountInput" min=` + min + ` max=`
       + max +
       `  value=` + value + ` class=` + inputClass +
       ` oninput="this.form.amountRange.value=this.value" ` +
       disabled + `/>`;
     }
 
-    let input_str = importStyle +
+    const input_str = importStyle +
       `<div class="slidecontainer">`+
           `<form>
               <input type="range" name="amountRange" min=` + min + ` max=` + max +
