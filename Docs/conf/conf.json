@@ -1,0 +1,27 @@
+{
+	"tags": {
+		"allowUnknownTags": true,
+		"dictionaries": ["jsdoc","closure"]
+	},
+	"source": {
+		"include": ["Components/CustomButton/",
+					"Components/SpecsTab/",
+					"Components/Slider/"],
+		"exclude": [],
+		"includePattern": ".+\\.js(doc)?$",
+		"excludePattern": "(^|\\/|\\\\)_"
+    },
+	"plugins": ["plugins/markdown"],
+	"templates": {
+		"cleverLinks": false,
+		"monospaceLinks": false,
+		"useLongnameInNav": false,
+		"showInheritedInNav": true
+	},
+	"opts": {
+		"destination": "Docs/",
+		"encoding": "utf8",
+		"recurse": true,
+		"template": "Docs/templates/minami"
+	}
+}

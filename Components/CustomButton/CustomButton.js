@@ -1,10 +1,14 @@
 'use strict';
 
-/** Class for Custom Button component */
+/** 
+ * Class for Custom Button component 
+ */
 class CustomButton extends HTMLElement {
-  /** Constructor of the class */
+  /** 
+   * constructor of the class
+   */
   constructor() {
-    super();
+    super()
 
     // Create shadow DOM and attach template content
     const shadowRoot = this.attachShadow({mode: 'open'});
@@ -25,9 +29,11 @@ class CustomButton extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /* List of attributes supported by the component.
+  /**
+   * List of attributes supported by the component.
    * Component listens for changes to these attributes
-   * and handles it using attributeChangedCallback(). */
+   * and handles it using attributeChangedCallback().
+   */
   static get observedAttributes() {
     return [
       'style',
@@ -175,11 +181,13 @@ class CustomButton extends HTMLElement {
   set theme(val) {
     this.setAttribute('theme', val);
   }
-
-  // Updates the style by taking user attributes, including 'style' and our own
-  // API of special attributes, and passing them to the CSS for the button.
-  // If the user styles an attribute (e.g. font color) using both direct CSS
-  // and our custom attribute (text-color), it prioritizes custom attributes.
+  
+  /**
+  * Updates the style by taking user attributes, including 'style' and our own
+  * API of special attributes, and passing them to the CSS for the button.
+  * If the user styles an attribute (e.g. font color) using both direct CSS
+  * and our custom attribute (text-color), it prioritizes custom attributes.
+  */
   updateStyle() {
     console.log('Updating custom-button styles');
 

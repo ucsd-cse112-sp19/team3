@@ -1,4 +1,45 @@
-'use strict';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Slider/Slider.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_findFirstSelectedTab">_findFirstSelectedTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_onTitleClick">_onTitleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_selectTab">_selectTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#connectedCallback">connectedCallback</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Slider/Slider.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
 /** Class for Custom Slider component */
 class CustomSlider extends HTMLElement {
@@ -14,7 +55,7 @@ class CustomSlider extends HTMLElement {
     const templateContent = CustomSlider.template.content;
 
     // Import CSS
-    const importStyle = `<style>
+    const importStyle = `&lt;style>
       .small-input {
         text-align: center;
         width: 20px;
@@ -129,7 +170,7 @@ class CustomSlider extends HTMLElement {
       background: #ffffff;
       cursor: pointer;
       margin-top: -14px;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects */
     }
 
     /* All the same stuff for Firefox */
@@ -155,7 +196,7 @@ class CustomSlider extends HTMLElement {
     }
     
     
-    </style>`;
+    &lt;/style>`;
 
     // Attributes
     let value = 0;
@@ -163,7 +204,7 @@ class CustomSlider extends HTMLElement {
     let max = 100;
     let disabled = '';
     let showInput = '';
-    let inputClass = 'small-input';
+    let inputClass = 'small-input';	
 
     // Store the value of the attribute value
     if (this.hasAttribute('value')) {
@@ -191,39 +232,36 @@ class CustomSlider extends HTMLElement {
     }
     // store the value of
     if (this.hasAttribute('size')) {
-      const sizeStr = this.getAttribute('size');
-      if (sizeStr == 'L') {
+      let sizeStr = this.getAttribute('size');
+      if (sizeStr == 'L')
         inputClass = 'large-input';
-      } else if (sizeStr == 'M') {
+      else if(sizeStr == 'M')
         inputClass = 'medium-input';
-      }
     }
 
     // indicate whether need to show input box
     if (this.hasAttribute('showInput')) {
-      showInput = `<br/><input type="number" name="amountInput" min=`
-      + min + ` max=`
+      showInput =  `&lt;br/>&lt;input type="number" name="amountInput" min=` + min + ` max=`
       + max +
       `  value=` + value + ` class=` + inputClass +
       ` oninput="this.form.amountRange.value=this.value" ` +
       disabled + `/>`;
     }
 
-    const inputStr = importStyle +
-      `<div class="slidecontainer">`+
-          `<form>
-              <input type="range" name="amountRange" min=` + min + ` max=`
-              + max +
+    let input_str = importStyle +
+      `&lt;div class="slidecontainer">`+
+          `&lt;form>
+              &lt;input type="range" name="amountRange" min=` + min + ` max=` + max +
               `  value=` + value +
               ` oninput="this.form.amountInput.value=this.value" `
               + disabled + `/>` + showInput + `      
-          </form>
-      </div>`;
+          &lt;/form>
+      &lt;/div>`;
 
-    console.log(inputStr);
+    console.log(input_str);
 
     // Set HTML
-    CustomSlider.template.innerHTML = inputStr;
+    CustomSlider.template.innerHTML = input_str;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
@@ -236,3 +274,22 @@ class CustomSlider extends HTMLElement {
 
 CustomSlider.template = document.createElement('CustomSlider_template');
 customElements.define('custom-slider', CustomSlider);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu May 23 2019 17:54:38 GMT-0700 (PDT) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
