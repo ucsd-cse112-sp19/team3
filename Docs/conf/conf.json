@@ -22,6 +22,6 @@
 		"destination": "Docs/",
 		"encoding": "utf8",
 		"recurse": true,
-		"template": "node_modules/minami"
+		"template": "Docs/templates/minami"
 	}
 }
