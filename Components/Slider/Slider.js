@@ -127,7 +127,7 @@ class CustomSlider extends HTMLElement {
       background: #ffffff;
       cursor: pointer;
       margin-top: -14px;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects */
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     }
 
     /* All the same stuff for Firefox */
@@ -199,27 +199,29 @@ class CustomSlider extends HTMLElement {
 
     // indicate whether need to show input box
     if (this.hasAttribute('showInput')) {
-      showInput = `<br/><input type="number" name="amountInput" min=` + min + ` max=`
+      showInput = `<br/><input type="number" name="amountInput" min=`
+      + min + ` max=`
       + max +
       `  value=` + value + ` class=` + inputClass +
       ` oninput="this.form.amountRange.value=this.value" ` +
       disabled + `/>`;
     }
 
-    const input_str = importStyle +
+    const inputStr = importStyle +
       `<div class="slidecontainer">`+
           `<form>
-              <input type="range" name="amountRange" min=` + min + ` max=` + max +
+              <input type="range" name="amountRange" min=` + min + ` max=`
+              + max +
               `  value=` + value +
               ` oninput="this.form.amountInput.value=this.value" `
               + disabled + `/>` + showInput + `      
           </form>
       </div>`;
 
-    console.log(input_str);
+    console.log(inputStr);
 
     // Set HTML
-    CustomSlider.template.innerHTML = input_str;
+    CustomSlider.template.innerHTML = inputStr;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }

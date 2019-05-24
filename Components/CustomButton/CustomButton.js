@@ -13,21 +13,21 @@ class CustomButton extends HTMLElement {
 
     // all styling performed by updateStyle() below
     CustomButton.template.innerHTML = `
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-            <style></style>
-            <a style='text-decoration: none'>
-            <button type='button'><slot></slot></button>
-            </a>
-        `;
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <style></style>
+      <a style='text-decoration: none'>
+      <button type='button'><slot></slot></button>
+      </a>
+    `;
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
   /* List of attributes supported by the component.
-     * Component listens for changes to these attributes
-     * and handles it using attributeChangedCallback(). */
+   * Component listens for changes to these attributes
+   * and handles it using attributeChangedCallback(). */
   static get observedAttributes() {
     return [
       'style',
@@ -179,7 +179,7 @@ class CustomButton extends HTMLElement {
   // Updates the style by taking user attributes, including 'style' and our own
   // API of special attributes, and passing them to the CSS for the button.
   // If the user styles an attribute (e.g. font color) using both direct CSS
-  // and our custom attribute (text-color), it will prioritize the custom attribute.
+  // and our custom attribute (text-color), it prioritizes custom attributes.
   updateStyle() {
     console.log('Updating custom-button styles');
 
@@ -193,62 +193,72 @@ class CustomButton extends HTMLElement {
 
     // provides default styles in case the user doesn't provide one
     shadow.querySelector('style').textContent = `
-            :host {
-                --hover-text-color: ${this.hoverTextColor ? this.hoverTextColor : '#ffffff'};
-                --hover-background-color: ${this.hoverBackgroundColor ? this.hoverBackgroundColor : '#1f57a4'};
-                --hover-border-color: ${this.hoverBorderColor ? this.hoverBorderColor : '#c8daf4'};
-                --active-text-color: ${this.activeTextColor ? this.activeTextColor : '#ffffff'};
-                --active-background-color: ${this.activeBackgroundColor ? this.activeBackgroundColor : '#25467a'};
-                --active-border-color: ${this.activeBorderColor ? this.activeBorderColor : '#ffffff'};
-            }
-            button {
-                ${this.style};
-                color: ${this.textColor ? this.textColor : '#ffffff'};
-                background-color: ${this.backgroundColor ? this.backgroundColor : '#2d74da'};
-                border: solid ${this.borderColor ? this.borderColor : '#cccccc'} 1px;
-                font-family: ${this.font ? this.font : 'Georgia'};
-                display: block;
-                width: ${this.width ? this.width : '90px'};
-                height: ${this.height ? this.height : '45px'};
-            }
-            button:hover {
-                color: var(--hover-text-color);
-                background-color: var(--hover-background-color);
-                border-color: var(--hover-border-color);
-            }
-            button:active {
-                color: var(--active-text-color);
-                background-color: var(--active-background-color);
-                border-color: var(--active-border-color);
-                box-shadow: ${this.activeBackgroundColor ? '0px 0px 0px 3px this.activeBackgroundColor inset, 0px 0px 0px 4px white inset' : '0px 0px 0px 3px #25467a inset, 0px 0px 0px 4px white inset'};  
-            }
-            button:focus {
-                outline: none;
-            }
-        `;
+      :host {
+        --hover-text-color: ${this.hoverTextColor ?
+                            this.hoverTextColor : '#ffffff'};
+        --hover-background-color: ${this.hoverBackgroundColor ?
+                            this.hoverBackgroundColor : '#1f57a4'};
+        --hover-border-color: ${this.hoverBorderColor ?
+                                this.hoverBorderColor : '#c8daf4'};
+        --active-text-color: ${this.activeTextColor ?
+                                this.activeTextColor : '#ffffff'};
+        --active-background-color: ${this.activeBackgroundColor ?
+                                this.activeBackgroundColor : '#25467a'};
+        --active-border-color: ${this.activeBorderColor ?
+                                this.activeBorderColor : '#ffffff'};
+      }
+      button {
+        ${this.style};
+        color: ${this.textColor ? this.textColor : '#ffffff'};
+        background-color: ${this.backgroundColor ?
+                                this.backgroundColor : '#2d74da'};
+        border: solid ${this.borderColor ? this.borderColor : '#cccccc'} 1px;
+        font-family: ${this.font ? this.font : 'Georgia'};
+        display: block;
+        width: ${this.width ? this.width : '90px'};
+        height: ${this.height ? this.height : '45px'};
+      }
+      button:hover {
+        color: var(--hover-text-color);
+        background-color: var(--hover-background-color);
+        border-color: var(--hover-border-color);
+      }
+      button:active {
+        color: var(--active-text-color);
+        background-color: var(--active-background-color);
+        border-color: var(--active-border-color);
+        box-shadow: ${this.activeBackgroundColor ?
+                '0px 0px 0px 3px this.activeBackgroundColor inset,' +
+                '0px 0px 0px 4px white inset' :
+                '0px 0px 0px 3px #25467a inset, 0px 0px 0px 4px white inset'};  
+      }
+      button:focus {
+        outline: none;
+      }
+    `;
     if (this.hasAttribute('rounded')) {
       shadow.querySelector('style').textContent += `
-                button {
-                    border-radius: 100px;
-                }
-            `;
+        button {
+          border-radius: 100px;
+        }
+      `;
     }
     if (this.hasAttribute('circle')) {
       shadow.querySelector('style').textContent += `
-                button {
-                    width: 70px;
-                    height: 70px;
-                    border-radius: 100%;
-                }
-            `;
+        button {
+          width: 70px;
+          height: 70px;
+          border-radius: 100%;
+        }
+      `;
     }
     if (this.hasAttribute('disabled')) {
       shadow.querySelector('button').setAttribute('disabled', true);
       shadow.querySelector('style').textContent += `
-                button {
-                    cursor: not-allowed;
-                }
-            `;
+        button {
+          cursor: not-allowed;
+        }
+      `;
     }
     if (this.hasAttribute('theme')) {
       let textColor = '';
@@ -353,22 +363,22 @@ class CustomButton extends HTMLElement {
         default:
       }
       shadow.querySelector('style').textContent += `
-                button {
-                    color: ${textColor};
-                    background-color: ${backgroundColor};
-                    border-color: ${borderColor};
-                }
-                button:hover {
-                    color: ${hoverTextColor};
-                    background-color: ${hoverBackgroundColor};
-                    border-color: ${hoverBorderColor};
-                }
-                button:active {
-                    color: ${activeTextColor};
-                    background-color: ${activeBackgroundColor};
-                    border-color: ${activeBorderColor};
-                }
-            `;
+        button {
+          color: ${textColor};
+          background-color: ${backgroundColor};
+          border-color: ${borderColor};
+        }
+        button:hover {
+          color: ${hoverTextColor};
+          background-color: ${hoverBackgroundColor};
+          border-color: ${hoverBorderColor};
+        }
+        button:active {
+          color: ${activeTextColor};
+          background-color: ${activeBackgroundColor};
+          border-color: ${activeBorderColor};
+        }
+      `;
     }
   }
 }
