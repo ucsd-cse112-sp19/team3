@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "generate-docs": "node_modules/.bin/jsdoc --configure Docs/conf/conf.json --verbose"},
-    "htmlhint": "htmlhint --config .htmlhintrc **/\\*.html",
-    "csslint": "stylelint --config .csslintrc **/\\*.css **/\\*.html",
-    "csslint_fix": "stylelint --config .csslintrc **/\\*.css **/\\*.html --fix",
+    "htmlhint": "htmlhint --config .htmlhintrc --ignore **/docs/** **/\\*.html",
+    "csslint": "stylelint --config .csslintrc --ignore-pattern=docs **/\\*.css **/\\*.html",
+    "csslint_fix": "stylelint --config .csslintrc **/\\*.css --ignore-pattern=docs **/\\*.html --fix",
     "eslint": "eslint **/\\*.html **/\\*.js",
     "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
     "test": "nyc --reporter=lcovonly mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit",
     "browserstack": "node ./local.runner.js",
-    "all": "npm run htmlhint && npm run csslint && npm run eslint && npm run test"
+    "all": "npm run htmlhint && npm run csslint && npm run eslint && npm run test",
+    "fix": "npm run csslint_fix && npm run eslint_fix"
   },
   "repository": {
     "type": "git",

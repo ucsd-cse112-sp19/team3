@@ -129,7 +129,7 @@ class CustomSlider extends HTMLElement {
       background: #ffffff;
       cursor: pointer;
       margin-top: -14px;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects */
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     }
 
     /* All the same stuff for Firefox */
@@ -163,7 +163,7 @@ class CustomSlider extends HTMLElement {
     let max = 100;
     let disabled = '';
     let showInput = '';
-    let inputClass = 'small-input';	
+    let inputClass = 'small-input';
 
     // Store the value of the attribute value
     if (this.hasAttribute('value')) {
@@ -191,36 +191,39 @@ class CustomSlider extends HTMLElement {
     }
     // store the value of
     if (this.hasAttribute('size')) {
-      let sizeStr = this.getAttribute('size');
-      if (sizeStr == 'L')
+      const sizeStr = this.getAttribute('size');
+      if (sizeStr == 'L') {
         inputClass = 'large-input';
-      else if(sizeStr == 'M')
+      } else if (sizeStr == 'M') {
         inputClass = 'medium-input';
+      }
     }
 
     // indicate whether need to show input box
     if (this.hasAttribute('showInput')) {
-      showInput =  `<br/><input type="number" name="amountInput" min=` + min + ` max=`
+      showInput = `<br/><input type="number" name="amountInput" min=`
+      + min + ` max=`
       + max +
       `  value=` + value + ` class=` + inputClass +
       ` oninput="this.form.amountRange.value=this.value" ` +
       disabled + `/>`;
     }
 
-    let input_str = importStyle +
+    const inputStr = importStyle +
       `<div class="slidecontainer">`+
           `<form>
-              <input type="range" name="amountRange" min=` + min + ` max=` + max +
+              <input type="range" name="amountRange" min=` + min + ` max=`
+              + max +
               `  value=` + value +
               ` oninput="this.form.amountInput.value=this.value" `
               + disabled + `/>` + showInput + `      
           </form>
       </div>`;
 
-    console.log(input_str);
+    console.log(inputStr);
 
     // Set HTML
-    CustomSlider.template.innerHTML = input_str;
+    CustomSlider.template.innerHTML = inputStr;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
