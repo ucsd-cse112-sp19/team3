@@ -23,6 +23,10 @@
   margin-left: 15px;
 }
 
+input[type=range]::-moz-focus-outer {
+  border: 0; /* Disable border when focused on firefox */
+}
+
 input[type=range] {
   -webkit-appearance: none; /* Hides default slider */
   width: 40%; /* Specific width is required for Firefox. */

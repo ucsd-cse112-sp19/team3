@@ -15,8 +15,12 @@ class CustomSlider extends HTMLElement {
     CustomSlider.template = document.createElement('template');
     const templateContent = CustomSlider.template.content;
 
+    // <link rel="stylesheet" href="./CustomSlider.css"/>
     CustomSlider.template.innerHTML = `
-      <link rel="stylesheet" href="./CustomSlider.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <input type="range"/>
       <div id="valueDisplay"/>
     `;
@@ -37,7 +41,6 @@ class CustomSlider extends HTMLElement {
       'max': 100,
       'input-class': 'small-input',
       'showinput': true,
-      'size': '15px',
     };
   }
 
@@ -73,7 +76,7 @@ class CustomSlider extends HTMLElement {
       'slider-class',
       'input-class',
       'showinput',
-      'size',
+      'height',
     ];
   }
 
@@ -124,35 +127,17 @@ class CustomSlider extends HTMLElement {
     // Update value
     valueDisplay.innerHTML = slider.value;
 
-    // Update size by CSS class
+    // Update CSS class
     const defaultInputClass = CustomSlider.defaultAttributes['input-class'];
     valueDisplay.classList = []; // Clear class list
-    if (this.hasAttribute('size')) {
-      switch (this.getAttribute('size')) {
-        case 'small':
-          valueDisplay.classList.add('small-input');
-          break;
-        case 'medium':
-          valueDisplay.classList.add('medium-input');
-          break;
-        case 'large':
-          valueDisplay.classList.add('large-input');
-          break;
-        default:
-          valueDisplay.classList.add(defaultInputClass);
-          break;
-      }
-    } else {
-      valueDisplay.classList.add(defaultInputClass);
-    }
+    valueDisplay.classList.add(defaultInputClass); // Use default class
 
     // Pass class attribute into the component
     if (this.hasAttribute('slider-class')) {
-      slider.setAttribute('slider-class', this.getAttribute('slider-class'));
+      slider.setAttribute('class', this.getAttribute('slider-class'));
     }
     if (this.hasAttribute('input-class')) {
-      valueDisplay.setAttribute('input-class',
-          this.getAttribute('input-class'));
+      valueDisplay.setAttribute('class', this.getAttribute('input-class'));
     }
   }
 
