@@ -5,6 +5,12 @@
 </head>
 <body>
   <script src="./CustomSlider.js"></script>
+  <script>
+    // eslint-disable-next-line
+    function changed(value) {
+      console.log('new value: %d', value);
+    }
+  </script>
   <h1> Default value of 0 within range from 0 to 100 </h1>
   <custom-slider></custom-slider>
 
@@ -18,5 +24,8 @@
   <custom-slider min="5" max="105" value="50" showinput></custom-slider>
 
   <h1> Change the size of the input box to Large </h1>
-  <custom-slider min="5" max="105" value="50" size="L" showinput></custom-slider>
+  <custom-slider min="5" max="105" value="50" size="large" showinput></custom-slider>
+
+  <h1> Add onchange callback </h1>
+  <custom-slider showinput onchange="changed"></custom-slider>
 </body>

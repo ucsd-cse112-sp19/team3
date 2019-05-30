@@ -18,9 +18,13 @@ class CustomSlider extends HTMLElement {
     CustomSlider.template.innerHTML = `
       <link rel="stylesheet" href="./CustomSlider.css"/>
       <input type="range"/>
+      <div id="valueDisplay"/>
     `;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
+    this.onValueChange = this.onValueChange.bind(this);
+    shadowRoot.querySelector('input').addEventListener('input',
+        this.onValueChange);
   }
 
   /**
@@ -31,7 +35,9 @@ class CustomSlider extends HTMLElement {
       'value': 0,
       'min': 0,
       'max': 100,
-      'class': 'small',
+      'input-class': 'small-input',
+      'showinput': true,
+      'size': '15px',
     };
   }
 
@@ -64,7 +70,8 @@ class CustomSlider extends HTMLElement {
    */
   static get customAttributes() {
     return [
-      'class',
+      'slider-class',
+      'input-class',
       'showinput',
       'size',
     ];
@@ -88,7 +95,7 @@ class CustomSlider extends HTMLElement {
   updateStyle() {
     const shadow = this.shadowRoot;
     const slider = shadow.querySelector('input');
-
+    const valueDisplay = shadow.querySelector('#valueDisplay');
     // Update all attributes for input
     for (const attribute of CustomSlider.inputAttributes) {
       if (this.hasAttribute(attribute)) {
@@ -107,9 +114,65 @@ class CustomSlider extends HTMLElement {
       }
     }
 
+    // showinput option tag
+    if (this.hasAttribute('showinput')) {
+      valueDisplay.style.display = '';
+    } else {
+      valueDisplay.style.display = 'none';
+    }
+
+    // Update value
+    valueDisplay.innerHTML = slider.value;
+
+    // Update size by CSS class
+    const defaultInputClass = CustomSlider.defaultAttributes['input-class'];
+    valueDisplay.classList = []; // Clear class list
+    if (this.hasAttribute('size')) {
+      switch (this.getAttribute('size')) {
+        case 'small':
+          valueDisplay.classList.add('small-input');
+          break;
+        case 'medium':
+          valueDisplay.classList.add('medium-input');
+          break;
+        case 'large':
+          valueDisplay.classList.add('large-input');
+          break;
+        default:
+          valueDisplay.classList.add(defaultInputClass);
+          break;
+      }
+    } else {
+      valueDisplay.classList.add(defaultInputClass);
+    }
+
     // Pass class attribute into the component
-    if (this.hasAttribute('class')) {
-      slider.setAttribute('class', this.getAttribute('class'));
+    if (this.hasAttribute('slider-class')) {
+      slider.setAttribute('slider-class', this.getAttribute('slider-class'));
+    }
+    if (this.hasAttribute('input-class')) {
+      valueDisplay.setAttribute('input-class',
+          this.getAttribute('input-class'));
+    }
+  }
+
+  /**
+   * When value of the slider changed
+   * @param {Integer} value
+   */
+  onValueChange(value) {
+    const shadow = this.shadowRoot;
+    const slider = shadow.querySelector('input');
+    const valueDisplay = shadow.querySelector('#valueDisplay');
+    // Update display value
+    valueDisplay.innerHTML = slider.value;
+    // Notify onchange
+    if (this.hasAttribute('onchange')) {
+      const callbackName = this.getAttribute('onchange');
+      const cb = window[callbackName];
+      if (typeof cb === 'function') {
+        cb(slider.value);
+      }
     }
   }
 
