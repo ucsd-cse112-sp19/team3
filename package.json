@@ -47,5 +47,8 @@
     "showroom": "^0.9.3",
     "sinon": "^7.3.2",
     "stylelint": "^10.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1"
   }
 }
