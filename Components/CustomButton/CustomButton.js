@@ -1,14 +1,12 @@
 'use strict';
 
-/** 
- * Class for Custom Button component 
- */
+
+/** Class for Custom Button component */
 class CustomButton extends HTMLElement {
-  /** 
-   * constructor of the class
-   */
-  constructor() {
-    super()
+    /** Constructor of the class */
+    constructor() {
+        super()
+
 
     // Create shadow DOM and attach template content
     const shadowRoot = this.attachShadow({mode: 'open'});
