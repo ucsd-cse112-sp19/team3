@@ -17,7 +17,8 @@ class CustomPopover extends HTMLElement {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-            <style></style>
+            <style>
+            </style>
             <div><slot></slot></div>
         `
         shadowRoot.appendChild(templateContent.cloneNode(true))
@@ -137,7 +138,6 @@ class CustomPopover extends HTMLElement {
                 background-color: var(--color-scheme);
                 color: var(--text-color);
                 font-family: ${this.font ? this.font : 'Lucida Console'};    
-                position: relative;
                 display: inline-block;
 
                 visibility: hidden;
@@ -147,24 +147,92 @@ class CustomPopover extends HTMLElement {
                 border: solid 1px;
                 border-radius: 6px;
                 padding: 6px 6px;
+                left: 110%;
+                top: 0%;
 
                 position: absolute;
                 z-index: 1;
             }
         `
+
+        var newCSS = ''
         switch (this.placement) {
             case 'top':
+                newCSS = `
+                    div {
+                        top: -110%;
+                        left: -15px; 
+                        height: 45px;
+                    }
+                    div::after {
+                        content: " ";
+                        position: absolute;
+                        top: 100%; /* At the bottom of the tooltip */
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: var(--color-scheme) transparent transparent transparent;
+                    }
+                `
                 break
             case 'bottom':
+                newCSS = `
+                    div {
+                        top: 115%;
+                        left: -15px;
+                    }
+                    div::after {
+                        content: " ";
+                        position: absolute;
+                        bottom: 100%;  /* At the top of the tooltip */
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: transparent transparent var(--color-scheme) transparent;
+                    }
+                `
                 break
             case 'left':
+                newCSS = `
+                    div {
+                        left: -145%;
+                        top: 0%;
+                    }
+                    div::after {
+                        content: " ";
+                        position: absolute;
+                        top: 50%;
+                        left: 100%; /* To the right of the tooltip */
+                        margin-top: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: transparent transparent transparent var(--color-scheme);
+                    }
+                `
                 break
-            case 'right':
-                break
-            default:
+            default: // right by default
+                newCSS = `
+                    div {
+                        left: 110%;
+                        top: 0%;
+                    }
+                    div::after {
+                        content: " ";
+                        position: absolute;
+                        top: 50%;
+                        right: 100%; /* To the left of the tooltip */
+                        margin-top: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: transparent var(--color-scheme) transparent transparent;
+                    }
+                `
+
         }
-        shadow.querySelector('style').textContent += `
-        `
+        shadow.querySelector('style').textContent += newCSS
+        
     }
 }
      
