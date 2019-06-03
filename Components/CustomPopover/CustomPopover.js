@@ -42,6 +42,8 @@ class CustomPopover extends HTMLElement {
     /* Getters and setters for observed attributes because WHY NOT */
     get style()         { return this.getAttribute('style') }
     set style(val)      { this.setAttribute('style', val) }
+    get class()         { return this.getAttribute('class') }
+    set class(val)      { this.setAttribute('class', val) }
     get color()         { return this.getAttribute('color') }
     set color(val)      { this.setAttribute('color', val) }
     get textColor()     { return this.getAttribute('text-color') }
@@ -128,11 +130,39 @@ class CustomPopover extends HTMLElement {
         const div = shadow.querySelector('div')
         div.setAttribute('class', this.getAttribute('class'))
 
+        // account for bootstrap in the arrow colors
+        var arrowColor = null
+        switch(this.class) {
+            case 'btn-primary':
+                arrowColor = '#007bff'
+                break
+            case 'btn-secondary':
+                arrowColor = '#868e96'
+                break
+            case 'btn-success':
+                arrowColor = '#28a745'
+                break
+            case 'btn-info':
+                arrowColor = '#17a2b8'
+                break
+            case 'btn-warning':
+                arrowColor = '#ffc107'
+                break
+            case 'btn-danger':
+                arrowColor = '#dc3545'
+                break
+            case 'btn-dark':
+                arrowColor = '#343a40'
+                break
+        }
+
         // provides default styles in case the user doesn't provide one
         shadow.querySelector('style').textContent = `
             :host {
                 --color-scheme: ${this.color ? this.color : '#45b9e8'};
                 --text-color: ${this.textColor ? this.textColor : '#ffffff'};
+                --arrow-color: ${arrowColor ? arrowColor : 'var(--color-scheme)'};
+                outline: none;
             }
             div {
                 background-color: var(--color-scheme);
@@ -140,11 +170,12 @@ class CustomPopover extends HTMLElement {
                 font-family: ${this.font ? this.font : 'Lucida Console'};    
                 display: inline-block;
 
+                outline: none;
                 visibility: hidden;
                 width: 120px;
 
                 text-align: center;
-                border: solid 1px;
+                border: solid 0px;
                 border-radius: 6px;
                 padding: 6px 6px;
                 left: 110%;
@@ -152,6 +183,12 @@ class CustomPopover extends HTMLElement {
 
                 position: absolute;
                 z-index: 1;
+            }
+            :host > div:focus {
+                outline: none;
+            }
+            div:focus, button:focus, div:active, button:active {
+                outline: none;
             }
         `
 
@@ -172,7 +209,7 @@ class CustomPopover extends HTMLElement {
                         margin-left: -5px;
                         border-width: 5px;
                         border-style: solid;
-                        border-color: var(--color-scheme) transparent transparent transparent;
+                        border-color: var(--arrow-color) transparent transparent transparent;
                     }
                 `
                 break
@@ -190,14 +227,14 @@ class CustomPopover extends HTMLElement {
                         margin-left: -5px;
                         border-width: 5px;
                         border-style: solid;
-                        border-color: transparent transparent var(--color-scheme) transparent;
+                        border-color: transparent transparent var(--arrow-color) transparent;
                     }
                 `
                 break
             case 'left':
                 newCSS = `
                     div {
-                        left: -145%;
+                        left: -142%;
                         top: 0%;
                     }
                     div::after {
@@ -208,7 +245,7 @@ class CustomPopover extends HTMLElement {
                         margin-top: -5px;
                         border-width: 5px;
                         border-style: solid;
-                        border-color: transparent transparent transparent var(--color-scheme);
+                        border-color: transparent transparent transparent var(--arrow-color);
                     }
                 `
                 break
@@ -226,13 +263,11 @@ class CustomPopover extends HTMLElement {
                         margin-top: -5px;
                         border-width: 5px;
                         border-style: solid;
-                        border-color: transparent var(--color-scheme) transparent transparent;
+                        border-color: transparent var(--arrow-color) transparent transparent;
                     }
                 `
-
         }
         shadow.querySelector('style').textContent += newCSS
-        
     }
 }
      
