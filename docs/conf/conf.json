@@ -27,7 +27,6 @@
 		"encoding": "utf8",
 		"recurse": true,
 		"template": "docs/templates/minami",
-		"sort": false,
-		"tutorial": "Components/"
+		"sort": false
 	}
 }
