@@ -7,6 +7,7 @@
 		"include": ["Components/CustomButton/",
 					"Components/SpecsTab/",
 					"Components/Slider/",
+                    "README.md",
                     "Components/CustomPopover"],
 		"exclude": [],
 		"includePattern": ".+\\.js(doc)?$",
