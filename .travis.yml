@@ -16,7 +16,6 @@ script:
     - npm run csslint
     - npm run eslint
     - commitlint-travis
-    - ./node_modules/.bin/esdoc
     - npm run test
     - npm run browserstack
 

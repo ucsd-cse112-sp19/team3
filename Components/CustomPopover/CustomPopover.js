@@ -1,8 +1,21 @@
 'use strict'
 
-/** Class for Custom Popover component */
+/** 
+ * @description Popover Web Component
+ * @example <custom-popover anchor='btn-exe' color='blue' font='arial' header-text='example' placement='top' style='' textcolor='black'></custom-popover>
+ * @property {string} anchor Name of the button to which the popover is anchored.
+ * @property {string} color -Set the background color. 
+ * @property {string} font -Set the font type.
+ * @property {string} header-text -Set the text content.
+ * @property {string} placement -Place popover on the button's top, bottom, left, or right.
+ * @property {string} style -Set a CSS style. 
+ * @property {string} textcolor -Set the text color. 
+ * 
+ */
 class CustomPopover extends HTMLElement {
-    /** Constructor of the class */
+    /**
+     * @hideconstructor
+     */
     constructor() {
         super()
 

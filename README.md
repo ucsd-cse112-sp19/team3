@@ -1,6 +1,6 @@
 # Team3
 
-![SPECS](./logo.png)
+![SPECS](https://raw.githubusercontent.com/ucsd-cse112/team3/master/logo.png?token=AGLD5CNAALYDOZCKXNB7GHK475PVW)
 
 [![Build Status](https://travis-ci.com/ucsd-cse112/team3.svg?token=N7quhPzu2SUwxwSC1Q4R&branch=master)](https://travis-ci.com/ucsd-cse112/team3)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
