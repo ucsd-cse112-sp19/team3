@@ -4,7 +4,7 @@
 /** 
  * @class CustomButton
  * @summary create a new CustomButton component with designated styles
- * ### Usage ###
+ * ### Usage
  * ```
  * <custom-button property="value"> Button Text </custom-button>
  * ```

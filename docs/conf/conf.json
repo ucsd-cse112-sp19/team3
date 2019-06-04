@@ -4,10 +4,11 @@
 		"dictionaries": ["jsdoc","closure"]
 	},
 	"source": {
-		"include": ["Components/CustomButton/",
+		"include": ["README.md",
+					"Components/CustomButton/",
 					"Components/SpecsTab/",
 					"Components/Slider/",
-                    "Components/CustomPopover"],
+					"Components/CustomPopover"],
 		"exclude": [],
 		"includePattern": ".+\\.js(doc)?$",
 		"excludePattern": "(^|\\/|\\\\)_"
