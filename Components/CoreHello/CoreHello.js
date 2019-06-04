@@ -5,6 +5,9 @@
  * @class CoreHello
  * 
  * @summary class of CoreHello component, a starter of customized web components
+ * 
+ * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CoreHello.html} for all listing examples.*
+ * 
  * ### Usage
  * ```
  * <core-hello property="value"> YourName </core-hello>

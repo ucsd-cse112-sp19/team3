@@ -4,7 +4,10 @@
 /** 
  * @class CustomSlider
  * 
- * @summary create a new CustomSlider component with designated styles
+ * @summary Create a new CustomSlider component with designated styles.
+ * 
+ * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomSlider.html} for all listing examples.*
+ * 
  * ### Usage
  * ```
  * <custom-slider property="value"></custom-slider>

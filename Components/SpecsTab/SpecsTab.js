@@ -7,7 +7,23 @@
   /** 
    * @class SpecsTab
    * 
-   * @summary create a new SpecsTab component with designated styles
+   * @summary Create a new SpecsTab component with designated styles.
+   * 
+   * *See [SpecsTab Demo]{@link https://ucsd-cse112.github.io/team3/demopages/SpecsTab.html} for all listing examples.*
+   * 
+   * ### Usage
+   * ```
+   * <specs-tab background>
+   *     <button slot="title" selected>Who are we?</button>
+   *     <button slot="title">What did we do?</button>
+   *     <button slot="title">How easy was it?</button>
+   *
+   *     <!-- Any tag can be used here for text, just need to be in-order -->
+   *     <section>Team SPECS!</section>
+   *     <section>Create a tab web component!</section>
+   *     <section>Not at all it was actually extraordinarily difficult!</section>
+   * </specs-tab>
+   * ```
    */
   class SpecsTab extends HTMLElement {
 

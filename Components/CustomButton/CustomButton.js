@@ -4,7 +4,10 @@
 /** 
  * @class CustomButton
  * 
- * @summary create a new CustomButton component with designated styles
+ * @summary Create a new CustomButton component with designated styles.
+ * 
+ * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomButton.html} for all listing examples.*
+ *
  * ### Usage
  * ```
  * <custom-button property="value"> Button Text </custom-button>
@@ -28,9 +31,9 @@
  * @property {string} href - this is example
  * @property {string} theme - this is example
  * 
- * @example <custom-button text-color="hotpink" hover-text-color="red" active-text-color="red">Click Me</custom-button> 
- * @example <custom-button text-color="hotpink" hover-text-color="red" active-text-color="red">Click Me</custom-button>
- * @example <custom-button text-color="hotpink" hover-text-color="red" active-text-color="red">Click Me</custom-button>
+ * @example <custom-button onclick="alert('Hello world!')">Button</custom-button>
+ * @example <custom-button rounded>Click Me</custom-button>
+ * @example <custom-button theme="pink-lemonade" active-background-color="#ff34b3">Click Me</custom-button>
  *
  * @todo fix the property table
  */
