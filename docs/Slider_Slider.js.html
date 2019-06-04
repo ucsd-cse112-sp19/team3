@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_findFirstSelectedTab">_findFirstSelectedTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_onTitleClick">_onTitleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_selectTab">_selectTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#connectedCallback">connectedCallback</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_findFirstSelectedTab">_findFirstSelectedTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_onTitleClick">_onTitleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_selectTab">_selectTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#connectedCallback">connectedCallback</a></span></li>
 </nav>
 
 <div id="main">
@@ -170,7 +170,7 @@ class CustomSlider extends HTMLElement {
       background: #ffffff;
       cursor: pointer;
       margin-top: -14px;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects */
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     }
 
     /* All the same stuff for Firefox */
@@ -204,7 +204,7 @@ class CustomSlider extends HTMLElement {
     let max = 100;
     let disabled = '';
     let showInput = '';
-    let inputClass = 'small-input';	
+    let inputClass = 'small-input';
 
     // Store the value of the attribute value
     if (this.hasAttribute('value')) {
@@ -232,36 +232,39 @@ class CustomSlider extends HTMLElement {
     }
     // store the value of
     if (this.hasAttribute('size')) {
-      let sizeStr = this.getAttribute('size');
-      if (sizeStr == 'L')
+      const sizeStr = this.getAttribute('size');
+      if (sizeStr == 'L') {
         inputClass = 'large-input';
-      else if(sizeStr == 'M')
+      } else if (sizeStr == 'M') {
         inputClass = 'medium-input';
+      }
     }
 
     // indicate whether need to show input box
     if (this.hasAttribute('showInput')) {
-      showInput =  `&lt;br/>&lt;input type="number" name="amountInput" min=` + min + ` max=`
+      showInput = `&lt;br/>&lt;input type="number" name="amountInput" min=`
+      + min + ` max=`
       + max +
       `  value=` + value + ` class=` + inputClass +
       ` oninput="this.form.amountRange.value=this.value" ` +
       disabled + `/>`;
     }
 
-    let input_str = importStyle +
+    const inputStr = importStyle +
       `&lt;div class="slidecontainer">`+
           `&lt;form>
-              &lt;input type="range" name="amountRange" min=` + min + ` max=` + max +
+              &lt;input type="range" name="amountRange" min=` + min + ` max=`
+              + max +
               `  value=` + value +
               ` oninput="this.form.amountInput.value=this.value" `
               + disabled + `/>` + showInput + `      
           &lt;/form>
       &lt;/div>`;
 
-    console.log(input_str);
+    console.log(inputStr);
 
     // Set HTML
-    CustomSlider.template.innerHTML = input_str;
+    CustomSlider.template.innerHTML = inputStr;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
@@ -286,7 +289,7 @@ customElements.define('custom-slider', CustomSlider);
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu May 23 2019 17:54:38 GMT-0700 (PDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Mon Jun 03 2019 22:53:00 GMT-0700 (Pacific Daylight Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
