@@ -1,10 +1,29 @@
 'use strict';
 
-/** Class for Custom Slider component */
+
+/** 
+ * @class CustomSlider
+ * 
+ * @summary create a new CustomSlider component with designated styles
+ * ### Usage
+ * ```
+ * <custom-slider property="value"></custom-slider>
+ * ```
+ * @property {string} value - this is example
+ * @property {string} min-color - this is example
+ * @property {string} max-color - this is example
+ * @property {boolean} disabled-color - this is example
+ * @property {boolean} showInput - this is example
+ * @property {string} size - this is example
+ * 
+ * @example <custom-slider min="5" max="105" value="50"></custom-slider>
+ * @example <custom-slider min="5" max="105" value="50" disabled></custom-slider>
+ * @example <custom-slider min="5" max="105" value="50" size="L" showinput></custom-slider>
+ *
+ * @todo fix the property table
+ */
 class CustomSlider extends HTMLElement {
-  /** 
-   * Constructor of the class 
-   */
+  
   constructor() {
     super();
 
@@ -228,7 +247,7 @@ class CustomSlider extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /** Element attached on DOM */
+  /* Element attached on DOM */
   connectedCallback() {
 
   }

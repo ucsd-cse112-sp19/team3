@@ -5,6 +5,7 @@
 	},
 	"source": {
 		"include": ["README.md",
+					"Components/CoreHello",
 					"Components/CustomButton/",
 					"Components/SpecsTab/",
 					"Components/Slider/",

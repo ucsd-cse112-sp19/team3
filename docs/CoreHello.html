@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>CustomPopover - Documentation</title>
+    <title>CoreHello - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">CustomPopover</h1>
+    <h1 class="page-title">CoreHello</h1>
     
 
     
@@ -42,7 +42,7 @@
 <header>
     
         <h2>
-        CustomPopover
+        CoreHello
         </h2>
         
     
@@ -56,12 +56,12 @@
 
     
 
-    <h4 class="name" id="CustomPopover"><span class="type-signature"></span>new CustomPopover<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="CoreHello"><span class="type-signature"></span>new CoreHello<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
-    <p class="summary"><p>create a new CustomPopover component with designated styles</p>
+    <p class="summary"><p>class of CoreHello component, a starter of customized web components</p>
 <h3>Usage</h3>
-<pre class="prettyprint source"><code>&lt;custom-popover property=&quot;value&quot;> Popover Body Text &lt;/custom-popover>
+<pre class="prettyprint source"><code>&lt;core-hello property=&quot;value&quot;> YourName &lt;/core-hello>
 </code></pre></p>
     
 
@@ -97,7 +97,7 @@
 
         <tr>
             
-                <td class="name"><code>anchor</code></td>
+                <td class="name"><code>lang</code></td>
             
 
             <td class="type">
@@ -113,7 +113,7 @@
 
             
 
-            <td class="description last"><p>Name of the button to which the popover is anchored.</p></td>
+            <td class="description last"><p>display language, options: <code>jp, es, fr</code></p></td>
         </tr>
 
         
@@ -122,13 +122,13 @@
 
         <tr>
             
-                <td class="name"><code>color</code></td>
+                <td class="name"><code>rainbow</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type"><code>boolean</code></span>
 
 
             
@@ -138,132 +138,7 @@
 
             
 
-            <td class="description last"><p>Set the background color.</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>font</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Set the font type.</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>header-text</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Set the text content.</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>placement</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Place popover on the button's top, bottom, left, or right.</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>style</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Set a CSS style.</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>textcolor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>string</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Set the text color.</p></td>
+            <td class="description last"><p>enable rainbow</p></td>
         </tr>
 
         
@@ -304,7 +179,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line4">line 4</a>
+        <a href="CoreHello_CoreHello.js.html">CoreHello/CoreHello.js</a>, <a href="CoreHello_CoreHello.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -345,13 +220,9 @@
 
 
 <div class="section-examples">
-<h5>Examples</h5>
+<h5>Example</h5>
 
-    <pre class="prettyprint"><code>&lt;custom-button id='defaultBtn'>&lt;custom-popover anchor='defaultBtn'>Popover Body Text&lt;/custom-popover>Click Me&lt;/custom-button></code></pre>
-
-    <pre class="prettyprint"><code>&lt;custom-button id='topBtn'>&lt;custom-popover anchor='topBtn' placement='top'>Popover Body Text&lt;/custom-popover>Click Me&lt;/custom-button></code></pre>
-
-    <pre class="prettyprint"><code>&lt;custom-button class="btn-warning" id='btnWarning'>&lt;custom-popover class='btn-warning' anchor='btnWarning' placement='top'>Popover Body Text&lt;/custom-popover>Warning&lt;/custom-button></code></pre>
+    <pre class="prettyprint"><code>&lt;core-hello lang="es" rainbow> Peter &lt;/core-hello></code></pre>
 
 </div>
 

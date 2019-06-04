@@ -4,9 +4,13 @@
   /* a global value to keep track of which tab is currently selected*/
   let selected_ = null;
 
-  /** Class for SpecsTab component */
+  /** 
+   * @class SpecsTab
+   * 
+   * @summary create a new SpecsTab component with designated styles
+   */
   class SpecsTab extends HTMLElement {
-  /** Constructor of the class */
+
     constructor() {
       super();
 
@@ -80,7 +84,7 @@
         `;
     }
 
-    /**
+    /*
      * A getter of which index of tab we select.
      * @return {int} The selected index of tabs.
      */
@@ -88,7 +92,7 @@
       return selected_;
     }
 
-    /**
+    /*
      * A setter of what we select
      * @param{int} index of tabs we select
      */
@@ -98,9 +102,7 @@
       this.setAttribute('selected', index);
     }
 
-    /**
-     * Callback after we successfully connect the component
-     */
+    //Callback after we successfully connect the component
     connectedCallback() {
       // Automatically differentiate tab and panel
       this.setAttribute('role', 'tablist');
@@ -131,7 +133,7 @@
       this.selected = this._findFirstSelectedTab() || 0;
     }
 
-    /**
+    /*
      * A listener that gets invoked when we click title
      * @param{e} e is passed in in case of an exception
      */
@@ -143,7 +145,7 @@
       }
     }
 
-    /**
+    /*
      * A getter of what we select.
      * @return{int} selectedIdx
      */
@@ -161,7 +163,7 @@
       return selectedIdx;
     }
 
-    /**
+    /*
      * A listener that keeps track of which tab is currently selected
      * @param{int} idx of tabs we select
      */

@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_findFirstSelectedTab">_findFirstSelectedTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_onTitleClick">_onTitleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_selectTab">_selectTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#connectedCallback">connectedCallback</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li>
 </nav>
 
 <div id="main">
@@ -41,22 +41,32 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict'
 
+
 /** 
- * @description Popover Web Component
- * @example &lt;custom-popover anchor='btn-exe' color='blue' font='arial' header-text='example' placement='top' style='' textcolor='black'>&lt;/custom-popover>
- * @property {string} anchor Name of the button to which the popover is anchored.
- * @property {string} color -Set the background color. 
- * @property {string} font -Set the font type.
- * @property {string} header-text -Set the text content.
- * @property {string} placement -Place popover on the button's top, bottom, left, or right.
- * @property {string} style -Set a CSS style. 
- * @property {string} textcolor -Set the text color. 
+ * @class CustomPopover
  * 
+ * @summary create a new CustomPopover component with designated styles
+ * ### Usage
+ * ```
+ * &lt;custom-popover property="value"> Popover Body Text &lt;/custom-popover>
+ * ```
+ * 
+ * @property {string} anchor - Name of the button to which the popover is anchored.
+ * @property {string} color - Set the background color. 
+ * @property {string} font - Set the font type.
+ * @property {string} header-text - Set the text content.
+ * @property {string} placement - Place popover on the button's top, bottom, left, or right.
+ * @property {string} style - Set a CSS style. 
+ * @property {string} textcolor - Set the text color. 
+ * 
+ * @example &lt;custom-button id='defaultBtn'>&lt;custom-popover anchor='defaultBtn'>Popover Body Text&lt;/custom-popover>Click Me&lt;/custom-button>
+ * @example &lt;custom-button id='topBtn'>&lt;custom-popover anchor='topBtn' placement='top'>Popover Body Text&lt;/custom-popover>Click Me&lt;/custom-button>
+ * @example &lt;custom-button class="btn-warning" id='btnWarning'>&lt;custom-popover class='btn-warning' anchor='btnWarning' placement='top'>Popover Body Text&lt;/custom-popover>Warning&lt;/custom-button>
+ * 
+ * @todo fix the property table
  */
 class CustomPopover extends HTMLElement {
-    /**
-     * @hideconstructor
-     */
+    
     constructor() {
         super()
 
@@ -78,9 +88,11 @@ class CustomPopover extends HTMLElement {
         shadowRoot.appendChild(templateContent.cloneNode(true))
     }
 
-    /* List of attributes supported by the component.
+    /* 
+     * List of attributes supported by the component.
      * Component listens for changes to these attributes
-     * and handles it using attributeChangedCallback(). */
+     * and handles it using attributeChangedCallback().
+     */
     static get observedAttributes() {
         return [
             'style',
@@ -339,7 +351,7 @@ customElements.define('custom-popover', CustomPopover)
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 06:21:14 GMT-0700 (PDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 07:15:43 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

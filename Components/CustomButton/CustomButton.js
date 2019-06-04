@@ -3,6 +3,7 @@
 
 /** 
  * @class CustomButton
+ * 
  * @summary create a new CustomButton component with designated styles
  * ### Usage
  * ```
@@ -35,8 +36,8 @@
  */
 class CustomButton extends HTMLElement {
 
-    constructor() {
-      super()
+  constructor() {
+    super();
 
     // Create shadow DOM and attach template content
     const shadowRoot = this.attachShadow({mode: 'open'});
