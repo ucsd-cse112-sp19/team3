@@ -6,7 +6,8 @@
 	"source": {
 		"include": ["Components/CustomButton/",
 					"Components/SpecsTab/",
-					"Components/Slider/"],
+					"Components/Slider/",
+                    "Components/CustomPopover"],
 		"exclude": [],
 		"includePattern": ".+\\.js(doc)?$",
 		"excludePattern": "(^|\\/|\\\\)_"
@@ -19,7 +20,7 @@
 		"showInheritedInNav": true
 	},
 	"opts": {
-		"destination": "Docs/",
+		"destination": "docs",
 		"encoding": "utf8",
 		"recurse": true,
 		"template": "Docs/templates/minami"
