@@ -10,7 +10,7 @@
  * @property {string} placement -Place popover on the button's top, bottom, left, or right.
  * @property {string} style -Set a CSS style. 
  * @property {string} textcolor -Set the text color. 
- * 
+ * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/PopoverDemo.html} of button types.
  */
 class CustomPopover extends HTMLElement {
     /**

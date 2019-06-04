@@ -1,9 +1,19 @@
 'use strict';
 
-/** Class for Custom Slider component */
+/** 
+ * @description Slider Web Component
+ * @example <custom-slider min=0 max=100 value=50 showinput size="M" ></custom-slider>
+ * @property {boolean} disabled  Disables the slider, graying out the bar and preventing value change.
+ * @property {string} size S, M, or L options allow size customization.
+ * @property {number} max Sets the maximum value of the slider.
+ * @property {number} min Sets the minimum value of the slider.
+ * @property {boolean} showInput Enables a text box containing the current value of the slider.
+ * @property {number} value Sets the initial value of the slider.
+ * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/SliderDemo.html} of slider attributes.
+ */
 class CustomSlider extends HTMLElement {
   /** 
-   * Constructor of the class 
+   * @hideconstructor
    */
   constructor() {
     super();
@@ -228,7 +238,7 @@ class CustomSlider extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /** Element attached on DOM */
+  // Element attached on DOM
   connectedCallback() {
 
   }
