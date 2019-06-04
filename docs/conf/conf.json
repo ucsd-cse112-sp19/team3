@@ -19,14 +19,12 @@
 		"cleverLinks": false,
 		"monospaceLinks": false,
 		"useLongnameInNav": false,
-		"showInheritedInNav": true,
-		"sort": false
+		"showInheritedInNav": true
 	},
 	"opts": {
 		"destination": "docs/",
 		"encoding": "utf8",
 		"recurse": true,
-		"template": "docs/templates/minami",
-		"sort": false
+		"template": "docs/templates/minami"
 	}
 }
