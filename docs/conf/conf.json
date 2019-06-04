@@ -11,8 +11,9 @@
 		"exclude": [],
 		"includePattern": ".+\\.js(doc)?$",
 		"excludePattern": "(^|\\/|\\\\)_"
-    },
-	"plugins": ["plugins/markdown"],
+	},
+	"plugins": ["plugins/markdown",
+				"plugins/shout"],
 	"templates": {
 		"cleverLinks": false,
 		"monospaceLinks": false,
@@ -25,6 +26,7 @@
 		"encoding": "utf8",
 		"recurse": true,
 		"template": "docs/templates/minami",
-        "sort": false
+		"sort": false,
+		"tutorial": "Components/"
 	}
 }

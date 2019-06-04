@@ -3,30 +3,38 @@
 
 /** 
  * @class CustomButton
- * @summary this is summary tag
- * @description this is description tag
+ * @summary create a new CustomButton component with designated styles
+ * ### Usage ###
+ * ```
+ * <custom-button property="value"> Button Text </custom-button>
+ * ```
+ * @property {string} style - this is example
+ * @property {string} text-color - this is example
+ * @property {string} background-color - this is example
+ * @property {string} border-color - this is example
+ * @property {string} font - this is example
+ * @property {string} width - this is example
+ * @property {string} height - this is example
+ * @property {string} hover-text-color - this is example
+ * @property {string} hover-background-color - this is example
+ * @property {string} hover-border-color - this is example
+ * @property {string} active-text-color - this is example
+ * @property {string} active-background-color - this is example
+ * @property {string} active-border-color - this is example
+ * @property {string} rounded - this is example
+ * @property {string} circle - this is example
+ * @property {string} disabled - this is example
+ * @property {string} href - this is example
+ * @property {string} theme - this is example
+ * 
+ * @example <custom-button text-color="hotpink" hover-text-color="red" active-text-color="red">Click Me</custom-button> 
  * @example <custom-button text-color="hotpink" hover-text-color="red" active-text-color="red">Click Me</custom-button>
- * @property {string} "style" - this is example
- * @property {string} 'text-color' - this is example
- * @property {string} 'background-color' - this is example
- * @property {string} 'border-color' - this is example
- * @property {string} 'font' - this is example
- * @property {string} 'width' - this is example
- * @property {string} 'height' - this is example
- * @property {string} 'hover-text-color' - this is example
- * @property {string} 'hover-background-color' - this is example
- * @property {string} 'hover-border-color' - this is example
- * @property {string} 'active-text-color' - this is example
- * @property {string} 'active-background-color' - this is example
- * @property {string} 'active-border-color' - this is example
- * @property {string} 'rounded' - this is example
- * @property {string} 'circle' - this is example
- * @property {string} 'disabled' - this is example
- * @property {string} 'href' - this is example
- * @property {string} 'theme' - this is example
+ * @example <custom-button text-color="hotpink" hover-text-color="red" active-text-color="red">Click Me</custom-button>
+ *
+ * @todo fix the property table
  */
 class CustomButton extends HTMLElement {
-  
+
     constructor() {
       super()
 
@@ -49,7 +57,7 @@ class CustomButton extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /**
+  /*
    * List of attributes supported by the component.
    * Component listens for changes to these attributes
    * and handles it using attributeChangedCallback().
@@ -202,12 +210,12 @@ class CustomButton extends HTMLElement {
     this.setAttribute('theme', val);
   }
   
-  /**
-  * Updates the style by taking user attributes, including 'style' and our own
-  * API of special attributes, and passing them to the CSS for the button.
-  * If the user styles an attribute (e.g. font color) using both direct CSS
-  * and our custom attribute (text-color), it prioritizes custom attributes.
-  */
+  /*
+   * Updates the style by taking user attributes, including 'style' and our own
+   * API of special attributes, and passing them to the CSS for the button.
+   * If the user styles an attribute (e.g. font color) using both direct CSS
+   * and our custom attribute (text-color), it prioritizes custom attributes.
+   */
   updateStyle() {
     console.log('Updating custom-button styles');
 
