@@ -4,9 +4,29 @@
   /* a global value to keep track of which tab is currently selected*/
   let selected_ = null;
 
-  /** Class for SpecsTab component */
+  /** 
+   * @class SpecsTab
+   * 
+   * @summary Create a new SpecsTab component with designated styles.
+   * 
+   * *See [SpecsTab Demo]{@link https://ucsd-cse112.github.io/team3/demopages/SpecsTab.html} for all listing examples.*
+   * 
+   * ### Usage
+   * ```
+   * <specs-tab background>
+   *     <button slot="title" selected>Who are we?</button>
+   *     <button slot="title">What did we do?</button>
+   *     <button slot="title">How easy was it?</button>
+   *
+   *     <!-- Any tag can be used here for text, just need to be in-order -->
+   *     <section>Team SPECS!</section>
+   *     <section>Create a tab web component!</section>
+   *     <section>Not at all it was actually extraordinarily difficult!</section>
+   * </specs-tab>
+   * ```
+   */
   class SpecsTab extends HTMLElement {
-  /** Constructor of the class */
+
     constructor() {
       super();
 
@@ -80,7 +100,7 @@
         `;
     }
 
-    /**
+    /*
      * A getter of which index of tab we select.
      * @return {int} The selected index of tabs.
      */
@@ -88,7 +108,7 @@
       return selected_;
     }
 
-    /**
+    /*
      * A setter of what we select
      * @param{int} index of tabs we select
      */
@@ -98,9 +118,7 @@
       this.setAttribute('selected', index);
     }
 
-    /**
-     * Callback after we successfully connect the component
-     */
+    //Callback after we successfully connect the component
     connectedCallback() {
       // Automatically differentiate tab and panel
       this.setAttribute('role', 'tablist');
@@ -131,7 +149,7 @@
       this.selected = this._findFirstSelectedTab() || 0;
     }
 
-    /**
+    /*
      * A listener that gets invoked when we click title
      * @param{e} e is passed in in case of an exception
      */
@@ -143,7 +161,7 @@
       }
     }
 
-    /**
+    /*
      * A getter of what we select.
      * @return{int} selectedIdx
      */
@@ -161,7 +179,7 @@
       return selectedIdx;
     }
 
-    /**
+    /*
      * A listener that keeps track of which tab is currently selected
      * @param{int} idx of tabs we select
      */

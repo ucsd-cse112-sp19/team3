@@ -1,51 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Slider/Slider.js - Documentation</title>
-
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-<body>
-
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
-
-<label for="nav-trigger" class="overlay"></label>
-
-<nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_findFirstSelectedTab">_findFirstSelectedTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_onTitleClick">_onTitleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_selectTab">_selectTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#connectedCallback">connectedCallback</a></span></li>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">Slider/Slider.js</h1>
-    
-
-    
+'use strict';
 
 
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>'use strict';
-
-/** Class for Custom Slider component */
+/** 
+ * @class CustomSlider
+ * 
+ * @summary Create a new CustomSlider component with designated styles.
+ * 
+ * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomSlider.html} for all listing examples.*
+ * 
+ * ### Usage
+ * ```
+ * <custom-slider property="value"></custom-slider>
+ * ```
+ * @property {boolean} disabled - Disables the slider, graying out the bar and preventing value change.
+ * @property {string} size - S, M, or L options allow size customization.
+ * @property {number} max - Sets the maximum value of the slider.
+ * @property {number} min - Sets the minimum value of the slider.
+ * @property {boolean} showInput - Enables a text box containing the current value of the slider.
+ * @property {number} value - Sets the initial value of the slider.
+ * 
+ * @example <custom-slider min="5" max="105" value="50"></custom-slider>
+ * @example <custom-slider min="5" max="105" value="50" disabled></custom-slider>
+ * @example <custom-slider min="5" max="105" value="50" size="L" showinput></custom-slider>
+ *
+ * @todo fix the property table
+ * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/SliderDemo.html} of slider attributes.
+ */  
 class CustomSlider extends HTMLElement {
-  /** 
-   * Constructor of the class 
-   */
+  
   constructor() {
     super();
 
@@ -55,7 +37,7 @@ class CustomSlider extends HTMLElement {
     const templateContent = CustomSlider.template.content;
 
     // Import CSS
-    const importStyle = `&lt;style>
+    const importStyle = `<style>
       .small-input {
         text-align: center;
         width: 20px;
@@ -196,7 +178,7 @@ class CustomSlider extends HTMLElement {
     }
     
     
-    &lt;/style>`;
+    </style>`;
 
     // Attributes
     let value = 0;
@@ -242,7 +224,7 @@ class CustomSlider extends HTMLElement {
 
     // indicate whether need to show input box
     if (this.hasAttribute('showInput')) {
-      showInput = `&lt;br/>&lt;input type="number" name="amountInput" min=`
+      showInput = `<br/><input type="number" name="amountInput" min=`
       + min + ` max=`
       + max +
       `  value=` + value + ` class=` + inputClass +
@@ -251,15 +233,15 @@ class CustomSlider extends HTMLElement {
     }
 
     const inputStr = importStyle +
-      `&lt;div class="slidecontainer">`+
-          `&lt;form>
-              &lt;input type="range" name="amountRange" min=` + min + ` max=`
+      `<div class="slidecontainer">`+
+          `<form>
+              <input type="range" name="amountRange" min=` + min + ` max=`
               + max +
               `  value=` + value +
               ` oninput="this.form.amountInput.value=this.value" `
               + disabled + `/>` + showInput + `      
-          &lt;/form>
-      &lt;/div>`;
+          </form>
+      </div>`;
 
     console.log(inputStr);
 
@@ -268,8 +250,8 @@ class CustomSlider extends HTMLElement {
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
-
-  /** Element attached on DOM */
+  
+  // Element attached on DOM
   connectedCallback() {
 
   }
@@ -277,22 +259,3 @@ class CustomSlider extends HTMLElement {
 
 CustomSlider.template = document.createElement('CustomSlider_template');
 customElements.define('custom-slider', CustomSlider);
-</code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<br class="clear">
-
-<footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Mon Jun 03 2019 22:53:00 GMT-0700 (Pacific Daylight Time) using the Minami theme.
-</footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
-</body>
-</html>

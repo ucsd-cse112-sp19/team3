@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_findFirstSelectedTab">_findFirstSelectedTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_onTitleClick">_onTitleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_selectTab">_selectTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#connectedCallback">connectedCallback</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li>
 </nav>
 
 <div id="main">
@@ -45,9 +45,29 @@
   /* a global value to keep track of which tab is currently selected*/
   let selected_ = null;
 
-  /** Class for SpecsTab component */
+  /** 
+   * @class SpecsTab
+   * 
+   * @summary Create a new SpecsTab component with designated styles.
+   * 
+   * *See [SpecsTab Demo]{@link https://ucsd-cse112.github.io/team3/demopages/SpecsTab.html} for all listing examples.*
+   * 
+   * ### Usage
+   * ```
+   * &lt;specs-tab background>
+   *     &lt;button slot="title" selected>Who are we?&lt;/button>
+   *     &lt;button slot="title">What did we do?&lt;/button>
+   *     &lt;button slot="title">How easy was it?&lt;/button>
+   *
+   *     &lt;!-- Any tag can be used here for text, just need to be in-order -->
+   *     &lt;section>Team SPECS!&lt;/section>
+   *     &lt;section>Create a tab web component!&lt;/section>
+   *     &lt;section>Not at all it was actually extraordinarily difficult!&lt;/section>
+   * &lt;/specs-tab>
+   * ```
+   */
   class SpecsTab extends HTMLElement {
-  /** Constructor of the class */
+
     constructor() {
       super();
 
@@ -121,7 +141,7 @@
         `;
     }
 
-    /**
+    /*
      * A getter of which index of tab we select.
      * @return {int} The selected index of tabs.
      */
@@ -129,7 +149,7 @@
       return selected_;
     }
 
-    /**
+    /*
      * A setter of what we select
      * @param{int} index of tabs we select
      */
@@ -139,9 +159,7 @@
       this.setAttribute('selected', index);
     }
 
-    /**
-     * Callback after we successfully connect the component
-     */
+    //Callback after we successfully connect the component
     connectedCallback() {
       // Automatically differentiate tab and panel
       this.setAttribute('role', 'tablist');
@@ -172,7 +190,7 @@
       this.selected = this._findFirstSelectedTab() || 0;
     }
 
-    /**
+    /*
      * A listener that gets invoked when we click title
      * @param{e} e is passed in in case of an exception
      */
@@ -184,7 +202,7 @@
       }
     }
 
-    /**
+    /*
      * A getter of what we select.
      * @return{int} selectedIdx
      */
@@ -202,7 +220,7 @@
       return selectedIdx;
     }
 
-    /**
+    /*
      * A listener that keeps track of which tab is currently selected
      * @param{int} idx of tabs we select
      */
@@ -231,7 +249,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Mon Jun 03 2019 22:53:00 GMT-0700 (Pacific Daylight Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 08:40:49 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

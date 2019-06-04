@@ -4,15 +4,18 @@
 		"dictionaries": ["jsdoc","closure"]
 	},
 	"source": {
-		"include": ["Components/CustomButton/",
-					"Components/SpecsTab/",
-					"Components/Slider/",
-                    "Components/CustomPopover"],
+		"include": ["README.md",
+								"Components/CoreHello/",
+								"Components/CustomButton",
+								"Components/CustomSlider",
+								"Components/CustomPopover",
+								"Components/SpecsTab"],
 		"exclude": [],
 		"includePattern": ".+\\.js(doc)?$",
 		"excludePattern": "(^|\\/|\\\\)_"
     },
-	"plugins": ["plugins/markdown"],
+	"plugins": ["plugins/markdown",
+							"plugins/shout"],
 	"templates": {
 		"cleverLinks": false,
 		"monospaceLinks": false,

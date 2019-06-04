@@ -1,8 +1,34 @@
 'use strict'
 
-/** Class for Custom Popover component */
+
+/** 
+ * @class CustomPopover
+ * 
+ * @summary Create a new CustomPopover component with designated styles.
+ * 
+ * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomPopover.html} for all listing examples.*
+ * 
+ * ### Usage
+ * ```
+ * <custom-popover property="value"> Popover Body Text </custom-popover>
+ * ```
+ * 
+ * @property {string} anchor - Name of the button to which the popover is anchored.
+ * @property {string} color - Set the background color. 
+ * @property {string} font - Set the font type.
+ * @property {string} header-text - Set the text content.
+ * @property {string} placement - Place popover on the button's top, bottom, left, or right.
+ * @property {string} style - Set a CSS style. 
+ * @property {string} textcolor - Set the text color. 
+ * 
+ * @example <custom-button id='defaultBtn'><custom-popover anchor='defaultBtn'>Popover Body Text</custom-popover>Click Me</custom-button>
+ * @example <custom-button id='topBtn'><custom-popover anchor='topBtn' placement='top'>Popover Body Text</custom-popover>Click Me</custom-button>
+ * @example <custom-button class="btn-warning" id='btnWarning'><custom-popover class='btn-warning' anchor='btnWarning' placement='top'>Popover Body Text</custom-popover>Warning</custom-button>
+ * 
+ * @todo fix the property table
+ */
 class CustomPopover extends HTMLElement {
-    /** Constructor of the class */
+    
     constructor() {
         super()
 
@@ -24,9 +50,11 @@ class CustomPopover extends HTMLElement {
         shadowRoot.appendChild(templateContent.cloneNode(true))
     }
 
-    /* List of attributes supported by the component.
+    /* 
+     * List of attributes supported by the component.
      * Component listens for changes to these attributes
-     * and handles it using attributeChangedCallback(). */
+     * and handles it using attributeChangedCallback().
+     */
     static get observedAttributes() {
         return [
             'style',

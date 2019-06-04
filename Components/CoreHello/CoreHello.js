@@ -1,8 +1,27 @@
 'use strict';
 
-/** Class for Core Hello component */
+
+/** 
+ * @class CoreHello
+ * 
+ * @summary class of CoreHello component, a starter of customized web components
+ * 
+ * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CoreHello.html} for all listing examples.*
+ * 
+ * ### Usage
+ * ```
+ * <core-hello property="value"> YourName </core-hello>
+ * ```
+ * 
+ * @property {string} lang - display language, options: `jp, es, fr`
+ * @property {boolean} rainbow - enable rainbow
+ * 
+ * @example <core-hello lang="es" rainbow> Peter </core-hello>
+ * 
+ * @todo fix the property table
+ */
 class CoreHello extends HTMLElement {
-  /** Constructor of the class */
+
   constructor() {
     super();
 
@@ -99,7 +118,7 @@ class CoreHello extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /** Element attached on DOM */
+  /* Element attached on DOM */
   connectedCallback() {
     // code
   }

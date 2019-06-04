@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_findFirstSelectedTab">_findFirstSelectedTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_onTitleClick">_onTitleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#_selectTab">_selectTab</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SpecsTab.html#connectedCallback">connectedCallback</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li>
 </nav>
 
 <div id="main">
@@ -42,12 +42,46 @@
             <pre class="prettyprint source linenums"><code>'use strict';
 
 
-/** Class for Custom Button component */
+/** 
+ * @class CustomButton
+ * 
+ * @summary Create a new CustomButton component with designated styles.
+ * 
+ * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomButton.html} for all listing examples.*
+ *
+ * ### Usage
+ * ```
+ * &lt;custom-button property="value"> Button Text &lt;/custom-button>
+ * ```
+ * @property {string} style - this is example
+ * @property {string} text-color - this is example
+ * @property {string} background-color - this is example
+ * @property {string} border-color - this is example
+ * @property {string} font - this is example
+ * @property {string} width - this is example
+ * @property {string} height - this is example
+ * @property {string} hover-text-color - this is example
+ * @property {string} hover-background-color - this is example
+ * @property {string} hover-border-color - this is example
+ * @property {string} active-text-color - this is example
+ * @property {string} active-background-color - this is example
+ * @property {string} active-border-color - this is example
+ * @property {string} rounded - this is example
+ * @property {string} circle - this is example
+ * @property {string} disabled - this is example
+ * @property {string} href - this is example
+ * @property {string} theme - this is example
+ * 
+ * @example &lt;custom-button onclick="alert('Hello world!')">Button&lt;/custom-button>
+ * @example &lt;custom-button rounded>Click Me&lt;/custom-button>
+ * @example &lt;custom-button theme="pink-lemonade" active-background-color="#ff34b3">Click Me&lt;/custom-button>
+ *
+ * @todo fix the property table
+ */
 class CustomButton extends HTMLElement {
-    /** Constructor of the class */
-    constructor() {
-        super()
 
+  constructor() {
+    super();
 
     // Create shadow DOM and attach template content
     const shadowRoot = this.attachShadow({mode: 'open'});
@@ -68,7 +102,7 @@ class CustomButton extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /**
+  /*
    * List of attributes supported by the component.
    * Component listens for changes to these attributes
    * and handles it using attributeChangedCallback().
@@ -221,12 +255,12 @@ class CustomButton extends HTMLElement {
     this.setAttribute('theme', val);
   }
   
-  /**
-  * Updates the style by taking user attributes, including 'style' and our own
-  * API of special attributes, and passing them to the CSS for the button.
-  * If the user styles an attribute (e.g. font color) using both direct CSS
-  * and our custom attribute (text-color), it prioritizes custom attributes.
-  */
+  /*
+   * Updates the style by taking user attributes, including 'style' and our own
+   * API of special attributes, and passing them to the CSS for the button.
+   * If the user styles an attribute (e.g. font color) using both direct CSS
+   * and our custom attribute (text-color), it prioritizes custom attributes.
+   */
   updateStyle() {
     console.log('Updating custom-button styles');
 
@@ -444,7 +478,7 @@ customElements.define('custom-button', CustomButton);
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Mon Jun 03 2019 22:53:00 GMT-0700 (Pacific Daylight Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 08:40:49 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
