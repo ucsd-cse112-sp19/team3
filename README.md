@@ -41,14 +41,50 @@ npm run csslint
 npm run eslint
 ```
 
+<<<<<<< HEAD
 ##### How to Run Automatic Linting Fix
 ```
 npm run csslint_fix
 npm run eslint_fix
 ```
 > *Note that some errors cannot be fixed automatically.
+=======
+>>>>>>> 8885b79dac83d561d472812fa6a96a08e460b3bc
 
+## Setup
+To setup after cloning the repo:
+```
+npm install
+```
 
+## Run linting tests
+```
+npm run htmlhint
+npm run csslint
+npm run eslint
+```
+
+## Run automatic linting fix
+\*Note that some errors cannot be fixed automatically
+```
+npm run csslint_fix
+npm run eslint_fix
+```
+
+## Run test cases
+```
+npm run test
+```
+
+## To start fresh again
+```
+# USE WITH CAUTION
+rm -rf ./node_modules
+git checkout -- .
+git clean -dfx
+```
+
+<<<<<<< HEAD
 ## Credit
 
 Acknowledgement to all team members who have contributed to this project. 
@@ -67,3 +103,6 @@ Acknowledgement to all team members who have contributed to this project.
 | Tools & Utility   | Vince Li      |
 | Quality Assurance | Yootak Jin    |
 > Name is sorted in alphabetic order within each category of team roles.
+=======
+[Documentation](https://ucsd-cse112.github.io/team3/)
+>>>>>>> 8885b79dac83d561d472812fa6a96a08e460b3bc

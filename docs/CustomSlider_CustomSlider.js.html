@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Slider/Slider.js - Documentation</title>
+    <title>CustomSlider/CustomSlider.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -24,16 +24,12 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-<<<<<<< HEAD
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li>
-=======
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li>
->>>>>>> 8885b79dac83d561d472812fa6a96a08e460b3bc
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">Slider/Slider.js</h1>
+    <h1 class="page-title">CustomSlider/CustomSlider.js</h1>
     
 
     
@@ -45,30 +41,21 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-
 /** 
- * @class CustomSlider
- * 
- * @summary create a new CustomSlider component with designated styles
- * ### Usage
- * ```
- * &lt;custom-slider property="value">&lt;/custom-slider>
- * ```
- * @property {string} value - this is example
- * @property {string} min-color - this is example
- * @property {string} max-color - this is example
- * @property {boolean} disabled-color - this is example
- * @property {boolean} showInput - this is example
- * @property {string} size - this is example
- * 
- * @example &lt;custom-slider min="5" max="105" value="50">&lt;/custom-slider>
- * @example &lt;custom-slider min="5" max="105" value="50" disabled>&lt;/custom-slider>
- * @example &lt;custom-slider min="5" max="105" value="50" size="L" showinput>&lt;/custom-slider>
- *
- * @todo fix the property table
+ * @description Slider Web Component
+ * @example &lt;custom-slider min=0 max=100 value=50 showinput size="M" >&lt;/custom-slider>
+ * @property {boolean} disabled  Disables the slider, graying out the bar and preventing value change.
+ * @property {string} size S, M, or L options allow size customization.
+ * @property {number} max Sets the maximum value of the slider.
+ * @property {number} min Sets the minimum value of the slider.
+ * @property {boolean} showInput Enables a text box containing the current value of the slider.
+ * @property {number} value Sets the initial value of the slider.
+ * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/SliderDemo.html} of slider attributes.
  */
 class CustomSlider extends HTMLElement {
-  
+  /** 
+   * @hideconstructor
+   */
   constructor() {
     super();
 
@@ -292,7 +279,7 @@ class CustomSlider extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /* Element attached on DOM */
+  // Element attached on DOM
   connectedCallback() {
 
   }
@@ -312,11 +299,7 @@ customElements.define('custom-slider', CustomSlider);
 <br class="clear">
 
 <footer>
-<<<<<<< HEAD
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 07:15:43 GMT-0700 (PDT) using the Minami theme.
-=======
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 04:31:55 GMT-0700 (Pacific Daylight Time) using the Minami theme.
->>>>>>> 8885b79dac83d561d472812fa6a96a08e460b3bc
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 06:42:19 GMT-0700 (Pacific Daylight Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

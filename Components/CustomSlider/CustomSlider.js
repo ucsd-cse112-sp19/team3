@@ -1,5 +1,6 @@
 'use strict';
 
+<<<<<<< HEAD:Components/Slider/Slider.js
 
 /** 
  * @class CustomSlider
@@ -9,19 +10,20 @@
  * ```
  * <custom-slider property="value"></custom-slider>
  * ```
- * @property {string} value - this is example
- * @property {string} min-color - this is example
- * @property {string} max-color - this is example
- * @property {boolean} disabled-color - this is example
- * @property {boolean} showInput - this is example
- * @property {string} size - this is example
+ * @property {boolean} disabled - Disables the slider, graying out the bar and preventing value change.
+ * @property {string} size - S, M, or L options allow size customization.
+ * @property {number} max - Sets the maximum value of the slider.
+ * @property {number} min - Sets the minimum value of the slider.
+ * @property {boolean} showInput - Enables a text box containing the current value of the slider.
+ * @property {number} value - Sets the initial value of the slider.
  * 
  * @example <custom-slider min="5" max="105" value="50"></custom-slider>
  * @example <custom-slider min="5" max="105" value="50" disabled></custom-slider>
  * @example <custom-slider min="5" max="105" value="50" size="L" showinput></custom-slider>
  *
  * @todo fix the property table
- */
+ * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/SliderDemo.html} of slider attributes.
+ */  
 class CustomSlider extends HTMLElement {
   
   constructor() {
@@ -246,8 +248,8 @@ class CustomSlider extends HTMLElement {
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
-
-  /* Element attached on DOM */
+  
+  // Element attached on DOM
   connectedCallback() {
 
   }

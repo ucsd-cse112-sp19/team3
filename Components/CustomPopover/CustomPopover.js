@@ -23,6 +23,7 @@
  * @example <custom-button class="btn-warning" id='btnWarning'><custom-popover class='btn-warning' anchor='btnWarning' placement='top'>Popover Body Text</custom-popover>Warning</custom-button>
  * 
  * @todo fix the property table
+ * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/PopoverDemo.html} of button types.
  */
 class CustomPopover extends HTMLElement {
     
