@@ -1,12 +1,34 @@
 'use strict';
 
 
-/** Class for Custom Button component */
+/** 
+ * @class CustomButton
+ * @summary this is summary tag
+ * @description this is description tag
+ * @example <custom-button text-color="hotpink" hover-text-color="red" active-text-color="red">Click Me</custom-button>
+ * @property {string} "style" - this is example
+ * @property {string} 'text-color' - this is example
+ * @property {string} 'background-color' - this is example
+ * @property {string} 'border-color' - this is example
+ * @property {string} 'font' - this is example
+ * @property {string} 'width' - this is example
+ * @property {string} 'height' - this is example
+ * @property {string} 'hover-text-color' - this is example
+ * @property {string} 'hover-background-color' - this is example
+ * @property {string} 'hover-border-color' - this is example
+ * @property {string} 'active-text-color' - this is example
+ * @property {string} 'active-background-color' - this is example
+ * @property {string} 'active-border-color' - this is example
+ * @property {string} 'rounded' - this is example
+ * @property {string} 'circle' - this is example
+ * @property {string} 'disabled' - this is example
+ * @property {string} 'href' - this is example
+ * @property {string} 'theme' - this is example
+ */
 class CustomButton extends HTMLElement {
-    /** Constructor of the class */
+  
     constructor() {
-        super()
-
+      super()
 
     // Create shadow DOM and attach template content
     const shadowRoot = this.attachShadow({mode: 'open'});
