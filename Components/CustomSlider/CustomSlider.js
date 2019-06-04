@@ -1,6 +1,5 @@
 'use strict';
 
-<<<<<<< HEAD:Components/Slider/Slider.js
 
 /** 
  * @class CustomSlider

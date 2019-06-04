@@ -5,23 +5,17 @@
 	},
 	"source": {
 		"include": ["README.md",
-<<<<<<< HEAD
-					"Components/CoreHello",
-					"Components/CustomButton/",
-					"Components/SpecsTab/",
-					"Components/Slider/",
-					"Components/CustomPopover"],
-=======
-                    "Components/CustomButton/",
-					"Components/CustomSlider/",
-                    "Components/CustomPopover"],
->>>>>>> 8885b79dac83d561d472812fa6a96a08e460b3bc
+								"Components/CoreHello/",
+								"Components/CustomButton",
+								"Components/CustomSlider",
+								"Components/CustomPopover",
+								"Components/SpecsTab"],
 		"exclude": [],
 		"includePattern": ".+\\.js(doc)?$",
 		"excludePattern": "(^|\\/|\\\\)_"
-	},
+    },
 	"plugins": ["plugins/markdown",
-				"plugins/shout"],
+							"plugins/shout"],
 	"templates": {
 		"cleverLinks": false,
 		"monospaceLinks": false,
