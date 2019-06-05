@@ -29,7 +29,10 @@ describe('CustomButton', function() {
     it('Testing rounded shape of the button', async() => {
       await showroom.setAttribute('rounded', 1)
       const shape = await showroom.getAttribute('rounded')
-      assert.deepEqual(shape, '1')
+      const style = await showroom.find('//style', component)
+      var style_text_content = await showroom.getTextContent(style)
+      var result = style_text_content.includes("border-radius: 100px;")    //test whether it added "border-radius: 100px;" to the 'style in shawdow, if yes, return true
+      assert.deepEqual(result.toString(), 'true')
     });
 
     it('Testing circle shape of the button', async() => {
@@ -57,8 +60,6 @@ describe('CustomButton', function() {
 
   describe('Font of the button', async() => {
     it('Testing font style of the button', async() => {
-      //const color = await showroom.getAttribute('background-color')
-      //console.log(color)
       await showroom.setAttribute('font', 'Comic Sans MS')
       const font = await showroom.getProperty('font')
       assert.deepEqual(font, 'Comic Sans MS')
@@ -75,6 +76,8 @@ describe('CustomButton', function() {
     it('Testing the href', async() => {
       await showroom.setAttribute('href', 'https://stackoverflow.com')
       const get_href = await showroom.getAttribute('href')
+      const test = await showroom.getProperty('href')
+      console.log(test)
       assert.deepEqual(get_href, 'https://stackoverflow.com')
     });
 
