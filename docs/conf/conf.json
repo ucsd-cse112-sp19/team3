@@ -1,0 +1,31 @@
+{
+	"tags": {
+		"allowUnknownTags": true,
+		"dictionaries": ["jsdoc","closure"]
+	},
+	"source": {
+		"include": ["README.md",
+								"Components/CoreHello/",
+								"Components/CustomButton",
+								"Components/CustomSlider",
+								"Components/CustomPopover",
+								"Components/SpecsTab"],
+		"exclude": [],
+		"includePattern": ".+\\.js(doc)?$",
+		"excludePattern": "(^|\\/|\\\\)_"
+    },
+	"plugins": ["plugins/markdown",
+							"plugins/shout"],
+	"templates": {
+		"cleverLinks": false,
+		"monospaceLinks": false,
+		"useLongnameInNav": false,
+		"showInheritedInNav": true
+	},
+	"opts": {
+		"destination": "docs/",
+		"encoding": "utf8",
+		"recurse": true,
+		"template": "docs/templates/minami"
+	}
+}

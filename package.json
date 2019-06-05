@@ -4,7 +4,7 @@
   "description": "![SPECS](https://github.com/ucsd-cse112/team3/blob/master/logo.png)",
   "main": "index.js",
   "scripts": {
-    "generate-docs": "node_modules/.bin/jsdoc --configure Docs/conf/conf.json --verbose",
+    "generate-docs": "node_modules/.bin/jsdoc --configure docs/conf/conf.json --verbose",
     "htmlhint": "htmlhint --config .htmlhintrc --ignore **/docs/** **/\\*.html",
     "csslint": "stylelint --config .csslintrc --ignore-pattern=docs **/\\*.css **/\\*.html",
     "csslint_fix": "stylelint --config .csslintrc **/\\*.css --ignore-pattern=docs **/\\*.html --fix",
@@ -53,6 +53,7 @@
     "stylelint": "^10.0.1"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "ink-docstrap": "^1.3.2"
   }
 }

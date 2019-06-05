@@ -50,45 +50,42 @@ describe('CoreHello', function() {
     });
   });
 
-  describe('Internationalization', function() {
-    it('should be able to display Japanese', function() {
-      return showroom.setProperty('innerHTML', `おはよう`)
-          .then(function() {
-            return showroom.getTextContent(component);
-          })
-          .then(function(text) {
-            assert.equal(text, 'おはよう');
-          });
+  describe('Internationalization', async() => {
+    it('should be able to display Japanese', async() => {
+      await showroom.setAttribute('lang', 'jp')
+      const style = await showroom.find('//div', component)
+      var text = await showroom.getTextContent(style)
+      assert.deepEqual(text, 'Kon\'nichiwa seka ')
     });
 
-    it('should be able to display Korean', function() {
-      return showroom.setProperty('innerHTML', `여보세요`)
-          .then(function() {
-            return showroom.getTextContent(component);
-          })
-          .then(function(text) {
-            assert.equal(text, '여보세요');
-          });
+    it('should be able to display English', async() => {
+      await showroom.setAttribute('lang', '')
+      const style = await showroom.find('//div', component)
+      var text = await showroom.getTextContent(style)
+      assert.deepEqual(text, 'Hello World ')
     });
 
-    it('should be able to display Spanish', function() {
-      return showroom.setProperty('innerHTML', `Buenos días`)
-          .then(function() {
-            return showroom.getTextContent(component);
-          })
-          .then(function(text) {
-            assert.equal(text, 'Buenos días');
-          });
+    it('should be able to display French', async() => {
+      await showroom.setAttribute('lang', 'fr')
+      const style = await showroom.find('//div', component)
+      var text = await showroom.getTextContent(style)
+      assert.deepEqual(text, 'Bonjour le monde ')
     });
 
-    it('should be able to display French', function() {
-      return showroom.setProperty('innerHTML', `Ça va`)
-          .then(function() {
-            return showroom.getTextContent(component);
-          })
-          .then(function(text) {
-            assert.equal(text, 'Ça va');
-          });
+    it('should be able to display Spanish', async() => {
+      await showroom.setAttribute('lang', 'es')
+      const style = await showroom.find('//div', component)
+      var text = await showroom.getTextContent(style)
+      assert.deepEqual(text, 'Hola Mundo ')
+    });
+  });
+  describe('Rainbow', async() => {
+    it('Test the rainbow funtionality', async() => {
+      await showroom.setAttribute('rainbow', '1')
+      const style = await showroom.find('//style', component)
+      var text = await showroom.getTextContent(style)
+      var result = text.includes("@keyframes rainbow {")
+      assert.deepEqual(result.toString(), 'true')
     });
   });
 });
