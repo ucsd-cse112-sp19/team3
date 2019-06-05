@@ -82,8 +82,6 @@ describe('CustomButton', function() {
     it('Testing the href', async() => {
       await showroom.setAttribute('href', 'https://stackoverflow.com')
       const get_href = await showroom.getAttribute('href')
-      const test = await showroom.getProperty('href')
-      console.log(test)
       assert.deepEqual(get_href, 'https://stackoverflow.com')
     });
 
