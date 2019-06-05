@@ -2,3 +2,4 @@
 
 require('./CoreHello');
 require('./Button');
+require('./Popover');
