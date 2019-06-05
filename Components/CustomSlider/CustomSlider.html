@@ -1,23 +1,31 @@
 <!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CustomSlider Example</title>
+</head>
+<body>
+  <script src="./CustomSlider.js"></script>
+  <script>
+    // eslint-disable-next-line
+    function changed(value) {
+      console.log('new value: ', value);
+    }
+  </script>
+  <h1> Default value of 0 within range from 0 to 100 </h1>
+  <custom-slider></custom-slider>
 
-<h1> Default value of 0 within range from 0 to 100 </h1>
-<custom-slider></custom-slider>
+  <h1> Value of 50 within range from 5 to 105 </h1>
+  <custom-slider min="5" max="105" value="50"></custom-slider>
 
-<h1> Value of 50 within range from 5 to 105 </h1>
-<custom-slider min="5" max="105" value="50"></custom-slider>
+  <h1> Have the slider disabled </h1>
+  <custom-slider min="5" max="105" value="50" disabled></custom-slider>
 
-<h1> Have the slider disabled </h1>
-<custom-slider min="5" max="105" value="50" disabled></custom-slider>
+  <h1> Show the Input Box </h1>
+  <custom-slider min="5" max="105" value="50" showinput></custom-slider>
 
-<h1> Show the Input Box </h1>
-<custom-slider min="5" max="105" value="50" showinput></custom-slider>
+  <h1> Add onchange callback </h1>
+  <custom-slider showinput onchange="changed"></custom-slider>
 
-<h1> Change the size of the input box to Large </h1>
-<custom-slider min="5" max="105" value="50" size="L" showinput></custom-slider>
-
-<script src="CustomSlider.js">
-</script>
-
-
-
-
+  <h1> Bootstrap </h1>
+  <custom-slider showinput input-class="form-control" slider-class="form-control-range"></custom-slider>
+</body>
