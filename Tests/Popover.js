@@ -44,5 +44,40 @@ describe('CustomPopover', function(){
       assert.deepEqual(font, 'Courier New')
     });
   });
+
+  describe('placement', async() => {
+    it('Testing the top placement of the popup', async() => {
+      await showroom.setAttribute('placement', 'top')
+      const find = await showroom.find('//style')
+      const text = await showroom.getTextContent(find)
+      const result = text.includes("top: 100%;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the bottom placement of the popup', async() => {
+      await showroom.setAttribute('placement', 'bottom')
+      const find = await showroom.find('//style')
+      const text = await showroom.getTextContent(find)
+      const result = text.includes("bottom: 100%;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the left placement of the popup', async() => {
+      await showroom.setAttribute('placement', 'left')
+      const find = await showroom.find('//style')
+      const text = await showroom.getTextContent(find)
+      const result = text.includes("left: 100%;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the right placement of the popup', async() => {
+      await showroom.setAttribute('placement', 'right')
+      const find = await showroom.find('//style')
+      const text = await showroom.getTextContent(find)
+      const result = text.includes("right: 100%;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+  });
   
 });
