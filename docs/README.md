@@ -8,13 +8,22 @@ jsdoc -c docs/conf/conf.json
 
 ### What to do next
 
+##### 1
+
+copy the entire `/Components` folder, and paste it into `/docs/demopages/`, since gh.pages (our website) only support accessing the files in `/docs` folder.
+```
+cp -r ./Components ./docs/demopages/
+```
+
+##### 2
+
 enable our component script in the generated `.html` pages,
 
 add `<script>` into the body of each specific `.html` page, for example,
 ```
 <script src="../Components/CoreHello/CoreHello.js"></script>
 ```
-> *Note that <script> must be added outside of <div>, it'd be good to add at the end of a </div>
+> *Note that `<script>` must be added outside of `<div>`, it'd be good to add at the end of a `</div>`
 
 then open the generated `CoreHello.html`, search for keyword `"section-examples"`,
 
