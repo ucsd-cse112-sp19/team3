@@ -39,7 +39,6 @@ class CustomSlider extends HTMLElement {
       'value': 0,
       'min': 0,
       'max': 100,
-      'input-class': 'small-input',
       'showinput': true,
     };
   }
@@ -51,7 +50,6 @@ class CustomSlider extends HTMLElement {
     return [
       'min',
       'max',
-      'name',
       'step',
       'value',
     ];
@@ -76,7 +74,6 @@ class CustomSlider extends HTMLElement {
       'slider-class',
       'input-class',
       'showinput',
-      'height',
     ];
   }
 
@@ -126,11 +123,6 @@ class CustomSlider extends HTMLElement {
 
     // Update value
     valueDisplay.innerHTML = slider.value;
-
-    // Update CSS class
-    const defaultInputClass = CustomSlider.defaultAttributes['input-class'];
-    valueDisplay.classList = []; // Clear class list
-    valueDisplay.classList.add(defaultInputClass); // Use default class
 
     // Pass class attribute into the component
     if (this.hasAttribute('slider-class')) {
