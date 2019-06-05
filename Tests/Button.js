@@ -44,13 +44,13 @@ describe('CustomButton', function() {
       //const color = await showroom.getAttribute('background-color')
       //console.log(color)
       await showroom.setAttribute('background-color', 'pink')
-      const background_color = await showroom.getAttribute('background-color')
+      const background_color = await showroom.getProperty('backgroundColor')
       assert.deepEqual(background_color, 'pink')
     });
 
     it('Testing border color of the button', async() => {
       await showroom.setAttribute('border-color', 'black')
-      const border_color = await showroom.getAttribute('border-color')
+      const border_color = await showroom.getProperty('borderColor')
       assert.deepEqual(border_color, 'black')
     });
   });
@@ -60,13 +60,13 @@ describe('CustomButton', function() {
       //const color = await showroom.getAttribute('background-color')
       //console.log(color)
       await showroom.setAttribute('font', 'Comic Sans MS')
-      const font = await showroom.getAttribute('font')
+      const font = await showroom.getProperty('font')
       assert.deepEqual(font, 'Comic Sans MS')
     });
 
     it('Testing text color of the button', async() => {
       await showroom.setAttribute('text-color', 'lime')
-      const text_color = await showroom.getAttribute('text-color')
+      const text_color = await showroom.getProperty('textColor')
       assert.deepEqual(text_color, 'lime')
     });
   });
