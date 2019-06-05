@@ -30,97 +30,133 @@ class CoreHello extends HTMLElement {
     CoreHello.template = document.createElement('template');
     const templateContent = CoreHello.template.content;
 
-    // Set greeting
-    let greeting = 'Hello World';
-    const lang = this.getAttribute('lang');
-    if (lang === 'jp') {
-      greeting = 'Kon\'nichiwa sekai';
-    } else if (lang === 'es') {
-      greeting = 'Hola Mundo';
-    } else if (lang === 'fr') {
-      greeting = 'Bonjour le monde';
-    }
-
-    // Import CSS
-    const importStyle = `<style>.greeting {
-                  font-size: 100px;
-                  font-family: 'Franklin Gothic Medium',
-                  'Arial Narrow', Arial, sans-serif;
-                }
-
-                .rainbow {
-                  animation: rainbow 2.5s linear;
-                  animation-iteration-count: infinite;
-                }
-
-                @keyframes rainbow {
-                  100%,
-                  0% {
-                color: rgb(255, 0, 0);
-                  }
-
-                  8% {
-                color: rgb(255, 127, 0);
-                  }
-
-                  16% {
-                color: rgb(255, 255, 0);
-                  }
-
-                  25% {
-                color: rgb(127, 255, 0);
-                  }
-
-                  33% {
-                color: rgb(0, 255, 0);
-                  }
-
-                  41% {
-                color: rgb(0, 255, 127);
-                  }
-
-                  50% {
-                color: rgb(0, 255, 255);
-                  }
-
-                  58% {
-                color: rgb(0, 127, 255);
-                  }
-
-                  66% {
-                color: rgb(0, 0, 255);
-                  }
-
-                  75% {
-                color: rgb(127, 0, 255);
-                  }
-
-                  83% {
-                color: rgb(255, 0, 255);
-                  }
-
-                  91% {
-                color: rgb(255, 0, 127);
-                  }
-                }</style>`;
-
-    // Set CSS
-    const isRainbow = this.hasAttribute('rainbow');
-    let styling = `<div class="greeting">`;
-    if (isRainbow) {
-      styling = `<div class="rainbow greeting">`;
-    }
-
-    CoreHello.template.innerHTML = importStyle +
-    styling + greeting + ` <slot></slot>`;
-
+    // component skeleton - fleshed out by callback functions
+    // and updateStyle()
+    CoreHello.template.innerHTML = `
+      <style>
+      </style>
+      <div><greeting></greeting><slot></slot></div>`;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
+  static get observedAttributes() {
+    return [
+      'style',
+      'class',
+      'lang',
+      'rainbow'
+    ];
+  }
+
   /* Element attached on DOM */
   connectedCallback() {
-    // code
+    console.log('core-hello rendered in DOM')
+    // Set greeting
+    var greeting = ''
+    switch (this.getAttribute('lang')) {
+      case 'jp':
+        greeting = 'Kon\'nichiwa seka'
+        break
+      case 'es':
+        greeting = 'Hola Mundo'
+        break
+      case 'fr':
+        greeting = 'Bonjour le monde'
+        break
+      default:
+        greeting = 'Hello World'
+    }
+    const shadow = this.shadowRoot
+    shadow.querySelector('greeting').textContent = greeting + ' '
+    this.updateStyle()
+  }
+
+  disconnectedCallback() {
+    console.log('core-hello removed from DOM')
+  }
+
+  attributeChangedCallback(attr, oldValue, newValue) {
+    console.log('core-hello attribute ' + attr + ' changed')
+    this.updateStyle()
+  }
+
+  updateStyle() {
+    console.log('core-hello calling updateStyle()')
+    const shadow = this.shadowRoot;
+
+    const div = shadow.querySelector('div');
+    if (this.hasAttribute('class')) {
+      div.setAttribute('class', this.getAttribute('class'));
+    }
+    shadow.querySelector('style').textContent = `
+      div { /* greeting styles, always included */
+        font-size: 100px;
+        font-family: 'Franklin Gothic Medium',
+        'Arial Narrow', Arial, sans-serif;
+      }
+      .rainbow {
+        animation: rainbow 2.5s linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes rainbow {
+        100%,
+        0% {
+      color: rgb(255, 0, 0);
+        }
+
+        8% {
+      color: rgb(255, 127, 0);
+        }
+
+        16% {
+      color: rgb(255, 255, 0);
+        }
+
+        25% {
+      color: rgb(127, 255, 0);
+        }
+
+        33% {
+      color: rgb(0, 255, 0);
+        }
+
+        41% {
+      color: rgb(0, 255, 127);
+        }
+
+        50% {
+      color: rgb(0, 255, 255);
+        }
+
+        58% {
+      color: rgb(0, 127, 255);
+        }
+
+        66% {
+      color: rgb(0, 0, 255);
+        }
+
+        75% {
+      color: rgb(127, 0, 255);
+        }
+
+        83% {
+      color: rgb(255, 0, 255);
+        }
+
+        91% {
+      color: rgb(255, 0, 127);
+        }
+      }
+    `
+
+    // Set rainbow style
+    if (this.hasAttribute('rainbow')) {
+      div.setAttribute('class', this.getAttribute('class') + ' rainbow')
+    }
+
   }
 }
 
