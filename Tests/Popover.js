@@ -25,5 +25,24 @@ describe('CustomPopover', function(){
         });
   });
 
+  describe('Color and font', async() => {
+    it('Testing the color of the popup', async() => {
+      await showroom.setAttribute('color', 'pink')
+      const color = await showroom.getProperty('color')
+      assert.deepEqual(color, 'pink')
+    });
+
+    it('Testing the color of the popup text', async() => {
+      await showroom.setAttribute('text-color', 'brown')
+      const color = await showroom.getProperty('textColor')
+      assert.deepEqual(color, 'brown')
+    });
+
+    it('Testing the font of the popup', async() => {
+      await showroom.setAttribute('font', 'Courier New')
+      const font = await showroom.getProperty('font')
+      assert.deepEqual(font, 'Courier New')
+    });
+  });
   
 });
