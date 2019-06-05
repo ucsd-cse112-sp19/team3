@@ -38,7 +38,13 @@ describe('CustomButton', function() {
     it('Testing circle shape of the button', async() => {
       await showroom.setAttribute('circle', 1)
       const shape = await showroom.getAttribute('circle')
-      assert.deepEqual(shape, '1')
+      const style = await showroom.find('//style', component)
+      var style_text_content = await showroom.getTextContent(style)
+      var width = style_text_content.includes("width: 70px;")
+      var height = style_text_content.includes("height: 70px;")
+      var border_radius = style_text_content.includes("border-radius: 100%;")
+      var result = (border_radius & width & height).toString()
+      assert.deepEqual(result, '1')
     });
   });
 
