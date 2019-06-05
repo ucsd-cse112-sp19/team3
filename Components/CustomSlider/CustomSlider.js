@@ -15,13 +15,13 @@ class CustomSlider extends HTMLElement {
     CustomSlider.template = document.createElement('template');
     const templateContent = CustomSlider.template.content;
 
-    // <link rel="stylesheet" href="./CustomSlider.css"/>
     CustomSlider.template.innerHTML = `
+      <link rel="stylesheet" href="./CustomSlider.css"/>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-      <input type="range"/>
+      <input type="range" />
       <div id="valueDisplay"/>
     `;
 
