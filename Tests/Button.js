@@ -87,4 +87,84 @@ describe('CustomButton', function() {
 
   });
 
+  describe('Theme', async() => {
+    it('Testing the ocean theme', async() => {
+      await showroom.setAttribute('theme', 'ocean')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #7fffd4;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the mad-queen theme', async() => {
+      await showroom.setAttribute('theme', 'mad-queen')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #dd0000;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the desert theme', async() => {
+      await showroom.setAttribute('theme', 'desert')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #a52a2a;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the pink-lemonade theme', async() => {
+      await showroom.setAttribute('theme', 'pink-lemonade')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #ff1493;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the forest theme', async() => {
+      await showroom.setAttribute('theme', 'forest')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #52ed32;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the ghost theme', async() => {
+      await showroom.setAttribute('theme', 'ghost')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #aaaaaa;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the flame theme', async() => {
+      await showroom.setAttribute('theme', 'flame')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #ffbb00;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+    it('Testing the triton theme', async() => {
+      await showroom.setAttribute('theme', 'triton')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("color: #ffd700;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+  });
+
+  describe('disabled functionality', async() => {
+    it('Testing the disabled', async() => {
+      await showroom.setAttribute('disabled', '')
+      const style = await showroom.find('//style', component)
+      const text = await showroom.getTextContent(style)
+      const result = text.includes("cursor: not-allowed;")
+      assert.deepEqual(result.toString(), 'true')
+    });
+
+  });
+
+  
+
 });
