@@ -35,7 +35,7 @@ class CoreHello extends HTMLElement {
     CoreHello.template.innerHTML = `
       <style>
       </style>
-      <div><greeting></greeting><slot></slot></div>`;
+      <div><greeting>Hello World </greeting><slot></slot></div>`;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
@@ -52,24 +52,6 @@ class CoreHello extends HTMLElement {
   /* Element attached on DOM */
   connectedCallback() {
     console.log('core-hello rendered in DOM')
-    // Set greeting
-    var greeting = ''
-    switch (this.getAttribute('lang')) {
-      case 'jp':
-        greeting = 'Kon\'nichiwa seka'
-        break
-      case 'es':
-        greeting = 'Hola Mundo'
-        break
-      case 'fr':
-        greeting = 'Bonjour le monde'
-        break
-      default:
-        greeting = 'Hello World'
-    }
-    const shadow = this.shadowRoot
-    shadow.querySelector('greeting').textContent = greeting + ' '
-    this.updateStyle()
   }
 
   disconnectedCallback() {
@@ -78,7 +60,27 @@ class CoreHello extends HTMLElement {
 
   attributeChangedCallback(attr, oldValue, newValue) {
     console.log('core-hello attribute ' + attr + ' changed')
-    this.updateStyle()
+    if(attr === 'lang') {
+      // Set greeting
+      var greeting = ''
+      switch (newValue) {
+        case 'jp':
+          greeting = 'Kon\'nichiwa seka'
+          break
+        case 'es':
+          greeting = 'Hola Mundo'
+          break
+        case 'fr':
+          greeting = 'Bonjour le monde'
+          break
+        default:
+          greeting = 'Hello World'
+      }
+      const shadow = this.shadowRoot
+      shadow.querySelector('greeting').textContent = greeting + ' '
+    } else {
+      this.updateStyle()
+    }
   }
 
   updateStyle() {
@@ -154,8 +156,11 @@ class CoreHello extends HTMLElement {
 
     // Set rainbow style
     if (this.hasAttribute('rainbow')) {
-      div.setAttribute('class', this.getAttribute('class') + ' rainbow')
+      div.setAttribute('class', 'rainbow')
+    } else {
+      div.setAttribute('class', '')
     }
+  }
 
   static get observedAttributes() {
     return [
