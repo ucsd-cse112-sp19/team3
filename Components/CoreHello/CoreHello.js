@@ -35,7 +35,7 @@ class CoreHello extends HTMLElement {
     CoreHello.template.innerHTML = `
       <style>
       </style>
-      <div><greeting></greeting><slot></slot></div>`;
+      <div><greeting>Hello World </greeting><slot></slot></div>`;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
@@ -52,9 +52,6 @@ class CoreHello extends HTMLElement {
   /* Element attached on DOM */
   connectedCallback() {
     console.log('core-hello rendered in DOM')
-    // Set greeting
-
-    this.updateStyle()
   }
 
   disconnectedCallback() {
@@ -158,7 +155,7 @@ class CoreHello extends HTMLElement {
 
     // Set rainbow style
     if (this.hasAttribute('rainbow')) {
-      div.setAttribute('class', this.getAttribute('class') + ' rainbow')
+      div.setAttribute('class', 'rainbow')
     } else {
       div.setAttribute('class', '')
     }
