@@ -1,27 +1,29 @@
 'use strict';
 
 
-/** 
+/**
  * @class CoreHello
- * 
+ *
  * @summary class of CoreHello component, a starter of customized web components
- * 
+ *
  * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CoreHello.html} for all listing examples.*
- * 
+ *
  * ### Usage
  * ```
  * <core-hello property="value"> YourName </core-hello>
  * ```
- * 
+ *
  * @property {string} lang - display language, options: `jp, es, fr`
  * @property {boolean} rainbow - enable rainbow
- * 
+ *
  * @example <core-hello lang="es" rainbow> Peter </core-hello>
- * 
+ *
  * @todo fix the property table
  */
 class CoreHello extends HTMLElement {
-
+  /**
+   * Constructor of the class
+   */
   constructor() {
     super();
 
@@ -40,51 +42,64 @@ class CoreHello extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
+  /**
+   * List of attributes supported by the component.
+   * Component listens for changes to these attributes
+   * and handles it using attributeChangedCallback().
+   */
   static get observedAttributes() {
     return [
       'style',
       'class',
       'lang',
-      'rainbow'
+      'rainbow',
     ];
   }
 
-  /* Element attached on DOM */
+  /** Called when element rendered in DOM */
   connectedCallback() {
-    console.log('core-hello rendered in DOM')
+    console.log('core-hello rendered in DOM');
   }
 
+  /** Called when element destroyed */
   disconnectedCallback() {
-    console.log('core-hello removed from DOM')
+    console.log('core-hello removed from DOM');
   }
 
+  /**
+    * Handles attribute changes on the fly.
+    * @param {string} attr - The attribute changed
+    * @param {string} oldValue - The value before change
+    * @param {string} newValue - The value after change
+    */
   attributeChangedCallback(attr, oldValue, newValue) {
-    console.log('core-hello attribute ' + attr + ' changed')
-    if(attr === 'lang') {
+    console.log('core-hello attribute ' + attr + ' changed');
+    if (attr === 'lang') {
       // Set greeting
-      var greeting = ''
+      let greeting = '';
       switch (newValue) {
         case 'jp':
-          greeting = 'Kon\'nichiwa seka'
-          break
+          greeting = 'Kon\'nichiwa seka';
+          break;
         case 'es':
-          greeting = 'Hola Mundo'
-          break
+          greeting = 'Hola Mundo';
+          break;
         case 'fr':
-          greeting = 'Bonjour le monde'
-          break
+          greeting = 'Bonjour le monde';
+          break;
         default:
-          greeting = 'Hello World'
+          greeting = 'Hello World';
       }
-      const shadow = this.shadowRoot
-      shadow.querySelector('greeting').textContent = greeting + ' '
+      const shadow = this.shadowRoot;
+      shadow.querySelector('greeting').textContent = greeting + ' ';
     } else {
-      this.updateStyle()
+      this.updateStyle();
     }
   }
 
+  /** Updates style based on set attributes */
   updateStyle() {
-    console.log('core-hello calling updateStyle()')
+    console.log('core-hello calling updateStyle()');
     const shadow = this.shadowRoot;
 
     const div = shadow.querySelector('div');
@@ -152,13 +167,13 @@ class CoreHello extends HTMLElement {
       color: rgb(255, 0, 127);
         }
       }
-    `
+    `;
 
     // Set rainbow style
     if (this.hasAttribute('rainbow')) {
-      div.setAttribute('class', 'rainbow')
+      div.setAttribute('class', 'rainbow');
     } else {
-      div.setAttribute('class', '')
+      div.setAttribute('class', '');
     }
   }
 }
