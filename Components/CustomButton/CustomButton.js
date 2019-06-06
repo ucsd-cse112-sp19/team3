@@ -1,11 +1,11 @@
 'use strict';
 
 
-/** 
+/**
  * @class CustomButton
- * 
+ *
  * @summary Create a new CustomButton component with designated styles.
- * 
+ *
  * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomButton.html} for all listing examples.*
  *
  * ### Usage
@@ -30,15 +30,22 @@
  * @property {string} disabled - this is example
  * @property {string} href - this is example
  * @property {string} theme - this is example
- * 
- * @example <custom-button onclick="alert('Hello world!')">Button</custom-button>
- * @example <custom-button rounded>Click Me</custom-button>
- * @example <custom-button theme="pink-lemonade" active-background-color="#ff34b3">Click Me</custom-button>
+ *
+ * @example <custom-button onclick="alert('Hello world!')">
+ *      Button
+ * </custom-button>
+ * @example <custom-button rounded>
+ *      Click Me</custom-button>
+ * @example <custom-button theme="pink-lemonade" active-background-color="blue">
+ *      Click Me
+ * </custom-button>
  *
  * @todo fix the property table
  */
 class CustomButton extends HTMLElement {
-
+  /**
+   * Constructor of the class
+   */
   constructor() {
     super();
 
@@ -61,7 +68,7 @@ class CustomButton extends HTMLElement {
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /*
+  /**
    * List of attributes supported by the component.
    * Component listens for changes to these attributes
    * and handles it using attributeChangedCallback().
@@ -89,18 +96,23 @@ class CustomButton extends HTMLElement {
     ];
   }
 
-  /* Called when element rendered in DOM */
+  /** Called when element rendered in DOM */
   connectedCallback() {
     console.log('Rendered custom-button');
     this.updateStyle();
   }
 
-  /* Called when element destroyed */
+  /** Called when element destroyed */
   disconnectedCallback() {
     console.log('custom-button removed');
   }
 
-  /* Handles attribute changes on the fly. */
+  /**
+    * Handles attribute changes on the fly.
+    * @param {string} attr - The attribute changed
+    * @param {string} oldValue - The value before change
+    * @param {string} newValue - The value after change
+    */
   attributeChangedCallback(attr, oldValue, newValue) {
     console.log('custom-button attribute ' + attr + ' was changed');
     if (attr === 'href') {
@@ -110,111 +122,178 @@ class CustomButton extends HTMLElement {
     }
   }
 
-  /* Getters and setters for observed attributes because WHY NOT */
+  /** Getter for style */
   get style() {
     return this.getAttribute('style');
   }
+  /** Setter for style
+    * @param {string} val - What to set new style to
+    */
   set style(val) {
     this.setAttribute('style', val);
   }
+  /** Getter for text color */
   get textColor() {
     return this.getAttribute('text-color');
   }
+  /** Setter for text color
+    * @param {string} val - What to set new text color to
+    */
   set textColor(val) {
     this.setAttribute('text-color', val);
   }
+  /** Getter for background color */
   get backgroundColor() {
     return this.getAttribute('background-color');
   }
+  /** Setter for background color
+    * @param {string} val - What to set new background color to
+    */
   set backgroundColor(val) {
     this.setAttribute('background-color', val);
   }
+  /** Getter for border color */
   get borderColor() {
     return this.getAttribute('border-color');
   }
+  /** Setter for border color
+    * @param {string} val - What to set new border color to
+    */
   set borderColor(val) {
     this.setAttribute('border-color', val);
   }
+  /** Getter for font */
   get font() {
     return this.getAttribute('font');
   }
+  /** Setter for font
+    * @param {string} val - What to set new font to
+    */
   set font(val) {
     this.setAttribute('font', val);
   }
+  /** Getter for width */
   get width() {
     return this.getAttribute('width');
   }
+  /** Setter for width
+    * @param {string} val - What to set new width to
+    */
   set width(val) {
     this.setAttribute('width', val);
   }
+  /** Getter for height */
   get height() {
     return this.getAttribute('height');
   }
+  /** Setter for height
+    * @param {string} val - What to set new height to
+    */
   set height(val) {
     this.setAttribute('height', val);
   }
+  /** Getter for hover text color */
   get hoverTextColor() {
     return this.getAttribute('hover-text-color');
   }
+  /** Setter for hover text color
+    * @param {string} val - What to set new hover text color to
+    */
   set hoverTextColor(val) {
     this.setAttribute('hover-text-color', val);
   }
+  /** Getter for hover background color */
   get hoverBackgroundColor() {
     return this.getAttribute('hover-background-color');
   }
+  /** Setter for hover background color
+    * @param {string} val - What to set new hover background color to
+    */
   set hoverBackgroundColor(val) {
     this.setAttribute('hover-background-color', val);
   }
+  /** Getter for hover border color */
   get hoverBorderColor() {
     return this.getAttribute('hover-border-color');
   }
+  /** Setter for hover border color
+    * @param {string} val - What to set new border color to
+    */
   set hoverBorderColor(val) {
     this.setAttribute('hover-border-color', val);
   }
+  /** Getter for active text color */
   get activeTextColor() {
     return this.getAttribute('active-text-color');
   }
+  /** Setter for active text color
+    * @param {string} val - What to set new active text color to
+    */
   set activeTextColor(val) {
     this.setAttribute('active-text-color', val);
   }
+  /** Getter for active background color */
   get activeBackgroundColor() {
     return this.getAttribute('active-background-color');
   }
+  /** Setter for active background color
+    * @param {string} val - What to set new active background color to
+    */
   set activeBackgroundColor(val) {
     this.setAttribute('active-background-color', val);
   }
+  /** Getter for active border color */
   get activeBorderColor() {
     return this.getAttribute('active-border-color');
   }
+  /** Setter for active border color
+    * @param {string} val - What to set new active border color to
+    */
   set activeBorderColor(val) {
     this.setAttribute('active-border-color', val);
   }
+  /** Getter for if button is rounded */
   get rounded() {
     return this.getAttribute('rounded');
   }
+  /** Setter for if button is rounded
+    * @param {boolean} val - Whether the button should be rounded
+    */
   set rounded(val) {
     this.setAttribute('rounded', val);
   }
+  /** Getter for if button is circle */
   get circle() {
     return this.getAttribute('circle');
   }
+  /** Setter for if button is circle
+    * @param {boolean} val - Whether the button should be a circle
+    */
   set circle(val) {
     this.setAttribute('circle', val);
   }
+  /** Getter for if button is disabled */
   get disabled() {
     return this.getAttribute('disabled');
   }
+  /** Setter for if button is disabled
+    * @param {boolean} val - Whether the button should be disabled
+    */
   set disabled(val) {
     this.setAttribute('disabled', val);
   }
+  /** Getter for theme */
   get theme() {
     return this.getAttribute('theme');
   }
+  /** Setter for theme
+    * @param {string} val - What to set new theme to
+    */
   set theme(val) {
     this.setAttribute('theme', val);
   }
-  
-  /*
+
+  /**
    * Updates the style by taking user attributes, including 'style' and our own
    * API of special attributes, and passing them to the CSS for the button.
    * If the user styles an attribute (e.g. font color) using both direct CSS
