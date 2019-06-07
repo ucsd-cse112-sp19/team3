@@ -4,7 +4,7 @@
 /**
  * @class CoreHello
  * @summary class of CoreHello component, a starter of customized web components
- * 
+ *
  * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.*
  * ### Usage
  * ```
@@ -12,23 +12,25 @@
  *     Display Text
  * </core-hello>
  * ```
- * @property {string} style - Same as style attribute in native CSS - used for inline styling.
- * @property {string} class - Same as class attribute in native CSS - used for modular styling.
- * @property {string} lang - Set the language of display, default is English, other options: jp, es, fr
+ * @property {string} style - Same as style attribute in native CSS.
+ * @property {string} class - Same as class attribute in native CSS.
+ * @property {string} lang - Set the language of display, default is English,
+ *                            other options: jp, es, fr
  * @property {boolean} rainbow - Enable rainbow color effect.
- * 
+ *
  * @example <core-hello>
  *     Peter
  * </core-hello>
- * 
+ *
  * @example <core-hello lang="es" rainbow>
  *     Peter
  * </core-hello>
- * 
+ *
  * @see [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.
  */
 class CoreHello extends HTMLElement {
   
+  // Constructor
   constructor() {
     super();
 
