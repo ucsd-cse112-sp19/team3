@@ -1,40 +1,55 @@
 'use strict';
 
-/**
- * @class CustomSlider
- * @summary Create a new CustomSlider component with designated styles.
- * 
- * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomSlider/CustomSlider.html} for all listing examples.*
- * ### Usage
- * ```
- * <custom-slider property="value"></custom-slider>
- * ```
- * @property {string} min - Set the minimum value of the slider.
- * @property {string} max - Set the maximum value of the slider.
- * @property {string} step - Set the step size when moving the slider.
- * @property {string} value - Set the initial value of the slider.
- * @property {boolean} disabled - Make the slider unabled to be used.
- * @property {boolean} readonly - Set the input field as read-only.
- * @property {boolean} required - Set whether required for like a form (if there’s a form bounding this component).
- * @property {boolean} showinput - Enables a text box containing the current value of the slider.
- * @property {string} onchange - Callback function when value is updated.
- * @property {string} slider-class - Class attribute for the slider in native CSS.
- * @property {String} input-class - Class attribute for the input field in native CSS.
- *
- * @example <custom-slider showinput></custom-slider> 
- * 
- * @example <custom-slider min="0" max="10" value="5" showinput></custom-slider>
- * 
- * @example <custom-slider min="0" max="10" value="5" showinput disabled></custom-slider>
- * 
- * @example <custom-slider min="0" max="10" value="5" showinput onchange="changed"></custom-slider>
- * 
- * @example <custom-slider showinput input-class="form-control" slider-class="form-control-range"></custom-slider>
- * 
- * @see See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomSlider/CustomSlider.html} for all listing examples.
- */
+
 class CustomSlider extends HTMLElement {
-  
+  /**
+   * @class CustomSlider
+   * @summary Create a new CustomSlider component with designated styles.
+   *
+   * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomSlider/CustomSlider.html} for all listing examples.*
+   * ### Usage
+   * ```
+   * <custom-slider property="value"></custom-slider>
+   * ```
+   * @property {string} min - Set the minimum value of the slider.
+   * @property {string} max - Set the maximum value of the slider.
+   * @property {string} step - Set the step size when moving the slider.
+   * @property {string} value - Set the initial value of the slider.
+   * @property {boolean} disabled - Make the slider unabled to be used.
+   * @property {boolean} readonly - Set the input field as read-only.
+   * @property {boolean} required - Set whether required for like a form (if
+   * there’s a form bounding this component).
+   * @property {boolean} showinput - Enables a text box containing the current
+   *  value of the slider.
+   * @property {string} onchange - Callback function when value is updated.
+   * @property {string} slider-class - Class attribute for the slider in native
+   *  CSS.
+   * @property {String} input-class - Class attribute for the input field in
+   *  native CSS.
+   *
+   * @example
+   * <custom-slider showinput></custom-slider> 
+   *
+   * @example
+   * <custom-slider min="0" max="10" value="5" showinput>
+   * </custom-slider>
+   *
+   * @example
+   * <custom-slider min="0" max="10" value="5" showinput disabled>
+   * </custom-slider>
+   *
+   * @example
+   * <custom-slider min="0" max="10" value="5" showinput onchange="changed">
+   * </custom-slider>
+   *
+   * @example
+   * <custom-slider showinput
+   *                input-class="form-control"
+   *                slider-class="form-control-range">
+   * </custom-slider>
+   *
+   * @see See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomSlider/CustomSlider.html} for all listing examples.
+   */
   constructor() {
     super();
 
