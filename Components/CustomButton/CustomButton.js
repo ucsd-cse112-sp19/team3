@@ -1,8 +1,12 @@
 'use strict';
 
+<<<<<<< HEAD
 /**
  * @file CustomButton
  */
+=======
+
+>>>>>>> 641b767cfeac35b34a52d3807316217815afcfb1
 class CustomButton extends HTMLElement {
   /**
    * @class CustomButton

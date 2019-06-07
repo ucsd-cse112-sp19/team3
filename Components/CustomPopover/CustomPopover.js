@@ -1,8 +1,12 @@
 'use strict';
 
+<<<<<<< HEAD
 /**
  * @file CustomPopover
  */
+=======
+
+>>>>>>> 641b767cfeac35b34a52d3807316217815afcfb1
 class CustomPopover extends HTMLElement {
   /**
    * @class CustomPopover
