@@ -3,3 +3,4 @@
 require('./CoreHello');
 require('./Button');
 require('./Popover');
+require('./Slider');
