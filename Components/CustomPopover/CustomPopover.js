@@ -3,16 +3,12 @@
 
 /**
  * @class CustomPopover
- *
  * @summary Create a new CustomPopover component with designated styles.
- *
  * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomPopover.html} for all listing examples.*
- *
  * ### Usage
  * ```
  * <custom-popover property="value"> Popover Body Text </custom-popover>
  * ```
- *
  * @property {string} anchor - Name of button to which the popover is anchored.
  * @property {string} color - Set the background color.
  * @property {string} font - Set the font type.
@@ -27,25 +23,23 @@
  *      </custom-popover>
  *      Click Me
  * </custom-button>
+ * 
  * @example <custom-button id='topBtn'>
  *      <custom-popover anchor='topBtn' placement='top'>
  *          Popover Body Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
+ * 
  * @example <custom-button class="btn-warning" id='btnWarning'>
  *      <custom-popover class='btn-warning' anchor='btnWarning' placement='top'>
- *          Popover Body
+ *          Popover Body Text
  *      </custom-popover>
  *      Warning
  * </custom-button>
- *
- * @todo fix the property table
  */
 class CustomPopover extends HTMLElement {
-  /**
-   * Constructor of the class
-   */
+
   constructor() {
     super();
 

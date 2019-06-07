@@ -3,27 +3,25 @@
 
 /**
  * @class CoreHello
- *
  * @summary class of CoreHello component, a starter of customized web components
- *
  * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CoreHello.html} for all listing examples.*
- *
  * ### Usage
  * ```
- * <core-hello property="value"> YourName </core-hello>
+ * <core-hello property="value">
+ *     Display Text
+ * </core-hello>
  * ```
- *
- * @property {string} lang - display language, options: `jp, es, fr`
- * @property {boolean} rainbow - enable rainbow
- *
- * @example <core-hello lang="es" rainbow> Peter </core-hello>
- *
- * @todo fix the property table
+ * @property {string} style - 
+ * @property {string} class - 
+ * @property {string} lang - language of display, default is English, other options: `jp, es, fr`
+ * @property {boolean} rainbow - enable rainbow color effect
+ * 
+ * @example <core-hello lang="es" rainbow>
+ *     Peter
+ * </core-hello>
  */
 class CoreHello extends HTMLElement {
-  /**
-   * Constructor of the class
-   */
+  
   constructor() {
     super();
 

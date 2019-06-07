@@ -2,38 +2,25 @@
 
 /**
  * @class CustomSlider
- *
  * @summary Create a new CustomSlider component with designated styles.
- *
  * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomSlider.html} for all listing examples.*
- *
  * ### Usage
  * ```
  * <custom-slider property="value"></custom-slider>
  * ```
- * @property {boolean} disabled - Disables the slider, graying out the bar
- * and preventing value change.
+ * @property {boolean} disabled - Disables the slider, graying out the bar and preventing value change.
  * @property {string} size - S, M, or L options allow size customization.
  * @property {number} max - Sets the maximum value of the slider.
  * @property {number} min - Sets the minimum value of the slider.
- * @property {boolean} showInput - Enables a text box containing the current
- * value of the slider.
+ * @property {boolean} showInput - Enables a text box containing the current value of the slider.
  * @property {number} value - Sets the initial value of the slider.
  *
  * @example <custom-slider min="5" max="105" value="50"></custom-slider>
- * @example
- * <custom-slider min="5" max="105" value="50" disabled></custom-slider>
- * @example
- * <custom-slider min="1" max="5" value="3" size="L" showinput
- * </custom-slider>
- *
- * @todo fix the property table
- * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/SliderDemo.html} of slider attributes.
+ * @example <custom-slider min="5" max="105" value="50" disabled></custom-slider>
+ * @example <custom-slider min="1" max="5" value="3" size="L" showinput></custom-slider>
  */
 class CustomSlider extends HTMLElement {
-  /**
-   * Constructor of the class
-   */
+  
   constructor() {
     super();
 
