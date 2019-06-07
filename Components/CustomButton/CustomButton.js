@@ -4,7 +4,7 @@
 /**
  * @class CustomButton
  * @summary Create a new CustomButton component with designated styles.
- * 
+ *
  * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.*
  * ### Usage
  * ```
@@ -12,49 +12,63 @@
  *     Button Text
  * </custom-button>
  * ```
- * @property {string} style - Same as style attribute in native CSS - used for inline styling.
- * @property {string} text-color - Change the color of the text within the button.
- * @property {string} background-color - Change the background color of the button.
+ * @property {string} style - Same as style attribute in native CSS.
+ * @property {string} text-color - Change color of the text within the button.
+ * @property {string} background-color - Change background color of the button.
  * @property {string} border-color - Change the color of the border.
  * @property {string} font - Change the font of the text within the button.
  * @property {string} width - Change the width of the button.
  * @property {string} height - Change the height of the button.
- * @property {string} hover-text-color - Change the text color when hovering over the button.
- * @property {string} hover-background-color - Change the background color when hovering over the button.
- * @property {string} hover-border-color - Change the border color when hovering over the button.
- * @property {string} active-text-color - Change the text color when the button is being clicked.
- * @property {string} active-background-color - Change the background color when the button is being clicked.
- * @property {string} active-border-color - Change the border color when the button is being clicked.
+ * @property {string} hover-text-color - Change the text color when hovering
+ *  over the button.
+ * @property {string} hover-background-color - Change the background color
+ *  when hovering over the button.
+ * @property {string} hover-border-color - Change the border color when
+ *  hovering over the button.
+ * @property {string} active-text-color - Change the text color when the button
+ *  is being clicked.
+ * @property {string} active-background-color - Change the background color
+ *  when the button is being clicked.
+ * @property {string} active-border-color - Change the border color when the
+ *  button is being clicked.
  * @property {boolean} rounded - Make the button appear with rounded edges.
  * @property {boolean} circle - Make the button appear as a circle.
  * @property {boolean} disabled - Make the button unable to be clicked.
  * @property {string} href - Pass a link to the button.
  * @property {string} theme - Use a pre-built theme to style the button.
  *
- * @example <custom-button onclick="alert('Hello world!')">
+ * @example
+ * <custom-button onclick="alert('Hello world!')">
  *      Button
  * </custom-button>
- * 
- * @example <custom-button theme="pink-lemonade" active-background-color="blue">
+ *
+ * @example
+ * <custom-button theme="pink-lemonade" active-background-color="blue">
  *      Click Me
  * </custom-button>
- * 
- * @example <custom-button theme="pink-lemonade" active-background-color="blue" rounded>
+ *
+ * @example
+ * <custom-button theme="pink-lemonade" active-background-color="blue"
+ *                rounded>
  *      Click Me
  * </custom-button>
- * 
- * @example <custom-button theme="pink-lemonade" active-background-color="blue" rounded font="Comic Sans MS" href="https://stackoverflow.com">
+ *
+ * @example
+ * <custom-button theme="pink-lemonade" active-background-color="blue"
+ *                rounded
+ *                font="Comic Sans MS" 
+ *                href="https://stackoverflow.com">
  *      stack overflow
  * </custom-button>
- * 
- * @example <custom-button class="btn-warning" width="112px" height="63px">
+ *
+ * @example
+ * <custom-button class="btn-warning" width="112px" height="63px">
  *      Warning
  * </custom-button>
- * 
+ *
  * @see [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.
  */
 class CustomButton extends HTMLElement {
-  
   constructor() {
     super();
 

@@ -4,7 +4,7 @@
 /**
  * @class CustomPopover
  * @summary Create a new CustomPopover component with designated styles.
- * 
+ *
  * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.*
  * ### Usage
  * ```
@@ -20,45 +20,52 @@
  * @property {string} style - Set a CSS style.
  * @property {string} textcolor - Set the text color.
  *
- * @example <custom-button id='default-btn'>
+ * @example
+ * <custom-button id='default-btn'>
  *      <custom-popover anchor='default-btn'>
  *          Popover Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
- * 
- * @example <custom-button rounded id="color-btn">
+ *
+ * @example
+ * <custom-button rounded id="color-btn">
  *      <custom-popover anchor="color-btn" color="hotpink" placement='right'>
  *          Popover Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
- * 
- * @example <custom-button rounded id="font-btn">
- *      <custom-popover anchor="font-btn" color="hotpink" placement='right' font="Courier New">
+ *
+ * @example
+ * <custom-button rounded id="font-btn">
+ *      <custom-popover anchor="font-btn" color="hotpink"
+ *                      placement='right' font="Courier New">
  *          Popover Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
- * 
- * @example <custom-button rounded id="textcolor-btn">
- *      <custom-popover anchor="textcolor-btn" color="hotpink" placement='left' text-color="black">
+ *
+ * @example
+ * <custom-button rounded id="textcolor-btn">
+ *      <custom-popover anchor="textcolor-btn" color="hotpink" 
+ *                      placement='left' text-color="black">
  *          Popover Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
- * 
- * @example <custom-button class="btn-warning" id='btnWarning'>
- *      <custom-popover class='btn-warning' anchor='btnWarning' placement='bottom'>
+ *
+ * @example
+ * <custom-button class="btn-warning" id='btnWarning'>
+ *      <custom-popover class='btn-warning' anchor='btnWarning' 
+ *                      placement='bottom'>
  *          Popover Text
  *      </custom-popover>
  *      Warning
  * </custom-button>
- * 
+ *
  * @see [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.
  */
 class CustomPopover extends HTMLElement {
-
   constructor() {
     super();
 

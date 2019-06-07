@@ -18,19 +18,19 @@
  *                            other options: jp, es, fr
  * @property {boolean} rainbow - Enable rainbow color effect.
  *
- * @example <core-hello>
+ * @example
+ * <core-hello>
  *     Peter
  * </core-hello>
  *
- * @example <core-hello lang="es" rainbow>
+ * @example
+ * <core-hello lang="es" rainbow>
  *     Peter
  * </core-hello>
  *
  * @see [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.
  */
 class CoreHello extends HTMLElement {
-  
-  // Constructor
   constructor() {
     super();
 
