@@ -27,18 +27,14 @@ describe('CustomSlider', function() {
 
   describe('Testing the attributes of the slider', async () => {
     it('Testing min attributes', async () => {
-      //await showroom.setAttribute('min', 1);
-      //const find = await showroom.find('//input', component);
-      //const text = await showroom.getProperty(find);
-      
-      
+      await showroom.setAttribute('min', 25);
+      const find = await showroom.find('//input', component);
+      const minprop = await find.getProperty('min');
+      const min = minprop._remoteObject.value;
+      assert.deepEqual(min, '25');
 
-      console.log(await showroom.getAttribute('min'));
-        
-      
-      //assert.deepEqual(result.toString(), 'true');
+
+      // assert.deepEqual(result.toString(), 'true');
     });
-
-    
   });
 });
