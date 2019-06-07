@@ -82,10 +82,8 @@ describe('CoreHello', function() {
   describe('Rainbow', async () => {
     it('Test the rainbow funtionality', async () => {
       await showroom.setAttribute('rainbow', '1');
-      const style = await showroom.find('//style', component);
-      const text = await showroom.getTextContent(style);
-      const result = text.includes('@keyframes rainbow {');
-      assert.deepEqual(result.toString(), 'true');
+      const obj = await showroom.find('//div', component);
+      assert.deepEqual(obj._remoteObject.description, 'div.rainbow');
     });
   });
 });
