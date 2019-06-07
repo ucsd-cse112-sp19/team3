@@ -25,9 +25,9 @@
  * @property {string} active-text-color - Change the text color when the button is being clicked.
  * @property {string} active-background-color - Change the background color when the button is being clicked.
  * @property {string} active-border-color - Change the border color when the button is being clicked.
- * @property {string} rounded - Make the button appear with rounded edges.
- * @property {string} circle - Make the button appear as a circle.
- * @property {string} disabled - Make the button unable to be clicked.
+ * @property {boolean} rounded - Make the button appear with rounded edges.
+ * @property {boolean} circle - Make the button appear as a circle.
+ * @property {boolean} disabled - Make the button unable to be clicked.
  * @property {string} href - Pass a link to the button.
  * @property {string} theme - Use a pre-built theme to style the button.
  *
