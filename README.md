@@ -11,10 +11,17 @@ We are Team SPECS! This is a library of customizable web components.
 
 ## Documentation
 
-[ucsd-cse112.github.io/team3](https://ucsd-cse112.github.io/team3/)
-[Wiki](https://github.com/ucsd-cse112/team3/wiki)
+Include any of the following scripts in your HTML file for the web component of your choosing, replacing the ../team3/ prefix with the absolute path to the team3 directory where you installed our repo. Then you will be able to use that web component like any other HTML element, as described in the documentation below. For installation instructions, see below.
+```
+<script src="team3/Components/CustomButton/CustomButton.js"></script>
+<script src="team3/Components/CustomPopover/CustomPopover.js"></script>
+<script src="team3/Components/CustomSlider/CustomSlider.js"></script>
+<script src="team3/Components/CoreHello/CoreHello.js"></script>
+```
+[**API Documentation**](https://ucsd-cse112.github.io/team3/) <br/>
+[**Developer Wiki**](https://github.com/ucsd-cse112/team3/wiki)
 
-## Development
+## Installation & Testing
 
 ##### How to Install
 Download the repository to local, and setup all the Node.js packages dependencies,
@@ -22,7 +29,7 @@ Download the repository to local, and setup all the Node.js packages dependencie
 git clone https://github.com/ucsd-cse112/Team3.git
 npm install
 ```
-If decide to start fresh again,
+If you decide to start fresh again,
 ```
 rm -rf ./node_modules
 git checkout -- .
@@ -51,7 +58,7 @@ npm run eslint_fix
 
 ## Credit
 
-Acknowledgement to all team members who have contributed to this project. 
+Acknowledgement to all of our team members who have contributed to this project. 
 
 | Team Roles    | Name              |
 |:--------------|:------------------|
@@ -66,4 +73,4 @@ Acknowledgement to all team members who have contributed to this project.
 | Tools & Utility   | Alex Mao      |
 | Tools & Utility   | Vince Li      |
 | Quality Assurance | Yootak Jin    |
-> Name is sorted in alphabetic order within each category of team roles.
+> Names are sorted in alphabetic order within each category of team roles.
