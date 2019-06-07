@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#attachAnchor">attachAnchor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#findAnchor">findAnchor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#onValueChange">onValueChange</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#updateStyle">updateStyle</a></span></li>
 </nav>
 
 <div id="main">
@@ -41,34 +41,40 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-
-/** 
+/**
  * @class CustomSlider
- * 
+ *
  * @summary Create a new CustomSlider component with designated styles.
- * 
+ *
  * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomSlider.html} for all listing examples.*
- * 
+ *
  * ### Usage
  * ```
  * &lt;custom-slider property="value">&lt;/custom-slider>
  * ```
- * @property {boolean} disabled - Disables the slider, graying out the bar and preventing value change.
+ * @property {boolean} disabled - Disables the slider, graying out the bar
+ * and preventing value change.
  * @property {string} size - S, M, or L options allow size customization.
  * @property {number} max - Sets the maximum value of the slider.
  * @property {number} min - Sets the minimum value of the slider.
- * @property {boolean} showInput - Enables a text box containing the current value of the slider.
+ * @property {boolean} showInput - Enables a text box containing the current
+ * value of the slider.
  * @property {number} value - Sets the initial value of the slider.
- * 
+ *
  * @example &lt;custom-slider min="5" max="105" value="50">&lt;/custom-slider>
- * @example &lt;custom-slider min="5" max="105" value="50" disabled>&lt;/custom-slider>
- * @example &lt;custom-slider min="5" max="105" value="50" size="L" showinput>&lt;/custom-slider>
+ * @example
+ * &lt;custom-slider min="5" max="105" value="50" disabled>&lt;/custom-slider>
+ * @example
+ * &lt;custom-slider min="1" max="5" value="3" size="L" showinput
+ * &lt;/custom-slider>
  *
  * @todo fix the property table
  * @see [Demo]{@link https://ucsd-cse112.github.io/team3/demos/SliderDemo.html} of slider attributes.
- */  
+ */
 class CustomSlider extends HTMLElement {
-  
+  /**
+   * Constructor of the class
+   */
   constructor() {
     super();
 
@@ -77,228 +83,163 @@ class CustomSlider extends HTMLElement {
     CustomSlider.template = document.createElement('template');
     const templateContent = CustomSlider.template.content;
 
-    // Import CSS
-    const importStyle = `&lt;style>
-      .small-input {
-        text-align: center;
-        width: 20px;
-        height: 20px;
-      }
-      .medium-input {
-        text-align: center;
-        width: 50px;
-        height: 50px;
-      }
-      .large-input {
-        font-size: 80px;
-        text-align: center;
-        width: 200px;
-        height: 100px;
-      }
-      
-      input[type=range] {
-      -webkit-appearance: none; /* Hides default slider */
-      width: 40%; /* Specific width is required for Firefox. */
-      background: transparent; /* Otherwise white in Chrome */
-    }
-    input[type=number]::-webkit-inner-spin-button, 
-    input[type=number]::-webkit-outer-spin-button { 
-          -webkit-appearance: none; 
-          margin: 0; 
-    }
-
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-    }
-
-    input[type=range]:focus {
-      outline: none; /* Removes the blue border.*/
-    }
-
-    input[type=range]::-ms-track {
-      width: 100%;
-      cursor: pointer;
-
-      /* Hides the slider so custom styles can be added */
-      background: transparent; 
-      border-color: transparent;
-      color: transparent;
-    }input[type=range]::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 8.4px;
-      cursor: pointer;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-      background: #3071a9;
-      border-radius: 1.3px;
-      border: 0.2px solid #010101;
-    }input[type=range][disabled]::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 8.4px;
-      cursor: pointer;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-      background: GREY;
-      border-radius: 1.3px;
-      border: 0.2px solid #010101;
-    }
-
-    input[type=range]:focus::-webkit-slider-runnable-track {
-      background: #367ebd;
-    }
-
-    input[type=range]::-moz-range-track {
-      width: 100%;
-      height: 8.4px;
-      cursor: pointer;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-      background: #3071a9;
-      border-radius: 1.3px;
-      border: 0.2px solid #010101;
-    }
-
-    input[type=range]::-ms-track {
-      width: 100%;
-      height: 8.4px;
-      cursor: pointer;
-      background: transparent;
-      border-color: transparent;
-      border-width: 16px 0;
-      color: transparent;
-    }
-    input[type=range]::-ms-fill-lower {
-      background: #2a6495;
-      border: 0.2px solid #010101;
-      border-radius: 2.6px;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    }
-    input[type=range]:focus::-ms-fill-lower {
-      background: #3071a9;
-    }
-    input[type=range]::-ms-fill-upper {
-      background: #3071a9;
-      border: 0.2px solid #010101;
-      border-radius: 2.6px;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    }
-    input[type=range]:focus::-ms-fill-upper {
-      background: #367ebd;
-    }
-      
-      /* Special styling for WebKit/Blink */
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      border: 1px solid #000000;
-      height: 36px;
-      width: 16px;
-      border-radius: 3px;
-      background: #ffffff;
-      cursor: pointer;
-      margin-top: -14px;
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    }
-
-    /* All the same stuff for Firefox */
-    input[type=range]::-moz-range-thumb {
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-      border: 1px solid #000000;
-      height: 36px;
-      width: 16px;
-      border-radius: 3px;
-      background: #ffffff;
-      cursor: pointer;
-    }
-
-    /* All the same stuff for IE */
-    input[type=range]::-ms-thumb {
-      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-      border: 1px solid #000000;
-      height: 36px;
-      width: 16px;
-      border-radius: 3px;
-      background: #ffffff;
-      cursor: pointer;
-    }
-    
-    
-    &lt;/style>`;
-
-    // Attributes
-    let value = 0;
-    let min = 0;
-    let max = 100;
-    let disabled = '';
-    let showInput = '';
-    let inputClass = 'small-input';
-
-    // Store the value of the attribute value
-    if (this.hasAttribute('value')) {
-      value = this.getAttribute('value');
-    }
-    // Store the value of the attribute min
-    if (this.hasAttribute('min')) {
-      min = this.getAttribute('min');
-    }
-    // store the value of the attribute max
-    if (this.hasAttribute('max')) {
-      max = this.getAttribute('max');
-    }
-    // disable
-    if (this.hasAttribute('disabled')) {
-      disabled = 'disabled';
-    }
-    // store the string indicating vertical orientation
-    if (this.hasAttribute('vertical')) {
-      vertical = this.getAttribute('vertical');
-    }
-    // store the value of steps
-    if (this.hasAttribute('steps')) {
-      steps = this.getAttribute('steps');
-    }
-    // store the value of
-    if (this.hasAttribute('size')) {
-      const sizeStr = this.getAttribute('size');
-      if (sizeStr == 'L') {
-        inputClass = 'large-input';
-      } else if (sizeStr == 'M') {
-        inputClass = 'medium-input';
-      }
-    }
-
-    // indicate whether need to show input box
-    if (this.hasAttribute('showInput')) {
-      showInput = `&lt;br/>&lt;input type="number" name="amountInput" min=`
-      + min + ` max=`
-      + max +
-      `  value=` + value + ` class=` + inputClass +
-      ` oninput="this.form.amountRange.value=this.value" ` +
-      disabled + `/>`;
-    }
-
-    const inputStr = importStyle +
-      `&lt;div class="slidecontainer">`+
-          `&lt;form>
-              &lt;input type="range" name="amountRange" min=` + min + ` max=`
-              + max +
-              `  value=` + value +
-              ` oninput="this.form.amountInput.value=this.value" `
-              + disabled + `/>` + showInput + `      
-          &lt;/form>
-      &lt;/div>`;
-
-    console.log(inputStr);
-
-    // Set HTML
-    CustomSlider.template.innerHTML = inputStr;
+    CustomSlider.template.innerHTML = `
+      &lt;link rel="stylesheet" href="./CustomSlider.css"/>
+      &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+      &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">&lt;/script>
+      &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">&lt;/script>
+      &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">&lt;/script>
+      &lt;input type="range" />
+      &lt;div id="valueDisplay"/>
+    `;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
+    this.onValueChange = this.onValueChange.bind(this);
+    shadowRoot.querySelector('input').addEventListener('input',
+        this.onValueChange);
   }
-  
-  // Element attached on DOM
-  connectedCallback() {
 
+  /**
+   * Default attributes values
+   */
+  static get defaultAttributes() {
+    return {
+      'value': 0,
+      'min': 0,
+      'max': 100,
+      'showinput': true,
+    };
+  }
+
+  /**
+   * Attributes passed directly to input (range)
+   */
+  static get inputAttributes() {
+    return [
+      'min',
+      'max',
+      'step',
+      'value',
+    ];
+  }
+
+  /**
+   * Attribte tags passed directly to input (range)
+   */
+  static get tagAttributes() {
+    return [
+      'disabled',
+      'readonly',
+      'required',
+    ];
+  }
+
+  /**
+   * Custom attributes for slider
+   */
+  static get customAttributes() {
+    return [
+      'slider-class',
+      'input-class',
+      'showinput',
+    ];
+  }
+
+  /**
+   * List of attributes supported by the component.
+   * Component listens for changes to these attributes
+   * and handles it using attributeChangedCallback().
+   */
+  static get observedAttributes() {
+    // All attributes
+    return CustomSlider.inputAttributes
+        .concat(CustomSlider.customAttributes)
+        .concat(CustomSlider.tagAttributes);
+  }
+
+  /**
+   * Update style from observed attributes
+   */
+  updateStyle() {
+    const shadow = this.shadowRoot;
+    const slider = shadow.querySelector('input');
+    const valueDisplay = shadow.querySelector('#valueDisplay');
+    // Update all attributes for input
+    for (const attribute of CustomSlider.inputAttributes) {
+      if (this.hasAttribute(attribute)) {
+        slider[attribute] = this.getAttribute(attribute);
+      } else {
+        if (CustomSlider.defaultAttributes[attribute] !== undefined) {
+          // Use default attribute if possible
+          slider[attribute] = CustomSlider.defaultAttributes[attribute];
+        }
+      }
+    }
+
+    for (const attribute of CustomSlider.tagAttributes) {
+      if (this.hasAttribute(attribute)) {
+        slider.setAttribute(attribute, true);
+      }
+    }
+
+    // showinput option tag
+    if (this.hasAttribute('showinput')) {
+      valueDisplay.style.display = '';
+    } else {
+      valueDisplay.style.display = 'none';
+    }
+
+    // Update value
+    valueDisplay.innerHTML = slider.value;
+
+    // Pass class attribute into the component
+    if (this.hasAttribute('slider-class')) {
+      slider.setAttribute('class', this.getAttribute('slider-class'));
+    }
+    if (this.hasAttribute('input-class')) {
+      valueDisplay.setAttribute('class', this.getAttribute('input-class'));
+    }
+  }
+
+  /**
+   * When value of the slider changed
+   * @param {Integer} value
+   */
+  onValueChange(value) {
+    const shadow = this.shadowRoot;
+    const slider = shadow.querySelector('input');
+    const valueDisplay = shadow.querySelector('#valueDisplay');
+    // Update display value
+    valueDisplay.innerHTML = slider.value;
+    // Notify onchange
+    if (this.hasAttribute('onchange')) {
+      const callbackName = this.getAttribute('onchange');
+      const cb = window[callbackName];
+      if (typeof cb === 'function') {
+        cb(slider.value);
+      }
+    }
+  }
+
+  /**
+   * Component attached on DOM
+   */
+  connectedCallback() {
+    this.updateStyle();
+  }
+
+  /**
+   * Called on attribute change
+   * @param {string} attr the attribute changed
+   * @param {string} oldValue the old value of the attribute
+   * @param {string} newValue the new value of the attribute
+   */
+  attributeChangedCallback(attr, oldValue, newValue) {
+    this.updateStyle();
   }
 }
 
-CustomSlider.template = document.createElement('CustomSlider_template');
+CustomSlider.template = document.createElement('template');
 customElements.define('custom-slider', CustomSlider);
 </code></pre>
         </article>
@@ -312,7 +253,7 @@ customElements.define('custom-slider', CustomSlider);
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 08:40:49 GMT-0700 (PDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu Jun 06 2019 17:04:18 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
