@@ -11,24 +11,24 @@
  *     Button Text
  * </custom-button>
  * ```
- * @property {string} style - this is example
- * @property {string} text-color - this is example
- * @property {string} background-color - this is example
- * @property {string} border-color - this is example
- * @property {string} font - this is example
- * @property {string} width - this is example
- * @property {string} height - this is example
- * @property {string} hover-text-color - this is example
- * @property {string} hover-background-color - this is example
- * @property {string} hover-border-color - this is example
- * @property {string} active-text-color - this is example
- * @property {string} active-background-color - this is example
- * @property {string} active-border-color - this is example
- * @property {string} rounded - this is example
- * @property {string} circle - this is example
- * @property {string} disabled - this is example
- * @property {string} href - this is example
- * @property {string} theme - this is example
+ * @property {string} style - Same as style attribute in native CSS - used for inline styling.
+ * @property {string} text-color - Change the color of the text within the button.
+ * @property {string} background-color - Change the background color of the button.
+ * @property {string} border-color - Change the color of the border.
+ * @property {string} font - Change the font of the text within the button.
+ * @property {string} width - Change the width of the button.
+ * @property {string} height - Change the height of the button.
+ * @property {string} hover-text-color - Change the text color when hovering over the button.
+ * @property {string} hover-background-color - Change the background color when hovering over the button.
+ * @property {string} hover-border-color - Change the border color when hovering over the button.
+ * @property {string} active-text-color - Change the text color when the button is being clicked.
+ * @property {string} active-background-color - Change the background color when the button is being clicked.
+ * @property {string} active-border-color - Change the border color when the button is being clicked.
+ * @property {string} rounded - Make the button appear with rounded edges.
+ * @property {string} circle - Make the button appear as a circle.
+ * @property {string} disabled - Make the button unable to be clicked.
+ * @property {string} href - Pass a link to the button.
+ * @property {string} theme - Use a pre-built theme to style the button.
  *
  * @example <custom-button onclick="alert('Hello world!')">
  *      Button
