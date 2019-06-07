@@ -29,6 +29,8 @@ const beforeHook = function(showroom) {
   ]);
 };
 
+let ALL_COVERAGES;
+
 const afterHook = function(showroom) {
   const page = showroom.page;
   return Promise.all([
@@ -36,12 +38,20 @@ const afterHook = function(showroom) {
     page.coverage.stopCSSCoverage(),
   ])
       .then(function([jsCoverage, cssCoverage]) {
-        const pti = require('puppeteer-to-istanbul');
         jsCoverage = filterCoverage(jsCoverage, jsBlacklistFileName);
         cssCoverage = filterCoverage(cssCoverage, cssBlacklistFileName);
-        pti.write(jsCoverage);
+        ALL_COVERAGES = ALL_COVERAGES.concat(jsCoverage);
         return showroom.stop();
       });
+};
+
+const initCoverage = function() {
+  ALL_COVERAGES = [];
+};
+
+const writeOutCoverage = function() {
+  const pti = require('puppeteer-to-istanbul');
+  pti.write(ALL_COVERAGES);
 };
 
 const filterCoverage = function(coverages, blacklist) {
@@ -59,3 +69,5 @@ const extractFileName = function(fileName) {
 
 exports.beforeHook = beforeHook;
 exports.afterHook = afterHook;
+exports.writeOutCoverage = writeOutCoverage;
+exports.initCoverage = initCoverage;
