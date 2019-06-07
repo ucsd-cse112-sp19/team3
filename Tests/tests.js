@@ -10,6 +10,7 @@ describe('All Tests', function() {
   require('./CoreHello');
   require('./Button');
   require('./Popover');
+  require('./Slider');
 
   after(function() {
     coverage.writeOutCoverage();
