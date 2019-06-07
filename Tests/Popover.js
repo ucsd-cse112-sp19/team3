@@ -77,16 +77,16 @@ describe('CustomPopover', function() {
     });
   });
 
-  describe('anchor', async()=> {
-    it('Testing popover anchor', async()=>{
+  describe('anchor', async () => {
+    it('Testing popover anchor', async () => {
       await showroom.setAttribute('anchor', 'default-btn');
       const anchor = await showroom.getProperty('anchor');
       assert.deepEqual(anchor, 'default-btn')
     });
   });
 
-  describe('bootstrap', async()=>{
-    it('Testing bootstrap support', async()=>{
+  describe('bootstrap', async () => {
+    it('Testing bootstrap support', async () => {
       await showroom.setAttribute('class', 'btn-primary');
       const style = await showroom.find('//style');
       const text = await showroom.getTextContent(style);
