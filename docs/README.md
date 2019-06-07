@@ -44,12 +44,21 @@ see below as the version after proper edits,
 ##### CoreHello.html
 ```
 <div class="section-examples">
-<h5>Example</h5>
+<h5>Examples</h5>
+
+    <pre class="prettyprint"><code>&lt;core-hello>
+    Peter
+&lt;/core-hello></code></pre>
+    <core-hello>
+        Peter
+    </core-hello>
 
     <pre class="prettyprint"><code>&lt;core-hello lang="es" rainbow>
     Peter
 &lt;/core-hello></code></pre>
-    <core-hello lang="es" rainbow> Peter </core-hello>
+    <core-hello lang="es" rainbow>
+        Peter
+    </core-hello>
 
 </div>
 <script src="./demo_components/CoreHello/CoreHello.js"></script>
@@ -63,18 +72,37 @@ see below as the version after proper edits,
     <pre class="prettyprint"><code>&lt;custom-button onclick="alert('Hello world!')">
      Button
 &lt;/custom-button></code></pre>
-    <custom-button onclick="alert('Hello world!')">Button</custom-button>
-
-
-    <pre class="prettyprint"><code>&lt;custom-button rounded>
-     Click Me
-&lt;/custom-button></code></pre>
-    <custom-button rounded>Click Me</custom-button>
+    <custom-button onclick="alert('Hello world!')">
+        Button
+    </custom-button>
 
     <pre class="prettyprint"><code>&lt;custom-button theme="pink-lemonade" active-background-color="blue">
      Click Me
 &lt;/custom-button></code></pre>
-    <custom-button theme="pink-lemonade" active-background-color="#ff34b3">Click Me</custom-button>
+    <custom-button theme="pink-lemonade" active-background-color="blue">
+        Click Me
+    </custom-button>
+
+    <pre class="prettyprint"><code>&lt;custom-button theme="pink-lemonade" active-background-color="blue" rounded>
+     Click Me
+&lt;/custom-button></code></pre>
+    <custom-button theme="pink-lemonade" active-background-color="blue" rounded>
+        Click Me
+    </custom-button>
+
+    <pre class="prettyprint"><code>&lt;custom-button theme="pink-lemonade" active-background-color="blue" rounded font="Comic Sans MS" href="https://stackoverflow.com">
+     stack overflow
+&lt;/custom-button></code></pre>
+    <custom-button theme="pink-lemonade" active-background-color="blue" width="150px"rounded font="Comic Sans MS" href="https://stackoverflow.com">
+        stack overflow
+    </custom-button>
+
+    <pre class="prettyprint"><code>&lt;custom-button class="btn-warning" width="112px" height="63px">
+     Warning
+&lt;/custom-button></code></pre>
+    <custom-button class="btn-warning" width="112px" height="63px">
+        Warning
+    </custom-button>
 
 </div>
 <script src="./demo_components/CustomButton/CustomButton.js"></script>
@@ -91,23 +119,64 @@ see below as the version after proper edits,
      &lt;/custom-popover>
      Click Me
 &lt;/custom-button></code></pre>
-    <custom-button id='defaultBtn'><custom-popover anchor='defaultBtn'>Popover Text</custom-popover>Click Me</custom-button>
+<custom-button id='default-btn'>
+        <custom-popover anchor='default-btn'>
+            Popover Text
+        </custom-popover>
+        Click Me
+   </custom-button>
 
-    <pre class="prettyprint"><code>&lt;custom-button id='topBtn'>
-     &lt;custom-popover anchor='topBtn' placement='top'>
+    <pre class="prettyprint"><code>&lt;custom-button rounded id="color-btn">
+     &lt;custom-popover anchor="color-btn" color="hotpink" placement='right'>
          Popover Text
      &lt;/custom-popover>
      Click Me
 &lt;/custom-button></code></pre>
-    <custom-button id='topBtn'><custom-popover anchor='topBtn' placement='top'>Popover Text</custom-popover>Click Me</custom-button>
+<custom-button rounded id="color-btn">
+        <custom-popover anchor="color-btn" color="hotpink" placement='right'>
+            Popover Text
+        </custom-popover>
+        Click Me
+   </custom-button>
+
+    <pre class="prettyprint"><code>&lt;custom-button rounded id="font-btn">
+     &lt;custom-popover anchor="font-btn" color="hotpink" placement='right' font="Courier New">
+         Popover Text
+     &lt;/custom-popover>
+     Click Me
+&lt;/custom-button></code></pre>
+<custom-button rounded id="font-btn">
+        <custom-popover anchor="font-btn" color="hotpink" placement='right' font="Courier New">
+            Popover Text
+        </custom-popover>
+        Click Me
+   </custom-button>
+
+    <pre class="prettyprint"><code>&lt;custom-button rounded id="textcolor-btn">
+     &lt;custom-popover anchor="textcolor-btn" color="hotpink" placement='left' text-color="black">
+         Popover Text
+     &lt;/custom-popover>
+     Click Me
+&lt;/custom-button></code></pre>
+<custom-button rounded id="textcolor-btn">
+        <custom-popover anchor="textcolor-btn" color="hotpink" placement='left' text-color="black">
+            Popover Text
+        </custom-popover>
+        Click Me
+   </custom-button>
 
     <pre class="prettyprint"><code>&lt;custom-button class="btn-warning" id='btnWarning'>
-     &lt;custom-popover class='btn-warning' anchor='btnWarning' placement='top'>
+     &lt;custom-popover class='btn-warning' anchor='btnWarning' placement='bottom'>
          Popover Text
      &lt;/custom-popover>
      Warning
 &lt;/custom-button></code></pre>
-    <custom-button class="btn-warning" id='btnWarning'><custom-popover class='btn-warning' anchor='btnWarning' placement='top'>Popover Text</custom-popover>Warning</custom-button>
+<custom-button class="btn-warning" id='btnWarning'>
+        <custom-popover class='btn-warning' anchor='btnWarning' placement='bottom'>
+            Popover Text
+        </custom-popover>
+        Warning
+   </custom-button>
 
 </div>
 <script src='./demo_components/CustomButton/CustomButton.js'></script>
@@ -119,14 +188,20 @@ see below as the version after proper edits,
 <div class="section-examples">
 <h5>Examples</h5>
 
-    <pre class="prettyprint"><code>&lt;custom-slider min="5" max="105" value="50">&lt;/custom-slider></code></pre>
-    <custom-slider min="5" max="105" value="50"></custom-slider>
+    <pre class="prettyprint"><code>&lt;custom-slider showinput>&lt;/custom-slider> </code></pre>
+    <custom-slider showinput></custom-slider> 
 
-    <pre class="prettyprint"><code>&lt;custom-slider min="5" max="105" value="50" disabled>&lt;/custom-slider></code></pre>
-    <custom-slider min="5" max="105" value="50" disabled></custom-slider>
+    <pre class="prettyprint"><code>&lt;custom-slider min="0" max="10" value="5" showinput>&lt;/custom-slider></code></pre>
+    <custom-slider min="0" max="10" value="5" showinput></custom-slider>
 
-    <pre class="prettyprint"><code>&lt;custom-slider min="5" max="105" value="50" size="L" showinput>&lt;/custom-slider></code></pre>
-    <custom-slider min="5" max="105" value="50" size="L" showinput></custom-slider>
+    <pre class="prettyprint"><code>&lt;custom-slider min="0" max="10" value="5" showinput disabled>&lt;/custom-slider></code></pre>
+    <custom-slider min="0" max="10" value="5" showinput disabled></custom-slider>
+
+    <pre class="prettyprint"><code>&lt;custom-slider min="0" max="10" value="5" showinput onchange="changed">&lt;/custom-slider></code></pre>
+    <custom-slider min="0" max="10" value="5" showinput onchange="changed"></custom-slider>
+
+    <pre class="prettyprint"><code>&lt;custom-slider showinput input-class="form-control" slider-class="form-control-range">&lt;/custom-slider></code></pre>
+    <custom-slider showinput input-class="form-control" slider-class="form-control-range"></custom-slider>
 
 </div>
 <script src="./demo_components/CustomSlider/CustomSlider.js"></script>

@@ -15,7 +15,7 @@
  * @property {string} value - Set the initial value of the slider.
  * @property {boolean} disabled - Make the slider unabled to be used.
  * @property {boolean} readonly - Set the input field as read-only.
- * @property {boolean} required - Set required attribute.
+ * @property {boolean} required - Set whether required for like a form (if there’s a form bounding this component).
  * @property {boolean} showinput - Enables a text box containing the current value of the slider.
  * @property {string} onchange - Callback function when value is updated.
  * @property {string} slider-class - Class attribute for the slider in native CSS.

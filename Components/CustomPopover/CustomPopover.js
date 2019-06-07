@@ -42,7 +42,7 @@
  * </custom-button>
  * 
  * @example <custom-button rounded id="textcolor-btn">
- *      <custom-popover anchor="color-btn" color="hotpink" placement='left' text-color="black">
+ *      <custom-popover anchor="textcolor-btn" color="hotpink" placement='left' text-color="black">
  *          Popover Text
  *      </custom-popover>
  *      Click Me

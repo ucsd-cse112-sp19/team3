@@ -62,7 +62,9 @@
     <p class="summary"><p>Create a new CustomPopover component with designated styles.</p>
 <p><em>See <a href="https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html">CustomPopover Demo</a> for all listing examples.</em></p>
 <h3>Usage</h3>
-<pre class="prettyprint source"><code>&lt;custom-popover property=&quot;value&quot;> Popover Text &lt;/custom-popover>
+<pre class="prettyprint source"><code>&lt;custom-popover property=&quot;value&quot;> 
+    Popover Text 
+&lt;/custom-popover>
 </code></pre></p>
     
 
@@ -346,45 +348,78 @@
 
 
 <div class="section-examples">
-<h5>Examples</h5>
+        <h5>Examples</h5>
+        
+            <pre class="prettyprint"><code>&lt;custom-button id='default-btn'>
+             &lt;custom-popover anchor='default-btn'>
+                 Popover Text
+             &lt;/custom-popover>
+             Click Me
+        &lt;/custom-button></code></pre>
+        <custom-button id='default-btn'>
+                <custom-popover anchor='default-btn'>
+                    Popover Text
+                </custom-popover>
+                Click Me
+           </custom-button>
+        
+            <pre class="prettyprint"><code>&lt;custom-button rounded id="color-btn">
+             &lt;custom-popover anchor="color-btn" color="hotpink" placement='right'>
+                 Popover Text
+             &lt;/custom-popover>
+             Click Me
+        &lt;/custom-button></code></pre>
+        <custom-button rounded id="color-btn">
+                <custom-popover anchor="color-btn" color="hotpink" placement='right'>
+                    Popover Text
+                </custom-popover>
+                Click Me
+           </custom-button>
+        
+            <pre class="prettyprint"><code>&lt;custom-button rounded id="font-btn">
+             &lt;custom-popover anchor="font-btn" color="hotpink" placement='right' font="Courier New">
+                 Popover Text
+             &lt;/custom-popover>
+             Click Me
+        &lt;/custom-button></code></pre>
+        <custom-button rounded id="font-btn">
+                <custom-popover anchor="font-btn" color="hotpink" placement='right' font="Courier New">
+                    Popover Text
+                </custom-popover>
+                Click Me
+           </custom-button>
+        
+            <pre class="prettyprint"><code>&lt;custom-button rounded id="textcolor-btn">
+             &lt;custom-popover anchor="textcolor-btn" color="hotpink" placement='left' text-color="black">
+                 Popover Text
+             &lt;/custom-popover>
+             Click Me
+        &lt;/custom-button></code></pre>
+        <custom-button rounded id="textcolor-btn">
+                <custom-popover anchor="textcolor-btn" color="hotpink" placement='left' text-color="black">
+                    Popover Text
+                </custom-popover>
+                Click Me
+           </custom-button>
+        
+            <pre class="prettyprint"><code>&lt;custom-button class="btn-warning" id='btnWarning'>
+             &lt;custom-popover class='btn-warning' anchor='btnWarning' placement='bottom'>
+                 Popover Text
+             &lt;/custom-popover>
+             Warning
+        &lt;/custom-button></code></pre>
+        <custom-button class="btn-warning" id='btnWarning'>
+                <custom-popover class='btn-warning' anchor='btnWarning' placement='bottom'>
+                    Popover Text
+                </custom-popover>
+                Warning
+           </custom-button>
+        
+        </div>
+        <script src='./demo_components/CustomButton/CustomButton.js'></script>
+        <script src='./demo_components/CustomPopover/CustomPopover.js'></script>
 
-    <pre class="prettyprint"><code>&lt;custom-button id='default-btn'>
-     &lt;custom-popover anchor='default-btn'>
-         Popover Text
-     &lt;/custom-popover>
-     Click Me
-&lt;/custom-button></code></pre>
-
-    <pre class="prettyprint"><code>&lt;custom-button rounded id="color-btn">
-     &lt;custom-popover anchor="color-btn" color="hotpink" placement='right'>
-         Popover Text
-     &lt;/custom-popover>
-     Click Me
-&lt;/custom-button></code></pre>
-
-    <pre class="prettyprint"><code>&lt;custom-button rounded id="font-btn">
-     &lt;custom-popover anchor="font-btn" color="hotpink" placement='right' font="Courier New">
-         Popover Text
-     &lt;/custom-popover>
-     Click Me
-&lt;/custom-button></code></pre>
-
-    <pre class="prettyprint"><code>@example &lt;custom-button rounded id="textcolor-btn">
-     &lt;custom-popover anchor="color-btn" color="hotpink" placement='left' text-color="black">
-         Popover Text
-     &lt;/custom-popover>
-     Click Me
-&lt;/custom-button></code></pre>
-
-    <pre class="prettyprint"><code>&lt;custom-button class="btn-warning" id='btnWarning'>
-     &lt;custom-popover class='btn-warning' anchor='btnWarning' placement='bottom'>
-         Popover Text
-     &lt;/custom-popover>
-     Warning
-&lt;/custom-button></code></pre>
-
-</div>
-
+        
 </div>
     
     </div>
@@ -449,7 +484,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line86">line 86</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -513,7 +548,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line139">line 139</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -577,7 +612,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line145">line 145</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line147">line 147</a>
     </li></ul></dd>
     
 
@@ -641,7 +676,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line115">line 115</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -705,7 +740,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line109">line 109</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -769,7 +804,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line125">line 125</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line127">line 127</a>
     </li></ul></dd>
     
 
@@ -833,7 +868,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line119">line 119</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line121">line 121</a>
     </li></ul></dd>
     
 
@@ -897,7 +932,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line165">line 165</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line167">line 167</a>
     </li></ul></dd>
     
 
@@ -961,7 +996,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line159">line 159</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line161">line 161</a>
     </li></ul></dd>
     
 
@@ -1025,7 +1060,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line169">line 169</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line171">line 171</a>
     </li></ul></dd>
     
 
@@ -1089,7 +1124,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line175">line 175</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line177">line 177</a>
     </li></ul></dd>
     
 
@@ -1153,7 +1188,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line149">line 149</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line151">line 151</a>
     </li></ul></dd>
     
 
@@ -1217,7 +1252,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line155">line 155</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line157">line 157</a>
     </li></ul></dd>
     
 
@@ -1281,7 +1316,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line99">line 99</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line101">line 101</a>
     </li></ul></dd>
     
 
@@ -1345,7 +1380,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line105">line 105</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line107">line 107</a>
     </li></ul></dd>
     
 
@@ -1409,7 +1444,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line135">line 135</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line137">line 137</a>
     </li></ul></dd>
     
 
@@ -1473,7 +1508,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line129">line 129</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line131">line 131</a>
     </li></ul></dd>
     
 
@@ -1548,7 +1583,7 @@ SETTING UP PROPERTIES THE ANCHOR SHOULD HAVE SUCH AS MOUSEOVER PROPERTIES</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line202">line 202</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line204">line 204</a>
     </li></ul></dd>
     
 
@@ -1631,7 +1666,7 @@ SETTING UP PROPERTIES THE ANCHOR SHOULD HAVE SUCH AS MOUSEOVER PROPERTIES</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line241">line 241</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line243">line 243</a>
     </li></ul></dd>
     
 
@@ -1818,7 +1853,7 @@ SETTING UP PROPERTIES THE ANCHOR SHOULD HAVE SUCH AS MOUSEOVER PROPERTIES</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line223">line 223</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line225">line 225</a>
     </li></ul></dd>
     
 
@@ -1901,7 +1936,7 @@ SETTING UP PROPERTIES THE ANCHOR SHOULD HAVE SUCH AS MOUSEOVER PROPERTIES</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line231">line 231</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line233">line 233</a>
     </li></ul></dd>
     
 
@@ -1984,7 +2019,7 @@ SETTING UP PROPERTIES THE ANCHOR SHOULD HAVE SUCH AS MOUSEOVER PROPERTIES</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line183">line 183</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line185">line 185</a>
     </li></ul></dd>
     
 
@@ -2095,7 +2130,7 @@ AND OUR CUSTOM ATTRIBUTE (TEXT-COLOR), IT WILL PRIORITIZE THE CUSTOM.</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line256">line 256</a>
+        <a href="CustomPopover_CustomPopover.js.html">CustomPopover/CustomPopover.js</a>, <a href="CustomPopover_CustomPopover.js.html#line258">line 258</a>
     </li></ul></dd>
     
 
@@ -2147,7 +2182,7 @@ AND OUR CUSTOM ATTRIBUTE (TEXT-COLOR), IT WILL PRIORITIZE THE CUSTOM.</P>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu Jun 06 2019 21:29:45 GMT-0700 (PDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu Jun 06 2019 21:57:29 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
