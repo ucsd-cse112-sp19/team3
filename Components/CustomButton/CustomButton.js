@@ -18,7 +18,8 @@ class CustomButton extends HTMLElement {
    * ```
    * @property {string} style - Same as style attribute in native CSS.
    * @property {string} text-color - Change color of the text within the button.
-   * @property {string} background-color - Change background color of the button.
+   * @property {string} background-color - Change background color of the 
+   * button.
    * @property {string} border-color - Change the color of the border.
    * @property {string} font - Change the font of the text within the button.
    * @property {string} width - Change the width of the button.
@@ -29,8 +30,8 @@ class CustomButton extends HTMLElement {
    * when hovering over the button.
    * @property {string} hover-border-color - Change the border color when
    * hovering over the button.
-   * @property {string} active-text-color - Change the text color when the button
-   * is being clicked.
+   * @property {string} active-text-color - Change the text color when the 
+   * button is being clicked.
    * @property {string} active-background-color - Change the background color
    * when the button is being clicked.
    * @property {string} active-border-color - Change the border color when the
@@ -60,12 +61,12 @@ class CustomButton extends HTMLElement {
    * @example
    * <custom-button theme="pink-lemonade" active-background-color="blue"
    *                rounded
-   *                font="Comic Sans MS" 
+   *                font="Comic Sans MS"
    *                href="https://stackoverflow.com">
    *      stack overflow
    * </custom-button>
    *
-   * @example 
+   * @example
    * <custom-button class="btn-warning" width="112px" height="63px">
    *      Warning
    * </custom-button>

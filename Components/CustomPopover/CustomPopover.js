@@ -12,10 +12,10 @@ class CustomPopover extends HTMLElement {
    * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.*
    * ```
    * <custom-popover property="value">
-   *     Popover Text 
+   *     Popover Text
    * </custom-popover>
    * ```
-   * @property {string} anchor - Name of button to which the popover is anchored.
+   * @property {string} anchor - Id of button to which the popover is anchored.
    * @property {string} color - Set the background color.
    * @property {string} font - Set the font type.
    * @property {string} header-text - Set the text content.

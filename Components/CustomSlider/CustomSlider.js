@@ -30,7 +30,7 @@ class CustomSlider extends HTMLElement {
    * native CSS.
    *
    * @example
-   * <custom-slider showinput></custom-slider> 
+   * <custom-slider showinput></custom-slider>
    *
    * @example
    * <custom-slider min="0" max="10" value="5" showinput>
