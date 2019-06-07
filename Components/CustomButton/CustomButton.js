@@ -18,7 +18,7 @@ class CustomButton extends HTMLElement {
    * ```
    * @property {string} style - Same as style attribute in native CSS.
    * @property {string} text-color - Change color of the text within the button.
-   * @property {string} background-color - Change background color of the 
+   * @property {string} background-color - Change background color of the
    * button.
    * @property {string} border-color - Change the color of the border.
    * @property {string} font - Change the font of the text within the button.
@@ -30,7 +30,7 @@ class CustomButton extends HTMLElement {
    * when hovering over the button.
    * @property {string} hover-border-color - Change the border color when
    * hovering over the button.
-   * @property {string} active-text-color - Change the text color when the 
+   * @property {string} active-text-color - Change the text color when the
    * button is being clicked.
    * @property {string} active-background-color - Change the background color
    * when the button is being clicked.
