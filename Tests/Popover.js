@@ -81,7 +81,7 @@ describe('CustomPopover', function() {
     it('Testing popover anchor', async () => {
       await showroom.setAttribute('anchor', 'default-btn');
       const anchor = await showroom.getProperty('anchor');
-      assert.deepEqual(anchor, 'default-btn')
+      assert.deepEqual(anchor, 'default-btn');
     });
   });
 
