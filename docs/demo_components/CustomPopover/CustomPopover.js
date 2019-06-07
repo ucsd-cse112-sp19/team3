@@ -4,7 +4,6 @@
 /**
  * @class CustomPopover
  * @summary Create a new CustomPopover component with designated styles.
- * 
  * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.*
  * ### Usage
  * ```

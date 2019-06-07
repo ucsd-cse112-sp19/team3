@@ -3,7 +3,6 @@
 /**
  * @class CustomSlider
  * @summary Create a new CustomSlider component with designated styles.
- * 
  * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomSlider/CustomSlider.html} for all listing examples.*
  * ### Usage
  * ```

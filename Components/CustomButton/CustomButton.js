@@ -4,7 +4,8 @@
 /**
  * @class CustomButton
  * @summary Create a new CustomButton component with designated styles.
- * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomButton.html} for all listing examples.*
+ * 
+ * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.*
  * ### Usage
  * ```
  * <custom-button property="value">
@@ -41,6 +42,8 @@
  * @example <custom-button theme="pink-lemonade" active-background-color="blue">
  *      Click Me
  * </custom-button>
+ * 
+ * @see [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.
  */
 class CustomButton extends HTMLElement {
   

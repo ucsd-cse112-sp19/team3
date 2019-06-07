@@ -4,7 +4,6 @@
 /**
  * @class CoreHello
  * @summary class of CoreHello component, a starter of customized web components
- * 
  * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.*
  * ### Usage
  * ```
