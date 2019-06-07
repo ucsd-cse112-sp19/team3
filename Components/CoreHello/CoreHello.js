@@ -14,8 +14,12 @@
  * ```
  * @property {string} style - Same as style attribute in native CSS - used for inline styling.
  * @property {string} class - Same as class attribute in native CSS - used for modular styling.
- * @property {string} lang - language of display, default is English, other options: jp, es, fr
- * @property {boolean} rainbow - enable rainbow color effect
+ * @property {string} lang - Set the language of display, default is English, other options: jp, es, fr
+ * @property {boolean} rainbow - Enable rainbow color effect.
+ * 
+ * @example <core-hello>
+ *     Peter
+ * </core-hello>
  * 
  * @example <core-hello lang="es" rainbow>
  *     Peter

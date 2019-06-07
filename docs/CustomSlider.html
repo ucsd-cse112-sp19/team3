@@ -98,6 +98,106 @@
 
         <tr>
             
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Set the minimum value of the slider.</p></td>
+        </tr>
+
+        
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Set the maximum value of the slider.</p></td>
+        </tr>
+
+        
+
+    
+
+        <tr>
+            
+                <td class="name"><code>step</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Set the step size when moving the slider.</p></td>
+        </tr>
+
+        
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Set the initial value of the slider.</p></td>
+        </tr>
+
+        
+
+    
+
+        <tr>
+            
                 <td class="name"><code>disabled</code></td>
             
 
@@ -114,7 +214,7 @@
 
             
 
-            <td class="description last"><p>Disables the slider, graying out the bar and preventing value change.</p></td>
+            <td class="description last"><p>Make the slider unabled to be used.</p></td>
         </tr>
 
         
@@ -123,13 +223,13 @@
 
         <tr>
             
-                <td class="name"><code>size</code></td>
+                <td class="name"><code>readonly</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type"><code>boolean</code></span>
 
 
             
@@ -139,7 +239,7 @@
 
             
 
-            <td class="description last"><p>S, M, or L options allow size customization.</p></td>
+            <td class="description last"><p>Set the input field as read-only.</p></td>
         </tr>
 
         
@@ -148,13 +248,13 @@
 
         <tr>
             
-                <td class="name"><code>max</code></td>
+                <td class="name"><code>required</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>number</code></span>
+<span class="param-type"><code>boolean</code></span>
 
 
             
@@ -164,7 +264,7 @@
 
             
 
-            <td class="description last"><p>Sets the maximum value of the slider.</p></td>
+            <td class="description last"><p>Set required attribute.</p></td>
         </tr>
 
         
@@ -173,32 +273,7 @@
 
         <tr>
             
-                <td class="name"><code>min</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Sets the minimum value of the slider.</p></td>
-        </tr>
-
-        
-
-    
-
-        <tr>
-            
-                <td class="name"><code>showInput</code></td>
+                <td class="name"><code>showinput</code></td>
             
 
             <td class="type">
@@ -223,13 +298,13 @@
 
         <tr>
             
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>onchange</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>number</code></span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -239,7 +314,57 @@
 
             
 
-            <td class="description last"><p>Sets the initial value of the slider.</p></td>
+            <td class="description last"><p>Callback function when value is updated.</p></td>
+        </tr>
+
+        
+
+    
+
+        <tr>
+            
+                <td class="name"><code>slider-class</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Class attribute for the slider in native CSS.</p></td>
+        </tr>
+
+        
+
+    
+
+        <tr>
+            
+                <td class="name"><code>input-class</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Class attribute for the input field in native CSS.</p></td>
         </tr>
 
         
@@ -323,17 +448,17 @@
 <div class="section-examples">
 <h5>Examples</h5>
 
-    <pre class="prettyprint"><code>&lt;custom-slider min="5" max="105" value="50">&lt;/custom-slider></code></pre>
-    <custom-slider min="5" max="105" value="50"></custom-slider>
+    <pre class="prettyprint"><code>&lt;custom-slider showinput>&lt;/custom-slider> </code></pre>
 
-    <pre class="prettyprint"><code>&lt;custom-slider min="5" max="105" value="50" disabled>&lt;/custom-slider></code></pre>
-    <custom-slider min="5" max="105" value="50" disabled></custom-slider>
+    <pre class="prettyprint"><code>&lt;custom-slider min="0" max="10" value="5" showinput>&lt;/custom-slider></code></pre>
 
-    <pre class="prettyprint"><code>&lt;custom-slider min="5" max="105" value="50" size="L" showinput>&lt;/custom-slider></code></pre>
-    <custom-slider min="5" max="105" value="50" size="L" showinput></custom-slider>
-    
+    <pre class="prettyprint"><code>&lt;custom-slider min="0" max="10" value="5" showinput disabled>&lt;/custom-slider></code></pre>
+
+    <pre class="prettyprint"><code>&lt;custom-slider min="0" max="10" value="5" showinput onchange="changed">&lt;/custom-slider></code></pre>
+
+    <pre class="prettyprint"><code>&lt;custom-slider showinput input-class="form-control" slider-class="form-control-range">&lt;/custom-slider></code></pre>
+
 </div>
-<script src="./demo_components/CustomSlider/CustomSlider.js"></script>
 
 </div>
     
@@ -397,7 +522,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line89">line 89</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line100">line 100</a>
     </li></ul></dd>
     
 
@@ -461,7 +586,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line54">line 54</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
@@ -525,7 +650,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line66">line 66</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line77">line 77</a>
     </li></ul></dd>
     
 
@@ -591,7 +716,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line102">line 102</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line113">line 113</a>
     </li></ul></dd>
     
 
@@ -655,7 +780,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line78">line 78</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -729,7 +854,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line186">line 186</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line197">line 197</a>
     </li></ul></dd>
     
 
@@ -916,7 +1041,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line176">line 176</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line187">line 187</a>
     </li></ul></dd>
     
 
@@ -999,7 +1124,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line157">line 157</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line168">line 168</a>
     </li></ul></dd>
     
 
@@ -1134,7 +1259,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line112">line 112</a>
+        <a href="CustomSlider_CustomSlider.js.html">CustomSlider/CustomSlider.js</a>, <a href="CustomSlider_CustomSlider.js.html#line123">line 123</a>
     </li></ul></dd>
     
 
@@ -1186,7 +1311,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu Jun 06 2019 19:41:23 GMT-0700 (PDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu Jun 06 2019 21:29:45 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -35,12 +35,20 @@
  *      Button
  * </custom-button>
  * 
- * @example <custom-button rounded>
+ * @example <custom-button theme="pink-lemonade" active-background-color="blue">
  *      Click Me
  * </custom-button>
  * 
- * @example <custom-button theme="pink-lemonade" active-background-color="blue">
+ * @example <custom-button theme="pink-lemonade" active-background-color="blue" rounded>
  *      Click Me
+ * </custom-button>
+ * 
+ * @example <custom-button theme="pink-lemonade" active-background-color="blue" rounded font="Comic Sans MS" href="https://stackoverflow.com">
+ *      stack overflow
+ * </custom-button>
+ * 
+ * @example <custom-button class="btn-warning" width="112px" height="63px">
+ *      Warning
  * </custom-button>
  * 
  * @see [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.

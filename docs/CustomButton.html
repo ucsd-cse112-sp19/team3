@@ -116,7 +116,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Same as style attribute in native CSS - used for inline styling.</p></td>
         </tr>
 
         
@@ -141,7 +141,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the color of the text within the button.</p></td>
         </tr>
 
         
@@ -166,7 +166,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the background color of the button.</p></td>
         </tr>
 
         
@@ -191,7 +191,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the color of the border.</p></td>
         </tr>
 
         
@@ -216,7 +216,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the font of the text within the button.</p></td>
         </tr>
 
         
@@ -241,7 +241,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the width of the button.</p></td>
         </tr>
 
         
@@ -266,7 +266,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the height of the button.</p></td>
         </tr>
 
         
@@ -291,7 +291,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the text color when hovering over the button.</p></td>
         </tr>
 
         
@@ -316,7 +316,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the background color when hovering over the button.</p></td>
         </tr>
 
         
@@ -341,7 +341,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the border color when hovering over the button.</p></td>
         </tr>
 
         
@@ -366,7 +366,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the text color when the button is being clicked.</p></td>
         </tr>
 
         
@@ -391,7 +391,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the background color when the button is being clicked.</p></td>
         </tr>
 
         
@@ -416,7 +416,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Change the border color when the button is being clicked.</p></td>
         </tr>
 
         
@@ -431,7 +431,7 @@
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type"><code>boolean</code></span>
 
 
             
@@ -441,7 +441,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Make the button appear with rounded edges.</p></td>
         </tr>
 
         
@@ -456,7 +456,7 @@
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type"><code>boolean</code></span>
 
 
             
@@ -466,7 +466,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Make the button appear as a circle.</p></td>
         </tr>
 
         
@@ -481,7 +481,7 @@
             <td class="type">
             
                 
-<span class="param-type"><code>string</code></span>
+<span class="param-type"><code>boolean</code></span>
 
 
             
@@ -491,7 +491,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Make the button unable to be clicked.</p></td>
         </tr>
 
         
@@ -516,7 +516,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Pass a link to the button.</p></td>
         </tr>
 
         
@@ -541,7 +541,7 @@
 
             
 
-            <td class="description last"><p>this is example</p></td>
+            <td class="description last"><p>Use a pre-built theme to style the button.</p></td>
         </tr>
 
         
@@ -628,22 +628,24 @@
     <pre class="prettyprint"><code>&lt;custom-button onclick="alert('Hello world!')">
      Button
 &lt;/custom-button></code></pre>
-    <custom-button onclick="alert('Hello world!')">Button</custom-button>
-
-
-    <pre class="prettyprint"><code>&lt;custom-button rounded>
-     Click Me
-&lt;/custom-button></code></pre>
-    <custom-button rounded>Click Me</custom-button>
 
     <pre class="prettyprint"><code>&lt;custom-button theme="pink-lemonade" active-background-color="blue">
      Click Me
 &lt;/custom-button></code></pre>
-    <custom-button theme="pink-lemonade" active-background-color="#ff34b3">Click Me</custom-button>
+
+    <pre class="prettyprint"><code>&lt;custom-button theme="pink-lemonade" active-background-color="blue" rounded>
+     Click Me
+&lt;/custom-button></code></pre>
+
+    <pre class="prettyprint"><code>&lt;custom-button theme="pink-lemonade" active-background-color="blue" rounded font="Comic Sans MS" href="https://stackoverflow.com">
+     stack overflow
+&lt;/custom-button></code></pre>
+
+    <pre class="prettyprint"><code>&lt;custom-button class="btn-warning" width="112px" height="63px">
+     Warning
+&lt;/custom-button></code></pre>
 
 </div>
-<script src="./demo_components/CustomButton/CustomButton.js"></script>
-
 
 </div>
     
@@ -709,7 +711,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line77">line 77</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -773,7 +775,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line237">line 237</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line245">line 245</a>
     </li></ul></dd>
     
 
@@ -837,7 +839,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line243">line 243</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line251">line 251</a>
     </li></ul></dd>
     
 
@@ -901,7 +903,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line247">line 247</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line255">line 255</a>
     </li></ul></dd>
     
 
@@ -965,7 +967,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line253">line 253</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line261">line 261</a>
     </li></ul></dd>
     
 
@@ -1029,7 +1031,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line233">line 233</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line241">line 241</a>
     </li></ul></dd>
     
 
@@ -1093,7 +1095,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line227">line 227</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line235">line 235</a>
     </li></ul></dd>
     
 
@@ -1157,7 +1159,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line147">line 147</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line155">line 155</a>
     </li></ul></dd>
     
 
@@ -1221,7 +1223,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line153">line 153</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line161">line 161</a>
     </li></ul></dd>
     
 
@@ -1285,7 +1287,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line157">line 157</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line165">line 165</a>
     </li></ul></dd>
     
 
@@ -1349,7 +1351,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line163">line 163</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line171">line 171</a>
     </li></ul></dd>
     
 
@@ -1413,7 +1415,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line267">line 267</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line275">line 275</a>
     </li></ul></dd>
     
 
@@ -1477,7 +1479,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line273">line 273</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line281">line 281</a>
     </li></ul></dd>
     
 
@@ -1541,7 +1543,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line277">line 277</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line285">line 285</a>
     </li></ul></dd>
     
 
@@ -1605,7 +1607,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line283">line 283</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line291">line 291</a>
     </li></ul></dd>
     
 
@@ -1669,7 +1671,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line167">line 167</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -1733,7 +1735,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line173">line 173</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line181">line 181</a>
     </li></ul></dd>
     
 
@@ -1797,7 +1799,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line187">line 187</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line195">line 195</a>
     </li></ul></dd>
     
 
@@ -1861,7 +1863,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line193">line 193</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line201">line 201</a>
     </li></ul></dd>
     
 
@@ -1925,7 +1927,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line207">line 207</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line215">line 215</a>
     </li></ul></dd>
     
 
@@ -1989,7 +1991,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line213">line 213</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line221">line 221</a>
     </li></ul></dd>
     
 
@@ -2053,7 +2055,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line217">line 217</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line225">line 225</a>
     </li></ul></dd>
     
 
@@ -2117,7 +2119,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line223">line 223</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line231">line 231</a>
     </li></ul></dd>
     
 
@@ -2181,7 +2183,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line203">line 203</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line211">line 211</a>
     </li></ul></dd>
     
 
@@ -2245,7 +2247,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line197">line 197</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line205">line 205</a>
     </li></ul></dd>
     
 
@@ -2309,7 +2311,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line263">line 263</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line271">line 271</a>
     </li></ul></dd>
     
 
@@ -2373,7 +2375,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line257">line 257</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line265">line 265</a>
     </li></ul></dd>
     
 
@@ -2437,7 +2439,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line127">line 127</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line135">line 135</a>
     </li></ul></dd>
     
 
@@ -2501,7 +2503,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line133">line 133</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -2565,7 +2567,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line143">line 143</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line151">line 151</a>
     </li></ul></dd>
     
 
@@ -2629,7 +2631,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line137">line 137</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line145">line 145</a>
     </li></ul></dd>
     
 
@@ -2693,7 +2695,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line287">line 287</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line295">line 295</a>
     </li></ul></dd>
     
 
@@ -2757,7 +2759,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line293">line 293</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line301">line 301</a>
     </li></ul></dd>
     
 
@@ -2821,7 +2823,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line183">line 183</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line191">line 191</a>
     </li></ul></dd>
     
 
@@ -2885,7 +2887,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line177">line 177</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line185">line 185</a>
     </li></ul></dd>
     
 
@@ -2959,7 +2961,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line117">line 117</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line125">line 125</a>
     </li></ul></dd>
     
 
@@ -3146,7 +3148,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line101">line 101</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line109">line 109</a>
     </li></ul></dd>
     
 
@@ -3229,7 +3231,7 @@ AND HANDLES IT USING ATTRIBUTECHANGEDCALLBACK().</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line107">line 107</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line115">line 115</a>
     </li></ul></dd>
     
 
@@ -3315,7 +3317,7 @@ AND OUR CUSTOM ATTRIBUTE (TEXT-COLOR), IT PRIORITIZES CUSTOM ATTRIBUTES.</P>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line303">line 303</a>
+        <a href="CustomButton_CustomButton.js.html">CustomButton/CustomButton.js</a>, <a href="CustomButton_CustomButton.js.html#line311">line 311</a>
     </li></ul></dd>
     
 
@@ -3367,7 +3369,7 @@ AND OUR CUSTOM ATTRIBUTE (TEXT-COLOR), IT PRIORITIZES CUSTOM ATTRIBUTES.</P>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu Jun 06 2019 19:41:23 GMT-0700 (PDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Thu Jun 06 2019 21:29:45 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -8,7 +8,9 @@
  * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.*
  * ### Usage
  * ```
- * <custom-popover property="value"> Popover Body Text </custom-popover>
+ * <custom-popover property="value"> 
+ *     Popover Text 
+ * </custom-popover>
  * ```
  * @property {string} anchor - Name of button to which the popover is anchored.
  * @property {string} color - Set the background color.
@@ -25,15 +27,29 @@
  *      Click Me
  * </custom-button>
  * 
- * @example <custom-button id='topBtn'>
- *      <custom-popover anchor='topBtn' placement='top'>
+ * @example <custom-button rounded id="color-btn">
+ *      <custom-popover anchor="color-btn" color="hotpink" placement='right'>
+ *          Popover Text
+ *      </custom-popover>
+ *      Click Me
+ * </custom-button>
+ * 
+ * @example <custom-button rounded id="font-btn">
+ *      <custom-popover anchor="font-btn" color="hotpink" placement='right' font="Courier New">
+ *          Popover Text
+ *      </custom-popover>
+ *      Click Me
+ * </custom-button>
+ * 
+ * @example <custom-button rounded id="textcolor-btn">
+ *      <custom-popover anchor="color-btn" color="hotpink" placement='left' text-color="black">
  *          Popover Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
  * 
  * @example <custom-button class="btn-warning" id='btnWarning'>
- *      <custom-popover class='btn-warning' anchor='btnWarning' placement='top'>
+ *      <custom-popover class='btn-warning' anchor='btnWarning' placement='bottom'>
  *          Popover Text
  *      </custom-popover>
  *      Warning
