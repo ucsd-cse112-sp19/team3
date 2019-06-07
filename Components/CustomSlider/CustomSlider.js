@@ -1,13 +1,15 @@
 'use strict';
 
-
+/**
+ * @file CustomSlider
+ */
 class CustomSlider extends HTMLElement {
   /**
    * @class CustomSlider
-   * @summary Create a new CustomSlider component with designated styles.
-   *
-   * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomSlider/CustomSlider.html} for all listing examples.*
+   * @classdesc Create a new CustomSlider component with designated styles.
+   * @summary
    * ### Usage
+   * *See [CustomSlider Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomSlider/CustomSlider.html} for all listing examples.*
    * ```
    * <custom-slider property="value"></custom-slider>
    * ```
@@ -20,12 +22,12 @@ class CustomSlider extends HTMLElement {
    * @property {boolean} required - Set whether required for like a form (if
    * there’s a form bounding this component).
    * @property {boolean} showinput - Enables a text box containing the current
-   *  value of the slider.
+   * value of the slider.
    * @property {string} onchange - Callback function when value is updated.
    * @property {string} slider-class - Class attribute for the slider in native
-   *  CSS.
+   * CSS.
    * @property {String} input-class - Class attribute for the input field in
-   *  native CSS.
+   * native CSS.
    *
    * @example
    * <custom-slider showinput></custom-slider> 

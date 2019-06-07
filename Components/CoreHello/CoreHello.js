@@ -1,13 +1,16 @@
 'use strict';
 
-
+/**
+ * @file CoreHello
+ */
 class CoreHello extends HTMLElement {
   /**
    * @class CoreHello
-   * @summary class of CoreHello component, a starter of customized web components
-   *
-   * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.*
+   * @classdesc A starter of customized web components.
+   * @extends HTMLElement
+   * @summary
    * ### Usage
+   * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.*
    * ```
    * <core-hello property="value">
    *     Display Text
@@ -30,7 +33,6 @@ class CoreHello extends HTMLElement {
    * </core-hello>
    *
    * @see [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.
-   * @hideconstructor
    */
   constructor() {
     super();
@@ -186,5 +188,6 @@ class CoreHello extends HTMLElement {
   }
 }
 
+/** */
 CoreHello.template = document.createElement('template');
 customElements.define('core-hello', CoreHello);

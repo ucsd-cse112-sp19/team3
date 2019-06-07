@@ -1,13 +1,15 @@
 'use strict';
 
-
+/**
+ * @file CustomPopover
+ */
 class CustomPopover extends HTMLElement {
   /**
    * @class CustomPopover
-   * @summary Create a new CustomPopover component with designated styles.
-   *
-   * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.*
+   * @classdesc Create a new CustomPopover component with designated styles.
+   * @summary
    * ### Usage
+   * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.*
    * ```
    * <custom-popover property="value">
    *     Popover Text 

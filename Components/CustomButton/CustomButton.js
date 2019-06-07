@@ -1,13 +1,16 @@
 'use strict';
 
-
+/**
+ * @file CustomButton
+ */
 class CustomButton extends HTMLElement {
   /**
    * @class CustomButton
-   * @summary Create a new CustomButton component with designated styles.
-   *
-   * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.*
+   * @classdesc Create a new CustomButton component with designated styles.
+   * @extends HTMLElement
+   * @summary
    * ### Usage
+   * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.*
    * ```
    * <custom-button property="value">
    *     Button Text
@@ -21,17 +24,17 @@ class CustomButton extends HTMLElement {
    * @property {string} width - Change the width of the button.
    * @property {string} height - Change the height of the button.
    * @property {string} hover-text-color - Change the text color when hovering
-   *  over the button.
+   * over the button.
    * @property {string} hover-background-color - Change the background color
-   *  when hovering over the button.
+   * when hovering over the button.
    * @property {string} hover-border-color - Change the border color when
-   *  hovering over the button.
+   * hovering over the button.
    * @property {string} active-text-color - Change the text color when the button
-   *  is being clicked.
+   * is being clicked.
    * @property {string} active-background-color - Change the background color
-   *  when the button is being clicked.
+   * when the button is being clicked.
    * @property {string} active-border-color - Change the border color when the
-   *  button is being clicked.
+   * button is being clicked.
    * @property {boolean} rounded - Make the button appear with rounded edges.
    * @property {boolean} circle - Make the button appear as a circle.
    * @property {boolean} disabled - Make the button unable to be clicked.
