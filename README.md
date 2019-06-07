@@ -11,14 +11,14 @@ We are Team SPECS! This is a library of customizable web components.
 
 ## Documentation
 
-<https://ucsd-cse112.github.io/team3/>
+[ucsd-cse112.github.io/team3](https://ucsd-cse112.github.io/team3/)
 
 ## Development
 
 ##### How to Install
 Download the repository to local, and setup all the Node.js packages dependencies,
 ```
-git clone https://github.com/ucsd-cse112/Team2.git
+git clone https://github.com/ucsd-cse112/Team3.git
 npm install
 ```
 If decide to start fresh again,
