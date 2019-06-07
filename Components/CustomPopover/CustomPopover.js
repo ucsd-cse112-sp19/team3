@@ -4,6 +4,7 @@
 /**
  * @class CustomPopover
  * @summary Create a new CustomPopover component with designated styles.
+ * 
  * *See [CustomPopover Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomPopover/CustomPopover.html} for all listing examples.*
  * ### Usage
  * ```
@@ -19,21 +20,21 @@
  *
  * @example <custom-button id='default-btn'>
  *      <custom-popover anchor='default-btn'>
- *          Popover Body Text
+ *          Popover Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
  * 
  * @example <custom-button id='topBtn'>
  *      <custom-popover anchor='topBtn' placement='top'>
- *          Popover Body Text
+ *          Popover Text
  *      </custom-popover>
  *      Click Me
  * </custom-button>
  * 
  * @example <custom-button class="btn-warning" id='btnWarning'>
  *      <custom-popover class='btn-warning' anchor='btnWarning' placement='top'>
- *          Popover Body Text
+ *          Popover Text
  *      </custom-popover>
  *      Warning
  * </custom-button>

@@ -4,6 +4,7 @@
 /**
  * @class CustomButton
  * @summary Create a new CustomButton component with designated styles.
+ * 
  * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.*
  * ### Usage
  * ```
