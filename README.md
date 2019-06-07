@@ -12,6 +12,7 @@ We are Team SPECS! This is a library of customizable web components.
 ## Documentation
 
 [ucsd-cse112.github.io/team3](https://ucsd-cse112.github.io/team3/)
+[Wiki](https://github.com/ucsd-cse112/team3/wiki)
 
 ## Development
 
