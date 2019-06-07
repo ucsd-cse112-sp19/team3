@@ -76,4 +76,22 @@ describe('CustomPopover', function() {
       assert.deepEqual(result.toString(), 'true');
     });
   });
+
+  describe('anchor', async()=> {
+    it('Testing popover anchor', async()=>{
+      await showroom.setAttribute('anchor', 'default-btn');
+      const anchor = await showroom.getProperty('anchor');
+      assert.deepEqual(anchor, 'default-btn')
+    });
+  });
+
+  describe('bootstrap', async()=>{
+    it('Testing bootstrap support', async()=>{
+      await showroom.setAttribute('class', 'btn-primary');
+      const style = await showroom.find('//style');
+      const text = await showroom.getTextContent(style);
+      const result = text.includes('--arrow-color: #007bff');
+      assert.deepEqual(result.toString(), 'true');
+    });
+  });
 });

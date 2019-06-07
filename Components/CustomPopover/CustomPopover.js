@@ -96,6 +96,8 @@ class CustomPopover extends HTMLElement {
    */
   static get observedAttributes() {
     return [
+      'class',
+
       'style',
       'color',
       'text-color',
@@ -311,7 +313,7 @@ class CustomPopover extends HTMLElement {
             div {
                 background-color: var(--color-scheme);
                 color: var(--text-color);
-                font-family: ${this.font ? this.font : 'Lucida Console'};    
+                font-family: ${this.font ? this.font : 'Lucida Console'};
                 display: inline-block;
 
                 outline: none;
@@ -342,7 +344,7 @@ class CustomPopover extends HTMLElement {
         newCSS = `
                     div {
                         top: -110%;
-                        left: -15px; 
+                        left: -15px;
                         height: 45px;
                     }
                     div::after {
