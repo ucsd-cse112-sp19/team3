@@ -1,39 +1,29 @@
 'use strict';
 
+
 /**
- * @file CoreHello
+ * @class CoreHello
+ * @summary class of CoreHello component, a starter of customized web components
+ * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.*
+ * ### Usage
+ * ```
+ * <core-hello property="value">
+ *     Display Text
+ * </core-hello>
+ * ```
+ * @property {string} style - this is example
+ * @property {string} class - this is example
+ * @property {string} lang - language of display, default is English, other options: `jp, es, fr`
+ * @property {boolean} rainbow - enable rainbow color effect
+ * 
+ * @example <core-hello lang="es" rainbow>
+ *     Peter
+ * </core-hello>
+ * 
+ * @see [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.
  */
 class CoreHello extends HTMLElement {
-  /**
-   * @class CoreHello
-   * @classdesc A starter of customized web components.
-   * @extends HTMLElement
-   * @summary
-   * ### Usage
-   * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.*
-   * ```
-   * <core-hello property="value">
-   *     Display Text
-   * </core-hello>
-   * ```
-   * @property {string} style - Same as style attribute in native CSS.
-   * @property {string} class - Same as class attribute in native CSS.
-   * @property {string} lang - Set the language of display, default is English,
-   * other options: jp, es, fr
-   * @property {boolean} rainbow - Enable rainbow color effect.
-   *
-   * @example
-   * <core-hello>
-   *     Peter
-   * </core-hello>
-   *
-   * @example
-   * <core-hello lang="es" rainbow>
-   *     Peter
-   * </core-hello>
-   *
-   * @see [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.
-   */
+  
   constructor() {
     super();
 
@@ -188,6 +178,5 @@ class CoreHello extends HTMLElement {
   }
 }
 
-/** */
 CoreHello.template = document.createElement('template');
 customElements.define('core-hello', CoreHello);

@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SpecsTab.html">SpecsTab</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CoreHello.html">CoreHello</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CoreHello.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomButton.html">CustomButton</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomButton.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomPopover.html">CustomPopover</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#attachAnchor">attachAnchor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#disconnectedCallback">disconnectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#findAnchor">findAnchor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomPopover.html#updateStyle">updateStyle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="CustomSlider.html">CustomSlider</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#attributeChangedCallback">attributeChangedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#connectedCallback">connectedCallback</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#onValueChange">onValueChange</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="CustomSlider.html#updateStyle">updateStyle</a></span></li>
 </nav>
 
 <div id="main">
@@ -41,28 +41,40 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-
-/** 
- * @class CoreHello
- * 
- * @summary class of CoreHello component, a starter of customized web components
- * 
- * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CoreHello.html} for all listing examples.*
- * 
- * ### Usage
- * ```
- * &lt;core-hello property="value"> YourName &lt;/core-hello>
- * ```
- * 
- * @property {string} lang - display language, options: `jp, es, fr`
- * @property {boolean} rainbow - enable rainbow
- * 
- * @example &lt;core-hello lang="es" rainbow> Peter &lt;/core-hello>
- * 
- * @todo fix the property table
+/**
+ * @file CoreHello
  */
 class CoreHello extends HTMLElement {
-
+  /**
+   * @class CoreHello
+   * @classdesc A starter of customized web components.
+   * @extends HTMLElement
+   * @summary
+   * ### Usage
+   * *See [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.*
+   * ```
+   * &lt;core-hello property="value">
+   *     Display Text
+   * &lt;/core-hello>
+   * ```
+   * @property {string} style - Same as style attribute in native CSS.
+   * @property {string} class - Same as class attribute in native CSS.
+   * @property {string} lang - Set the language of display, default is English,
+   * other options: jp, es, fr
+   * @property {boolean} rainbow - Enable rainbow color effect.
+   *
+   * @example
+   * &lt;core-hello>
+   *     Peter
+   * &lt;/core-hello>
+   *
+   * @example
+   * &lt;core-hello lang="es" rainbow>
+   *     Peter
+   * &lt;/core-hello>
+   *
+   * @see [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.
+   */
   constructor() {
     super();
 
@@ -71,100 +83,153 @@ class CoreHello extends HTMLElement {
     CoreHello.template = document.createElement('template');
     const templateContent = CoreHello.template.content;
 
-    // Set greeting
-    let greeting = 'Hello World';
-    const lang = this.getAttribute('lang');
-    if (lang === 'jp') {
-      greeting = 'Kon\'nichiwa sekai';
-    } else if (lang === 'es') {
-      greeting = 'Hola Mundo';
-    } else if (lang === 'fr') {
-      greeting = 'Bonjour le monde';
-    }
-
-    // Import CSS
-    const importStyle = `&lt;style>.greeting {
-                  font-size: 100px;
-                  font-family: 'Franklin Gothic Medium',
-                  'Arial Narrow', Arial, sans-serif;
-                }
-
-                .rainbow {
-                  animation: rainbow 2.5s linear;
-                  animation-iteration-count: infinite;
-                }
-
-                @keyframes rainbow {
-                  100%,
-                  0% {
-                color: rgb(255, 0, 0);
-                  }
-
-                  8% {
-                color: rgb(255, 127, 0);
-                  }
-
-                  16% {
-                color: rgb(255, 255, 0);
-                  }
-
-                  25% {
-                color: rgb(127, 255, 0);
-                  }
-
-                  33% {
-                color: rgb(0, 255, 0);
-                  }
-
-                  41% {
-                color: rgb(0, 255, 127);
-                  }
-
-                  50% {
-                color: rgb(0, 255, 255);
-                  }
-
-                  58% {
-                color: rgb(0, 127, 255);
-                  }
-
-                  66% {
-                color: rgb(0, 0, 255);
-                  }
-
-                  75% {
-                color: rgb(127, 0, 255);
-                  }
-
-                  83% {
-                color: rgb(255, 0, 255);
-                  }
-
-                  91% {
-                color: rgb(255, 0, 127);
-                  }
-                }&lt;/style>`;
-
-    // Set CSS
-    const isRainbow = this.hasAttribute('rainbow');
-    let styling = `&lt;div class="greeting">`;
-    if (isRainbow) {
-      styling = `&lt;div class="rainbow greeting">`;
-    }
-
-    CoreHello.template.innerHTML = importStyle +
-    styling + greeting + ` &lt;slot>&lt;/slot>`;
-
+    // component skeleton - fleshed out by callback functions
+    // and updateStyle()
+    CoreHello.template.innerHTML = `
+      &lt;style>
+      &lt;/style>
+      &lt;div>&lt;greeting>Hello World &lt;/greeting>&lt;slot>&lt;/slot>&lt;/div>`;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
   }
 
-  /* Element attached on DOM */
+  /**
+   * List of attributes supported by the component.
+   * Component listens for changes to these attributes
+   * and handles it using attributeChangedCallback().
+   */
+  static get observedAttributes() {
+    return [
+      'style',
+      'class',
+      'lang',
+      'rainbow',
+    ];
+  }
+
+  /** Called when element rendered in DOM */
   connectedCallback() {
-    // code
+    console.log('core-hello rendered in DOM');
+  }
+
+  /** Called when element destroyed */
+  disconnectedCallback() {
+    console.log('core-hello removed from DOM');
+  }
+
+  /**
+    * Handles attribute changes on the fly.
+    * @param {string} attr - The attribute changed
+    * @param {string} oldValue - The value before change
+    * @param {string} newValue - The value after change
+    */
+  attributeChangedCallback(attr, oldValue, newValue) {
+    console.log('core-hello attribute ' + attr + ' changed');
+    if (attr === 'lang') {
+      // Set greeting
+      let greeting = '';
+      switch (newValue) {
+        case 'jp':
+          greeting = 'Kon\'nichiwa seka';
+          break;
+        case 'es':
+          greeting = 'Hola Mundo';
+          break;
+        case 'fr':
+          greeting = 'Bonjour le monde';
+          break;
+        default:
+          greeting = 'Hello World';
+      }
+      const shadow = this.shadowRoot;
+      shadow.querySelector('greeting').textContent = greeting + ' ';
+    } else {
+      this.updateStyle();
+    }
+  }
+
+  /** Updates style based on set attributes */
+  updateStyle() {
+    console.log('core-hello calling updateStyle()');
+    const shadow = this.shadowRoot;
+
+    const div = shadow.querySelector('div');
+    if (this.hasAttribute('class')) {
+      div.setAttribute('class', this.getAttribute('class'));
+    }
+    shadow.querySelector('style').textContent = `
+      div { /* greeting styles, always included */
+        font-size: 100px;
+        font-family: 'Franklin Gothic Medium',
+        'Arial Narrow', Arial, sans-serif;
+      }
+      .rainbow {
+        animation: rainbow 2.5s linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes rainbow {
+        100%,
+        0% {
+      color: rgb(255, 0, 0);
+        }
+
+        8% {
+      color: rgb(255, 127, 0);
+        }
+
+        16% {
+      color: rgb(255, 255, 0);
+        }
+
+        25% {
+      color: rgb(127, 255, 0);
+        }
+
+        33% {
+      color: rgb(0, 255, 0);
+        }
+
+        41% {
+      color: rgb(0, 255, 127);
+        }
+
+        50% {
+      color: rgb(0, 255, 255);
+        }
+
+        58% {
+      color: rgb(0, 127, 255);
+        }
+
+        66% {
+      color: rgb(0, 0, 255);
+        }
+
+        75% {
+      color: rgb(127, 0, 255);
+        }
+
+        83% {
+      color: rgb(255, 0, 255);
+        }
+
+        91% {
+      color: rgb(255, 0, 127);
+        }
+      }
+    `;
+
+    // Set rainbow style
+    if (this.hasAttribute('rainbow')) {
+      div.setAttribute('class', 'rainbow');
+    } else {
+      div.setAttribute('class', '');
+    }
   }
 }
 
+/** */
 CoreHello.template = document.createElement('template');
 customElements.define('core-hello', CoreHello);
 </code></pre>
@@ -179,7 +244,7 @@ customElements.define('core-hello', CoreHello);
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue Jun 04 2019 08:40:49 GMT-0700 (PDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Fri Jun 07 2019 01:51:10 GMT-0700 (PDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

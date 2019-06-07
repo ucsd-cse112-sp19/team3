@@ -8,8 +8,7 @@
 								"Components/CoreHello/",
 								"Components/CustomButton",
 								"Components/CustomSlider",
-								"Components/CustomPopover",
-								"Components/SpecsTab"],
+								"Components/CustomPopover"],
 		"exclude": [],
 		"includePattern": ".+\\.js(doc)?$",
 		"excludePattern": "(^|\\/|\\\\)_"

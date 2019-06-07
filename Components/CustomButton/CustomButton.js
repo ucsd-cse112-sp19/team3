@@ -1,50 +1,77 @@
 'use strict';
 
-
 /**
- * @class CustomButton
- *
- * @summary Create a new CustomButton component with designated styles.
- *
- * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demopages/CustomButton.html} for all listing examples.*
- *
- * ### Usage
- * ```
- * <custom-button property="value"> Button Text </custom-button>
- * ```
- * @property {string} style - this is example
- * @property {string} text-color - this is example
- * @property {string} background-color - this is example
- * @property {string} border-color - this is example
- * @property {string} font - this is example
- * @property {string} width - this is example
- * @property {string} height - this is example
- * @property {string} hover-text-color - this is example
- * @property {string} hover-background-color - this is example
- * @property {string} hover-border-color - this is example
- * @property {string} active-text-color - this is example
- * @property {string} active-background-color - this is example
- * @property {string} active-border-color - this is example
- * @property {string} rounded - this is example
- * @property {string} circle - this is example
- * @property {string} disabled - this is example
- * @property {string} href - this is example
- * @property {string} theme - this is example
- *
- * @example <custom-button onclick="alert('Hello world!')">
- *      Button
- * </custom-button>
- * @example <custom-button rounded>
- *      Click Me</custom-button>
- * @example <custom-button theme="pink-lemonade" active-background-color="blue">
- *      Click Me
- * </custom-button>
- *
- * @todo fix the property table
+ * @file CustomButton
  */
 class CustomButton extends HTMLElement {
   /**
-   * Constructor of the class
+   * @class CustomButton
+   * @classdesc Create a new CustomButton component with designated styles.
+   * @extends HTMLElement
+   * @summary
+   * ### Usage
+   * *See [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.*
+   * ```
+   * <custom-button property="value">
+   *     Button Text
+   * </custom-button>
+   * ```
+   * @property {string} style - Same as style attribute in native CSS.
+   * @property {string} text-color - Change color of the text within the button.
+   * @property {string} background-color - Change background color of the
+   * button.
+   * @property {string} border-color - Change the color of the border.
+   * @property {string} font - Change the font of the text within the button.
+   * @property {string} width - Change the width of the button.
+   * @property {string} height - Change the height of the button.
+   * @property {string} hover-text-color - Change the text color when hovering
+   * over the button.
+   * @property {string} hover-background-color - Change the background color
+   * when hovering over the button.
+   * @property {string} hover-border-color - Change the border color when
+   * hovering over the button.
+   * @property {string} active-text-color - Change the text color when the
+   * button is being clicked.
+   * @property {string} active-background-color - Change the background color
+   * when the button is being clicked.
+   * @property {string} active-border-color - Change the border color when the
+   * button is being clicked.
+   * @property {boolean} rounded - Make the button appear with rounded edges.
+   * @property {boolean} circle - Make the button appear as a circle.
+   * @property {boolean} disabled - Make the button unable to be clicked.
+   * @property {string} href - Pass a link to the button.
+   * @property {string} theme - Use a pre-built theme to style the button.
+   *
+   * @example
+   * <custom-button onclick="alert('Hello world!')">
+   *      Button
+   * </custom-button>
+   *
+   * @example
+   * <custom-button theme="pink-lemonade" active-background-color="blue">
+   *      Click Me
+   * </custom-button>
+   *
+   * @example
+   * <custom-button theme="pink-lemonade" active-background-color="blue"
+   *                rounded>
+   *      Click Me
+   * </custom-button>
+   *
+   * @example
+   * <custom-button theme="pink-lemonade" active-background-color="blue"
+   *                rounded
+   *                font="Comic Sans MS"
+   *                href="https://stackoverflow.com">
+   *      stack overflow
+   * </custom-button>
+   *
+   * @example
+   * <custom-button class="btn-warning" width="112px" height="63px">
+   *      Warning
+   * </custom-button>
+   *
+   * @see [CustomButton Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CustomButton/CustomButton.html} for all listing examples.
    */
   constructor() {
     super();
