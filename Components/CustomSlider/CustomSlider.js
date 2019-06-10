@@ -138,9 +138,8 @@ class CustomSlider extends HTMLElement {
    * Update style from observed attributes
    */
   updateStyle() {
-    const shadow = this.shadowRoot;
-    const slider = shadow.querySelector('input');
-    const valueDisplay = shadow.querySelector('#valueDisplay');
+    const slider = this.shadowRoot.querySelector('input');
+    const valueDisplay = this.shadowRoot.querySelector('#valueDisplay');
     // Update all attributes for input
     for (const attribute of CustomSlider.inputAttributes) {
       if (this.hasAttribute(attribute)) {
