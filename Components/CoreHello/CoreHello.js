@@ -116,6 +116,9 @@ class CoreHello extends HTMLElement {
     if (this.hasAttribute('class')) {
       div.setAttribute('class', this.getAttribute('class'));
     }
+    if (this.hasAttribute('style')) {
+      div.setAttribute('style', this.getAttribute('style'));
+    }
     shadow.querySelector('style').textContent = `
       div { /* greeting styles, always included */
         font-size: 100px;
@@ -182,8 +185,6 @@ class CoreHello extends HTMLElement {
     // Set rainbow style
     if (this.hasAttribute('rainbow')) {
       div.setAttribute('class', 'rainbow');
-    } else {
-      div.setAttribute('class', '');
     }
   }
 }

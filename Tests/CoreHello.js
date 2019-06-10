@@ -36,7 +36,7 @@ describe('CoreHello', function() {
           });
     });
 
-    it('should contain parahraph tag', function() {
+    it('should contain paragraph tag', function() {
       return showroom.setProperty('innerHTML', `<p>test2</p>`)
           .then(function() {
             return showroom.find('p');
@@ -80,10 +80,25 @@ describe('CoreHello', function() {
     });
   });
   describe('Rainbow', async () => {
-    it('Test the rainbow funtionality', async () => {
+    it('Test the rainbow functionality', async () => {
       await showroom.setAttribute('rainbow', '1');
       const obj = await showroom.find('//div', component);
       assert.deepEqual(obj._remoteObject.description, 'div.rainbow');
     });
+  });
+  describe('Style and css importing', async () => {
+    it('Test classes properly importing', async () => {
+      await showroom.setAttribute('class', 'testClass');
+      const obj = await showroom.find('//div', component);
+      assert.deepEqual(obj._remoteObject.description, 'div.testClass');
+    });
+    /* Work on trying to fix this
+    it('Test styles properly importing', async () => {
+      await showroom.setAttribute('style', 'color: blue;');
+      const obj = await showroom.find('//div', component);
+      console.log(obj);
+      assert.deepEqual(obj._remoteObject.description, 'div.testClass');
+    });
+    */
   });
 });
