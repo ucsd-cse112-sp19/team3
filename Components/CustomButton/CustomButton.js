@@ -40,7 +40,6 @@ class CustomButton extends HTMLElement {
    * @property {boolean} circle - Make the button appear as a circle.
    * @property {boolean} disabled - Make the button unable to be clicked.
    * @property {string} href - Pass a link to the button.
-   * @property {string} theme - Use a pre-built theme to style the button.
    *
    * @example
    * <custom-button onclick="alert('Hello world!')">
@@ -48,18 +47,18 @@ class CustomButton extends HTMLElement {
    * </custom-button>
    *
    * @example
-   * <custom-button theme="pink-lemonade" active-background-color="blue">
+   * <custom-button active-background-color="blue">
    *      Click Me
    * </custom-button>
    *
    * @example
-   * <custom-button theme="pink-lemonade" active-background-color="blue"
+   * <custom-button active-background-color="blue"
    *                rounded>
    *      Click Me
    * </custom-button>
    *
    * @example
-   * <custom-button theme="pink-lemonade" active-background-color="blue"
+   * <custom-button active-background-color="blue"
    *                rounded
    *                font="Comic Sans MS"
    *                href="https://stackoverflow.com">
@@ -119,19 +118,12 @@ class CustomButton extends HTMLElement {
       'circle',
       'disabled',
       'href',
-      'theme',
     ];
   }
 
   /** Called when element rendered in DOM */
   connectedCallback() {
-    console.log('Rendered custom-button');
     this.updateStyle();
-  }
-
-  /** Called when element destroyed */
-  disconnectedCallback() {
-    console.log('custom-button removed');
   }
 
   /**
@@ -147,6 +139,12 @@ class CustomButton extends HTMLElement {
     } else {
       this.updateStyle();
     }
+    if (this.hasAttribute('rounded'))
+      this.updateRounded();
+    if (this.hasAttribute('circle'))
+      this.updateCircle();
+    if (this.hasAttribute('disabled'))
+      this.updateDisabled();
   }
 
   /** Getter for style */
@@ -309,16 +307,6 @@ class CustomButton extends HTMLElement {
   set disabled(val) {
     this.setAttribute('disabled', val);
   }
-  /** Getter for theme */
-  get theme() {
-    return this.getAttribute('theme');
-  }
-  /** Setter for theme
-    * @param {string} val - What to set new theme to
-    */
-  set theme(val) {
-    this.setAttribute('theme', val);
-  }
 
   /**
    * Updates the style by taking user attributes, including 'style' and our own
@@ -327,15 +315,11 @@ class CustomButton extends HTMLElement {
    * and our custom attribute (text-color), it prioritizes custom attributes.
    */
   updateStyle() {
-    console.log('Updating custom-button styles');
-
     const shadow = this.shadowRoot;
 
     // pass class attribute into the component
     const btn = shadow.querySelector('button');
-    if (this.hasAttribute('class')) {
-      btn.setAttribute('class', this.getAttribute('class'));
-    }
+    btn.setAttribute('class', this.getAttribute('class'));
 
     // provides default styles in case the user doesn't provide one
     shadow.querySelector('style').textContent = `
@@ -382,150 +366,39 @@ class CustomButton extends HTMLElement {
         outline: none;
       }
     `;
-    if (this.hasAttribute('rounded')) {
-      shadow.querySelector('style').textContent += `
-        button {
-          border-radius: 100px;
-        }
-      `;
-    }
-    if (this.hasAttribute('circle')) {
-      shadow.querySelector('style').textContent += `
-        button {
-          width: 70px;
-          height: 70px;
-          border-radius: 100%;
-        }
-      `;
-    }
-    if (this.hasAttribute('disabled')) {
-      shadow.querySelector('button').setAttribute('disabled', true);
-      shadow.querySelector('style').textContent += `
-        button {
-          cursor: not-allowed;
-        }
-      `;
-    }
-    if (this.hasAttribute('theme')) {
-      let textColor = '';
-      let backgroundColor = '';
-      let borderColor = '';
-      let hoverTextColor = '';
-      let hoverBackgroundColor = '';
-      let hoverBorderColor = '';
-      let activeTextColor = '';
-      let activeBackgroundColor = '';
-      let activeBorderColor = '';
-
-      switch (this.theme) {
-        case 'mad-queen':
-          textColor = '#dd0000';
-          backgroundColor = '#000000';
-          borderColor = '#dd0000';
-          hoverTextColor = '#000000';
-          hoverBackgroundColor = '#dd0000';
-          hoverBorderColor = '#000000';
-          activeTextColor = '#000000';
-          activeBackgroundColor = '#ff0000';
-          activeBorderColor = '#000000';
-          break;
-        case 'desert':
-          textColor = '#a52a2a';
-          backgroundColor = '#ffdead';
-          borderColor = '#a52a2a';
-          hoverTextColor = '#ffdead';
-          hoverBackgroundColor = '#a52a2a';
-          hoverBorderColor = '#ffdead';
-          activeTextColor = '#ffdead';
-          activeBackgroundColor = '#c54a4a';
-          activeBorderColor = '#ffdead';
-          break;
-        case 'ocean':
-          textColor = '#7fffd4';
-          backgroundColor = '#00379b';
-          borderColor = '#7fffd4';
-          hoverTextColor = '#00379b';
-          hoverBackgroundColor = '#7fffd4';
-          hoverBorderColor = '#00379b';
-          activeTextColor = '#00379b';
-          activeBackgroundColor = '#9ffff4';
-          activeBorderColor = '#00379b';
-          break;
-        case 'pink-lemonade':
-          textColor = '#ff1493';
-          backgroundColor = '#ffff00';
-          borderColor = '#ff1493';
-          hoverTextColor = '#ffff00';
-          hoverBackgroundColor = '#ff1493';
-          hoverBorderColor = '#ffff00';
-          activeTextColor = '#ffff00';
-          activeBackgroundColor = '#ff34b3';
-          activeBorderColor = '#ffff00';
-          break;
-        case 'forest':
-          textColor = '#52ed32';
-          backgroundColor = '#a52a2a';
-          borderColor = '#52ed32';
-          hoverTextColor = '#a52a2a';
-          hoverBackgroundColor = '#52ed32';
-          hoverBorderColor = '#a52a2a';
-          activeTextColor = '#a52a2a';
-          activeBackgroundColor = '#72ff52';
-          activeBorderColor = '#a52a2a';
-          break;
-        case 'ghost':
-          textColor = '#aaaaaa';
-          backgroundColor = '#ffffff';
-          borderColor = '#aaaaaa';
-          hoverTextColor = '#ffffff';
-          hoverBackgroundColor = '#aaaaaa';
-          hoverBorderColor = '#ffffff';
-          activeTextColor = '#ffffff';
-          activeBackgroundColor = '#cccccc';
-          activeBorderColor = '#ffffff';
-          break;
-        case 'flame':
-          textColor = '#ffbb00';
-          backgroundColor = '#ff2400';
-          borderColor = '#ffbb00';
-          hoverTextColor = '#ff2400';
-          hoverBackgroundColor = '#ffbb00';
-          hoverBorderColor = '#ff2400';
-          activeTextColor = '#ff2400';
-          activeBackgroundColor = '#ffdb00';
-          activeBorderColor = '#ff2400';
-          break;
-        case 'triton':
-          textColor = '#ffd700';
-          backgroundColor = '#000080';
-          borderColor = '#ffd700';
-          hoverTextColor = '#000080 ';
-          hoverBackgroundColor = '#ffd700';
-          hoverBorderColor = '#000080 ';
-          activeTextColor = '#000080 ';
-          activeBackgroundColor = '#fff700';
-          activeBorderColor = '#000080 ';
-          break;
-        default:
+  }
+  /**
+   * Handle the inclusion of the rounded attribute.
+   */
+  updateRounded() {
+    shadow.querySelector('style').textContent += `
+      button {
+        border-radius: 100px;
       }
+    `;
+  }
+  /**
+   * Handle the inclusion of the circle attribute.
+   */
+  updateCircle() {
       shadow.querySelector('style').textContent += `
-        button {
-          color: ${textColor};
-          background-color: ${backgroundColor};
-          border-color: ${borderColor};
-        }
-        button:hover {
-          color: ${hoverTextColor};
-          background-color: ${hoverBackgroundColor};
-          border-color: ${hoverBorderColor};
-        }
-        button:active {
-          color: ${activeTextColor};
-          background-color: ${activeBackgroundColor};
-          border-color: ${activeBorderColor};
-        }
-      `;
-    }
+      button {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+      }
+    `;
+  }
+  /**
+   * Handle the inclusion of the disabled attribute.
+   */
+  updateDisabled() {
+    shadow.querySelector('button').setAttribute('disabled', true);
+    shadow.querySelector('style').textContent += `
+      button {
+        cursor: not-allowed;
+      }
+    `;
   }
 }
 

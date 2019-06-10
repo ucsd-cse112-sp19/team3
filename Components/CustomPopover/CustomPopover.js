@@ -97,14 +97,12 @@ class CustomPopover extends HTMLElement {
   static get observedAttributes() {
     return [
       'class',
-
       'style',
       'color',
       'text-color',
       'anchor',
       'placement',
       'font',
-      'header-text',
     ];
   }
 
@@ -178,23 +176,12 @@ class CustomPopover extends HTMLElement {
   set font(val) {
     this.setAttribute('font', val);
   }
-  /** Getter for header text */
-  get headerText() {
-    return this.getAttribute('header-text');
-  }
-  /** Setter for header text
-    * @param {string} val - What to set new header text to
-    */
-  set headerText(val) {
-    this.setAttribute('header-text', val);
-  }
 
   /**
     * Takes the anchor attribute and finds the element with that id
     * @return {string} anchor - The anchor id we find
     */
   findAnchor() {
-    console.log('running findAnchor()');
     const anchorID = this.getAttribute('anchor');
     if (!anchorID) {
       console.log('ERROR: component needs an anchor attribute');
@@ -213,14 +200,12 @@ class CustomPopover extends HTMLElement {
     * setting up properties the anchor should have such as mouseover properties
     */
   attachAnchor() {
-    console.log('running attachAnchor()');
     const anchor = this.findAnchor();
 
     // this gets injected in the style of the anchor element
     const anchorCSS = '; position: relative; display: inline-block;';
     anchor.setAttribute('style', anchor.getAttribute('style') + anchorCSS);
 
-    // this is hacky as hell but it works
     const shadow = this.shadowRoot;
     anchor.onmouseover = function() {
       shadow.querySelector('style').textContent += 'div {visibility: visible;}';
@@ -228,21 +213,12 @@ class CustomPopover extends HTMLElement {
     anchor.onmouseout = function() {
       shadow.querySelector('style').textContent += 'div {visibility: hidden;}';
     };
-
-    this.updateStyle();
   }
 
   /** Called when element rendered in DOM */
   connectedCallback() {
-    console.log('Rendering custom-popover');
-    this.attachAnchor();
     this.updateStyle();
-    console.log('Rendering custom-popover complete');
-  }
-
-  /** Called when element destroyed */
-  disconnectedCallback() {
-    console.log('custom-popover removed');
+    this.updatePlacement();
   }
 
   /**
@@ -257,6 +233,7 @@ class CustomPopover extends HTMLElement {
       this.attachAnchor();
     } else {
       this.updateStyle();
+      this.updatePlacement();
     }
   }
 
@@ -267,47 +244,17 @@ class CustomPopover extends HTMLElement {
     * and our custom attribute (text-color), it will prioritize the custom.
     */
   updateStyle() {
-    console.log('Updating custom-popover styles');
-
     const shadow = this.shadowRoot;
 
     // pass class attribute into the component
     const div = shadow.querySelector('div');
     div.setAttribute('class', this.getAttribute('class'));
 
-    // account for bootstrap in the arrow colors
-    let arrowColor = null;
-    switch (this.class) {
-      case 'btn-primary':
-        arrowColor = '#007bff';
-        break;
-      case 'btn-secondary':
-        arrowColor = '#868e96';
-        break;
-      case 'btn-success':
-        arrowColor = '#28a745';
-        break;
-      case 'btn-info':
-        arrowColor = '#17a2b8';
-        break;
-      case 'btn-warning':
-        arrowColor = '#ffc107';
-        break;
-      case 'btn-danger':
-        arrowColor = '#dc3545';
-        break;
-      case 'btn-dark':
-        arrowColor = '#343a40';
-        break;
-    }
-
     // provides default styles in case the user doesn't provide one
     shadow.querySelector('style').textContent = `
             :host {
-                --color-scheme: ${this.color ? this.color : '#45b9e8'};
+                --color-scheme: ${this.pickColor()};
                 --text-color: ${this.textColor ? this.textColor : '#ffffff'};
-                --arrow-color: ${arrowColor ? arrowColor :
-                                                'var(--color-scheme)'};
                 outline: none;
             }
             div {
@@ -337,13 +284,48 @@ class CustomPopover extends HTMLElement {
                 outline: none;
             }
         `;
-
+  }
+  /**
+   * Select the color scheme for both arrow and background.
+   */
+  pickColor() {
+    // account for bootstrap classes
+    let color = null;
+    switch (this.class) {
+      case 'btn-primary':
+        color = '#007bff';
+        break;
+      case 'btn-secondary':
+        color = '#868e96';
+        break;
+      case 'btn-success':
+        color = '#28a745';
+        break;
+      case 'btn-info':
+        color = '#17a2b8';
+        break;
+      case 'btn-warning':
+        color = '#ffc107';
+        break;
+      case 'btn-danger':
+        color = '#dc3545';
+        break;
+      case 'btn-dark':
+        color = '#343a40';
+        break;
+      default:
+        color = this.color ? this.color : '#45b9e8';
+    }
+    return color;
+  }
+  updatePlacement() {
+    const shadow = this.shadowRoot;
     let newCSS = '';
     switch (this.placement) {
       case 'top':
         newCSS = `
                     div {
-                        top: -110%;
+                        top: -117%;
                         left: -15px;
                         height: 45px;
                     }
@@ -355,7 +337,7 @@ class CustomPopover extends HTMLElement {
                         margin-left: -5px;
                         border-width: 5px;
                         border-style: solid;
-                        border-color: var(--arrow-color) transparent
+                        border-color: var(--color-scheme) transparent
                                     transparent transparent;
                     }
                 `;
@@ -375,7 +357,7 @@ class CustomPopover extends HTMLElement {
                         border-width: 5px;
                         border-style: solid;
                         border-color: transparent
-                                    transparent var(--arrow-color) transparent;
+                                    transparent var(--color-scheme) transparent;
                     }
                 `;
         break;
@@ -394,7 +376,7 @@ class CustomPopover extends HTMLElement {
                         border-width: 5px;
                         border-style: solid;
                         border-color: transparent transparent
-                                transparent var(--arrow-color);
+                                transparent var(--color-scheme);
                     }
                 `;
         break;
@@ -412,7 +394,7 @@ class CustomPopover extends HTMLElement {
                         margin-top: -5px;
                         border-width: 5px;
                         border-style: solid;
-                        border-color: transparent var(--arrow-color)
+                        border-color: transparent var(--color-scheme)
                                 transparent transparent;
                     }
                 `;
