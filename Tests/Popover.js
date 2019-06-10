@@ -90,7 +90,7 @@ describe('CustomPopover', function() {
       await showroom.setAttribute('class', 'btn-primary');
       const style = await showroom.find('//style');
       const text = await showroom.getTextContent(style);
-      const result = text.includes('--arrow-color: #007bff');
+      const result = text.includes('--color-scheme: #007bff');
       assert.deepEqual(result.toString(), 'true');
     });
   });

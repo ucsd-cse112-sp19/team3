@@ -124,6 +124,15 @@ class CustomButton extends HTMLElement {
   /** Called when element rendered in DOM */
   connectedCallback() {
     this.updateStyle();
+    if (this.hasAttribute('rounded')) {
+      this.updateRounded();
+    }
+    if (this.hasAttribute('circle')) {
+      this.updateCircle();
+    }
+    if (this.hasAttribute('disabled')) {
+      this.updateDisabled();
+    }
   }
 
   /**
@@ -139,12 +148,15 @@ class CustomButton extends HTMLElement {
     } else {
       this.updateStyle();
     }
-    if (this.hasAttribute('rounded'))
+    if (this.hasAttribute('rounded')) {
       this.updateRounded();
-    if (this.hasAttribute('circle'))
+    }
+    if (this.hasAttribute('circle')) {
       this.updateCircle();
-    if (this.hasAttribute('disabled'))
+    }
+    if (this.hasAttribute('disabled')) {
       this.updateDisabled();
+    }
   }
 
   /** Getter for style */
@@ -371,6 +383,7 @@ class CustomButton extends HTMLElement {
    * Handle the inclusion of the rounded attribute.
    */
   updateRounded() {
+    const shadow = this.shadowRoot;
     shadow.querySelector('style').textContent += `
       button {
         border-radius: 100px;
@@ -381,7 +394,8 @@ class CustomButton extends HTMLElement {
    * Handle the inclusion of the circle attribute.
    */
   updateCircle() {
-      shadow.querySelector('style').textContent += `
+    const shadow = this.shadowRoot;
+    shadow.querySelector('style').textContent += `
       button {
         width: 70px;
         height: 70px;
@@ -393,6 +407,7 @@ class CustomButton extends HTMLElement {
    * Handle the inclusion of the disabled attribute.
    */
   updateDisabled() {
+    const shadow = this.shadowRoot;
     shadow.querySelector('button').setAttribute('disabled', true);
     shadow.querySelector('style').textContent += `
       button {

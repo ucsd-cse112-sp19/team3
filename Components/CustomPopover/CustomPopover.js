@@ -287,6 +287,7 @@ class CustomPopover extends HTMLElement {
   }
   /**
    * Select the color scheme for both arrow and background.
+   * @return {string} color - The color scheme chosen
    */
   pickColor() {
     // account for bootstrap classes
@@ -318,6 +319,9 @@ class CustomPopover extends HTMLElement {
     }
     return color;
   }
+  /**
+   * Selects where to place the popover
+   */
   updatePlacement() {
     const shadow = this.shadowRoot;
     let newCSS = '';
