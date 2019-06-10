@@ -10,10 +10,11 @@
     "csslint_fix": "stylelint --config .csslintrc **/\\*.css --ignore-pattern=docs **/\\*.html --fix",
     "eslint": "eslint **/\\*.html **/\\*.js",
     "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
-    "test": "nyc --reporter=lcovonly --exclude Utils/ --exclude Tests/  mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit",
+    "test": "nyc --reporter=lcovonly --exclude Utils/ --exclude Tests/  mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit && npm run pathrewrite",
     "browserstack": "node ./local.runner.js",
     "all": "npm run htmlhint && npm run csslint && npm run eslint && npm run test",
-    "fix": "npm run csslint_fix && npm run eslint_fix"
+    "fix": "npm run csslint_fix && npm run eslint_fix",
+    "pathrewrite": "node ./Utils/path.rewrite.js"
   },
   "repository": {
     "type": "git",
