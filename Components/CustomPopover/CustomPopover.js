@@ -82,8 +82,7 @@ class CustomPopover extends HTMLElement {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-            <style>
-            </style>
+            <style></style>
             <div><slot></slot></div>
         `;
     shadowRoot.appendChild(templateContent.cloneNode(true));
@@ -96,13 +95,7 @@ class CustomPopover extends HTMLElement {
    */
   static get observedAttributes() {
     return [
-      'class',
-      'style',
-      'color',
-      'text-color',
-      'anchor',
-      'placement',
-      'font',
+      'class', 'style', 'color', 'text-color', 'anchor', 'placement', 'font',
     ];
   }
 
@@ -294,26 +287,19 @@ class CustomPopover extends HTMLElement {
     let color = null;
     switch (this.class) {
       case 'btn-primary':
-        color = '#007bff';
-        break;
+        color = '#007bff'; break;
       case 'btn-secondary':
-        color = '#868e96';
-        break;
+        color = '#868e96'; break;
       case 'btn-success':
-        color = '#28a745';
-        break;
+        color = '#28a745'; break;
       case 'btn-info':
-        color = '#17a2b8';
-        break;
+        color = '#17a2b8'; break;
       case 'btn-warning':
-        color = '#ffc107';
-        break;
+        color = '#ffc107'; break;
       case 'btn-danger':
-        color = '#dc3545';
-        break;
+        color = '#dc3545'; break;
       case 'btn-dark':
-        color = '#343a40';
-        break;
+        color = '#343a40'; break;
       default:
         color = this.color ? this.color : '#45b9e8';
     }
