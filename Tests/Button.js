@@ -64,18 +64,103 @@ describe('CustomButton', function() {
       const borderColor = await showroom.getProperty('borderColor');
       assert.deepEqual(borderColor, 'black');
     });
-    it('Testing background color property of the button', async () => {
-      // const color = await showroom.getAttribute('background-color')
-      // console.log(color)
+  });
+  
+  describe('Test all getters and setters', async() => {
+    it('Testing get/set background color', async () => {
       await showroom.setProperty('backgroundColor', 'pink');
-      const backgroundColor = await showroom.getProperty('backgroundColor');
-      assert.deepEqual(backgroundColor, 'pink');
+      const prop = await showroom.getProperty('backgroundColor');
+      assert.deepEqual(prop, 'pink');
     });
 
-    it('Testing border color property of the button', async () => {
+    it('Testing get/set border color', async () => {
       await showroom.setProperty('borderColor', 'black');
-      const borderColor = await showroom.getProperty('borderColor');
-      assert.deepEqual(borderColor, 'black');
+      const prop = await showroom.getProperty('borderColor');
+      assert.deepEqual(prop, 'black');
+    });
+
+    it('Testing get/set style', async () => {
+      await showroom.setProperty('style', 'color: brown;');
+      const prop = await showroom.getProperty('style');
+      assert.deepEqual(prop, 'color: brown;');
+    });
+
+    it('Testing get/set text color', async () => {
+      await showroom.setProperty('textColor', 'red');
+      const prop = await showroom.getProperty('textColor');
+      assert.deepEqual(prop, 'red');
+    });
+
+    it('Testing get/set font', async () => {
+      await showroom.setProperty('font', 'Comic Sans');
+      const prop = await showroom.getProperty('font');
+      assert.deepEqual(prop, 'Comic Sans');
+    });
+
+    it('Testing get/set width', async () => {
+      await showroom.setProperty('width', '10px');
+      const prop = await showroom.getProperty('width');
+      assert.deepEqual(prop, '10px');
+    });
+
+    it('Testing get/set height', async () => {
+      await showroom.setProperty('height', '20px');
+      const prop = await showroom.getProperty('height');
+      assert.deepEqual(prop, '20px');
+    });
+
+    it('Testing get/set hover text color', async () => {
+      await showroom.setProperty('hoverTextColor', 'black');
+      const prop = await showroom.getProperty('hoverTextColor');
+      assert.deepEqual(prop, 'black');
+    });
+
+    it('Testing get/set hover border color', async () => {
+      await showroom.setProperty('hoverBorderColor', 'red');
+      const prop = await showroom.getProperty('hoverBorderColor');
+      assert.deepEqual(prop, 'red');
+    });
+
+    it('Testing get/set hover bg color', async () => {
+      await showroom.setProperty('hoverBackgroundColor', 'black');
+      const prop = await showroom.getProperty('hoverBackgroundColor');
+      assert.deepEqual(prop, 'black');
+    });
+
+    it('Testing get/set active text color', async () => {
+      await showroom.setProperty('activeTextColor', 'red');
+      const prop = await showroom.getProperty('activeTextColor');
+      assert.deepEqual(prop, 'red');
+    });
+
+    it('Testing get/set active bg color', async () => {
+      await showroom.setProperty('activeBackgroundColor', 'pink');
+      const prop = await showroom.getProperty('activeBackgroundColor');
+      assert.deepEqual(prop, 'pink');
+    });
+
+    it('Testing get/set active border color', async () => {
+      await showroom.setProperty('activeBorderColor', 'blue');
+      const prop = await showroom.getProperty('activeBorderColor');
+      assert.deepEqual(prop, 'blue');
+    });
+
+    it('Testing get/set rounded', async () => {
+      await showroom.setProperty('rounded', true);
+      const prop = await showroom.getProperty('rounded');
+      assert.deepEqual(prop, 'true');
+    });
+
+    it('Testing get/set circle', async () => {
+      await showroom.setProperty('circle', true);
+      const prop = await showroom.getProperty('circle');
+      assert.deepEqual(prop, 'true');
+    });
+
+    it('Testing get/set disabled', async () => {
+      await showroom.setProperty('disabled', true);
+      const prop = await showroom.getProperty('disabled');
+      assert.deepEqual(prop, 'true');
     });
   });
 
