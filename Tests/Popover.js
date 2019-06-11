@@ -23,6 +23,50 @@ describe('CustomPopover', function() {
         });
   });
 
+  describe('Test all getters and setters', async () => {
+    it('Testing get/set anchor', async () => {
+      await showroom.setProperty('anchor', 'tester');
+      const prop = await showroom.getProperty('anchor');
+      assert.deepEqual(prop, 'tester');
+    });
+
+    it('Testing get/set color', async () => {
+      await showroom.setProperty('color', 'red');
+      const prop = await showroom.getProperty('color');
+      assert.deepEqual(prop, 'red');
+    });
+
+    it('Testing get/set font', async () => {
+      await showroom.setProperty('font', 'Times New Roman');
+      const prop = await showroom.getProperty('font');
+      assert.deepEqual(prop, 'Times New Roman');
+    });
+
+    it('Testing get/set header-text', async () => {
+      await showroom.setProperty('header-text', 'hello world');
+      const prop = await showroom.getProperty('header-text');
+      assert.deepEqual(prop, 'hello world');
+    });
+
+    it('Testing get/set placement', async () => {
+      await showroom.setProperty('placement', 'bottom');
+      const prop = await showroom.getProperty('placement');
+      assert.deepEqual(prop, 'bottom');
+    });
+
+    it('Testing get/set style', async () => {
+      await showroom.setProperty('style', 'color: red;');
+      const prop = await showroom.getProperty('style');
+      assert.deepEqual(prop, 'color: red;');
+    });
+
+    it('Testing get/set textcolor', async () => {
+      await showroom.setProperty('textcolor', 'pink');
+      const prop = await showroom.getProperty('textcolor');
+      assert.deepEqual(prop, 'pink');
+    });
+  });
+
   describe('Color and font', async () => {
     it('Testing the color of the popup', async () => {
       await showroom.setAttribute('color', 'pink');
