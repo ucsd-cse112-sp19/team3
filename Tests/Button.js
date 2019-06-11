@@ -65,8 +65,8 @@ describe('CustomButton', function() {
       assert.deepEqual(borderColor, 'black');
     });
   });
-  
-  describe('Test all getters and setters', async() => {
+
+  describe('Test all getters and setters', async () => {
     it('Testing get/set background color', async () => {
       await showroom.setProperty('backgroundColor', 'pink');
       const prop = await showroom.getProperty('backgroundColor');
