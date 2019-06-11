@@ -27,11 +27,14 @@ describe('CustomButton', function() {
 
   describe('Shape of the button', async () => {
     it('Testing rounded shape of the button', async () => {
+      let style = await showroom.find('//style', component);
+      let styleTextContent = await showroom.getTextContent(style);
+      let result = styleTextContent.includes('border-radius: 100px;');
+      assert.deepEqual(result.toString(), 'false');
       await showroom.setAttribute('rounded', 1);
-      const style = await showroom.find('//style', component);
-      const styleTextContent = await showroom.getTextContent(style);
-      // test whether "border-radius: 100px;" added to 'style in shadowdom
-      const result = styleTextContent.includes('border-radius: 100px;');
+      style = await showroom.find('//style', component);
+      styleTextContent = await showroom.getTextContent(style);
+      result = styleTextContent.includes('border-radius: 100px;');
       assert.deepEqual(result.toString(), 'true');
     });
 
@@ -87,10 +90,14 @@ describe('CustomButton', function() {
 
   describe('disabled functionality', async () => {
     it('Testing the disabled', async () => {
-      await showroom.setAttribute('disabled', '');
-      const style = await showroom.find('//style', component);
-      const text = await showroom.getTextContent(style);
-      const result = text.includes('cursor: not-allowed;');
+      let style = await showroom.find('//style', component);
+      let text = await showroom.getTextContent(style);
+      let result = text.includes('cursor: not-allowed;');
+      assert.deepEqual(result.toString(), 'false');
+      await showroom.setAttribute('disabled');
+      style = await showroom.find('//style', component);
+      text = await showroom.getTextContent(style);
+      result = text.includes('cursor: not-allowed;');
       assert.deepEqual(result.toString(), 'true');
     });
   });
