@@ -66,6 +66,24 @@ describe('CustomButton', function() {
     });
   });
 
+  describe('Height and width', async () => {
+    it('Testing width of the button', async () => {
+      await showroom.setAttribute('width', '120px');
+      const style = await showroom.find('//style', component);
+      const styleTextContent = await showroom.getTextContent(style);
+      const width = styleTextContent.includes('width: 120px;');
+      assert.deepEqual(width, true);
+    });
+
+    it('Testing height of the button', async () => {
+      await showroom.setAttribute('height', '120px');
+      const style = await showroom.find('//style', component);
+      const styleTextContent = await showroom.getTextContent(style);
+      const height = styleTextContent.includes('height: 120px;');
+      assert.deepEqual(height, true);
+    });
+  });
+
   describe('Font of the button', async () => {
     it('Testing font style of the button', async () => {
       await showroom.setAttribute('font', 'Comic Sans MS');

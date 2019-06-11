@@ -92,13 +92,11 @@ describe('CoreHello', function() {
       const obj = await showroom.find('//div', component);
       assert.deepEqual(obj._remoteObject.description, 'div.testClass');
     });
-    /* Work on trying to fix this
     it('Test styles properly importing', async () => {
       await showroom.setAttribute('style', 'color: blue;');
       const obj = await showroom.find('//div', component);
-      console.log(obj);
-      assert.deepEqual(obj._remoteObject.description, 'div.testClass');
+      const styling = await showroom.getAttribute('style', obj);
+      assert.deepEqual(styling, 'color: blue;');
     });
-    */
   });
 });
