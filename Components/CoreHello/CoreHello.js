@@ -89,7 +89,7 @@ class CoreHello extends HTMLElement {
       let greeting = '';
       switch (newValue) {
         case 'jp':
-          greeting = 'Kon\'nichiwa seka';
+          greeting = 'Kon\'nichiwa sekai';
           break;
         case 'es':
           greeting = 'Hola Mundo';

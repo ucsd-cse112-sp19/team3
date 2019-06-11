@@ -55,7 +55,7 @@ describe('CoreHello', function() {
       await showroom.setAttribute('lang', 'jp');
       const style = await showroom.find('//div', component);
       const text = await showroom.getTextContent(style);
-      assert.deepEqual(text, 'Kon\'nichiwa seka ');
+      assert.deepEqual(text, 'Kon\'nichiwa sekai ');
     });
 
     it('should be able to display English', async () => {
@@ -97,6 +97,16 @@ describe('CoreHello', function() {
       const obj = await showroom.find('//div', component);
       const styling = await showroom.getAttribute('style', obj);
       assert.deepEqual(styling, 'color: blue;');
+    });
+  });
+  describe('Slot and greeting combined', function() {
+    it('should be able to display Japanese', async () => {
+      await showroom.setAttribute('lang', 'jp');
+      const style = await showroom.find('//div', component);
+      const greeting = await showroom.getTextContent(style);
+      await showroom.setProperty('innerHTML', `test1`);
+      const slot = await showroom.getTextContent(component);
+      assert.deepEqual('Kon\'nichiwa sekai test1', greeting + slot);
     });
   });
 });
