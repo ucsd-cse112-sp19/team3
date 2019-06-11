@@ -9,6 +9,10 @@ We are Team SPECS! This is a library of customizable web components.
 [![Build Status](https://travis-ci.com/ucsd-cse112/team3.svg?token=N7quhPzu2SUwxwSC1Q4R&branch=master)](https://travis-ci.com/ucsd-cse112/team3)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+
 ## Documentation
 
 Include any of the following scripts in your HTML file for the web component of your choosing, replacing the ../team3/ prefix with the absolute path to the team3 directory where you installed our repo. Then you will be able to use that web component like any other HTML element, as described in the documentation below. For installation instructions, see below.
