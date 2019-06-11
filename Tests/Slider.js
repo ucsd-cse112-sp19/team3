@@ -25,6 +25,74 @@ describe('CustomSlider', function() {
         });
   });
 
+  describe('Test all getters and setters', async () => {
+    it('Testing get/set min', async () => {
+      await showroom.setProperty('min', '2');
+      const prop = await showroom.getProperty('min');
+      assert.deepEqual(prop, '2');
+    });
+
+    it('Testing get/set max', async () => {
+      await showroom.setProperty('max', '50');
+      const prop = await showroom.getProperty('max');
+      assert.deepEqual(prop, '50');
+    });
+
+    it('Testing get/set step', async () => {
+      await showroom.setProperty('step', '3');
+      const prop = await showroom.getProperty('step');
+      assert.deepEqual(prop, '3');
+    });
+
+    it('Testing get/set value', async () => {
+      await showroom.setProperty('value', '45');
+      const prop = await showroom.getProperty('value');
+      assert.deepEqual(prop, '45');
+    });
+
+    it('Testing get/set readonly', async () => {
+      await showroom.setProperty('readonly', true);
+      const prop = await showroom.getProperty('readonly');
+      assert.deepEqual(prop, true);
+    });
+
+    it('Testing get/set required', async () => {
+      await showroom.setProperty('required', true);
+      const prop = await showroom.getProperty('required');
+      assert.deepEqual(prop, true);
+    });
+
+    it('Testing get/set showinput', async () => {
+      await showroom.setProperty('showinput', true);
+      const prop = await showroom.getProperty('showinput');
+      assert.deepEqual(prop, true);
+    });
+
+    it('Testing get/set onChange', async () => {
+      await showroom.setProperty('onChange', '1');
+      const prop = await showroom.getProperty('onChange');
+      assert.deepEqual(prop, '1');
+    });
+
+    it('Testing get/set disabled', async () => {
+      await showroom.setProperty('disabled', true);
+      const prop = await showroom.getProperty('disabled');
+      assert.deepEqual(prop, true);
+    });
+
+    it('Testing get/set slider-class', async () => {
+      await showroom.setProperty('slider-class', 'testclass');
+      const prop = await showroom.getProperty('slider-class');
+      assert.deepEqual(prop, 'testclass');
+    });
+
+    it('Testing get/set input-class', async () => {
+      await showroom.setProperty('input-class', 'testclass');
+      const prop = await showroom.getProperty('input-class');
+      assert.deepEqual(prop, 'testclass');
+    });
+  });
+
   describe('Testing the attributes of the slider', async () => {
     it('Testing min attribute', async () => {
       await showroom.setAttribute('min', 25);

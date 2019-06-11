@@ -162,6 +162,18 @@ describe('CustomButton', function() {
       const prop = await showroom.getProperty('disabled');
       assert.deepEqual(prop, 'true');
     });
+
+    it('Testing get/set href', async () => {
+      await showroom.setProperty('href', 'stackoverflow.com');
+      const prop = await showroom.getProperty('href');
+      assert.deepEqual(prop, 'stackoverflow.com');
+    });
+
+    it('Testing get/set class', async () => {
+      await showroom.setProperty('class', 'testclass');
+      const prop = await showroom.getProperty('class');
+      assert.deepEqual(prop, 'testclass');
+    });
   });
 
   describe('Height and width', async () => {

@@ -49,6 +49,18 @@ describe('CoreHello', function() {
           });
     });
   });
+  describe('Test all getters and setters', async () => {
+    it('Testing get/set class', async () => {
+      await showroom.setProperty('class', 'testclass');
+      const prop = await showroom.getProperty('class');
+      assert.deepEqual(prop, 'testclass');
+    });
+    it('Testing get/set lang', async () => {
+      await showroom.setProperty('lang', 'en');
+      const prop = await showroom.getProperty('lang');
+      assert.deepEqual(prop, 'en');
+    });
+  });
 
   describe('Internationalization', async () => {
     it('should be able to display Japanese', async () => {
