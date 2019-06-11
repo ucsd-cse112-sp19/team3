@@ -64,6 +64,19 @@ describe('CustomButton', function() {
       const borderColor = await showroom.getProperty('borderColor');
       assert.deepEqual(borderColor, 'black');
     });
+    it('Testing background color property of the button', async () => {
+      // const color = await showroom.getAttribute('background-color')
+      // console.log(color)
+      await showroom.setProperty('backgroundColor', 'pink');
+      const backgroundColor = await showroom.getProperty('backgroundColor');
+      assert.deepEqual(backgroundColor, 'pink');
+    });
+
+    it('Testing border color property of the button', async () => {
+      await showroom.setProperty('borderColor', 'black');
+      const borderColor = await showroom.getProperty('borderColor');
+      assert.deepEqual(borderColor, 'black');
+    });
   });
 
   describe('Height and width', async () => {
