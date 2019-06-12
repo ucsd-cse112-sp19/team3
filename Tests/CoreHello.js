@@ -123,7 +123,7 @@ describe('CoreHello', function() {
   });
   describe('observedAttributes', function() {
     it('should be able to return expected attributes', async () => {
-      await showroom.utils.page.evaluate(function(target) {
+      const result = await showroom.utils.page.evaluate(function(target) {
         const obAttr = target.constructor.observedAttributes;
         const expAttr = [
           'style',
@@ -131,14 +131,9 @@ describe('CoreHello', function() {
           'lang',
           'rainbow',
         ];
-        // Use visibility to confirm the state
-        if (JSON.stringify(obAttr) !== JSON.stringify(expAttr)) {
-          target.style.visibility = null;
-        } else {
-          target.style.visibility = 'hidden';
-        }
+        return (JSON.stringify(obAttr) === JSON.stringify(expAttr));
       }, component);
-      assert(await showroom.isVisible() === false);
+      assert(result === true);
     });
   });
 });
