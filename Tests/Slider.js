@@ -151,4 +151,38 @@ describe('CustomSlider', function() {
       assert.deepEqual(obj._remoteObject.description, 'input.test2');
     });
   });
+
+  describe('Attribute list checks', function() {
+    it('should be able to return observed attributes', async () => {
+      const result = await showroom.utils.page.evaluate(function(target) {
+        const obAttr = target.constructor.observedAttributes;
+        const expAttr = [
+          'min',
+          'max',
+          'step',
+          'value',
+          'slider-class',
+          'input-class',
+          'showinput',
+          'disabled',
+          'readonly',
+          'required',
+        ];
+        return (JSON.stringify(obAttr) === JSON.stringify(expAttr));
+      }, component);
+      assert(result === true);
+    });
+    it('should be able to return custom attributes', async () => {
+      const result = await showroom.utils.page.evaluate(function(target) {
+        const cuAttr = target.constructor.customAttributes;
+        const expAttr = [
+          'slider-class',
+          'input-class',
+          'showinput',
+        ];
+        return (JSON.stringify(cuAttr) === JSON.stringify(expAttr));
+      }, component);
+      assert(result === true);
+    });
+  });
 });
