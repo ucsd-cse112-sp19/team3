@@ -121,7 +121,7 @@ describe('CoreHello', function() {
       assert.deepEqual('Kon\'nichiwa sekai test1', greeting + slot);
     });
   });
-  
+
   describe('Attribute list checks', function() {
     it('should be able to return observed attributes', async () => {
       const result = await showroom.utils.page.evaluate(function(target) {

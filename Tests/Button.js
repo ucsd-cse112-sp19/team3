@@ -229,7 +229,7 @@ describe('CustomButton', function() {
       assert.deepEqual(result.toString(), 'true');
     });
   });
-  
+
   describe('Attribute list checks', function() {
     it('should be able to return expected attributes', async () => {
       const result = await showroom.utils.page.evaluate(function(target) {
@@ -251,7 +251,7 @@ describe('CustomButton', function() {
           'rounded',
           'circle',
           'disabled',
-          'href'
+          'href',
         ];
         return (JSON.stringify(obAttr) === JSON.stringify(expAttr));
       }, component);

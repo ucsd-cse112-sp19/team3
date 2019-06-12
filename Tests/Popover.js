@@ -208,7 +208,13 @@ describe('CustomPopover', function() {
       const result = await showroom.utils.page.evaluate(function(target) {
         const obAttr = target.constructor.observedAttributes;
         const expAttr = [
-          'class', 'style', 'color', 'text-color', 'anchor', 'placement', 'font',
+          'class',
+          'style',
+          'color',
+          'text-color',
+          'anchor',
+          'placement',
+          'font',
         ];
         return (JSON.stringify(obAttr) === JSON.stringify(expAttr));
       }, component);
