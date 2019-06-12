@@ -229,4 +229,33 @@ describe('CustomButton', function() {
       assert.deepEqual(result.toString(), 'true');
     });
   });
+
+  describe('Attribute list checks', function() {
+    it('should be able to return expected attributes', async () => {
+      const result = await showroom.utils.page.evaluate(function(target) {
+        const obAttr = target.constructor.observedAttributes;
+        const expAttr = [
+          'style',
+          'text-color',
+          'background-color',
+          'border-color',
+          'font',
+          'width',
+          'height',
+          'hover-text-color',
+          'hover-background-color',
+          'hover-border-color',
+          'active-text-color',
+          'active-background-color',
+          'active-border-color',
+          'rounded',
+          'circle',
+          'disabled',
+          'href',
+        ];
+        return (JSON.stringify(obAttr) === JSON.stringify(expAttr));
+      }, component);
+      assert(result === true);
+    });
+  });
 });

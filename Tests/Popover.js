@@ -5,6 +5,7 @@ const showroom = require('showroom/puppeteer')();
 const coverage = require('../Utils/coverage.js');
 
 describe('CustomPopover', function() {
+  let component;
   before(function() {
     return showroom.start()
         .then(function() {
@@ -19,10 +20,61 @@ describe('CustomPopover', function() {
   beforeEach(function() {
     return showroom.setTestSubject('custom-popover')
         .then(function(comp) {
-          // const component = comp; (Unused, commented out for linter)
+          component = comp;
         });
   });
+  describe('Anchor tests', async () => {
+    it('Testing no anchor', async () => {
+      await showroom.setProperty('anchor', '');
+      const prop = await showroom.getProperty('anchor');
+      assert.deepEqual(prop, '');
+    });
+  });
 
+  describe('Bootstrap testing', async () => {
+    it('Button primary', async () => {
+      await showroom.setProperty('class', 'btn-secondary');
+      const style = await showroom.find('//style');
+      const text = await showroom.getTextContent(style);
+      const result = text.includes('--color-scheme: #868e96');
+      assert.deepEqual(result.toString(), 'true');
+    });
+    it('Button success', async () => {
+      await showroom.setProperty('class', 'btn-success');
+      const style = await showroom.find('//style');
+      const text = await showroom.getTextContent(style);
+      const result = text.includes('--color-scheme: #28a745');
+      assert.deepEqual(result.toString(), 'true');
+    });
+    it('Button info', async () => {
+      await showroom.setProperty('class', 'btn-info');
+      const style = await showroom.find('//style');
+      const text = await showroom.getTextContent(style);
+      const result = text.includes('--color-scheme: #17a2b8');
+      assert.deepEqual(result.toString(), 'true');
+    });
+    it('Button warning', async () => {
+      await showroom.setProperty('class', 'btn-warning');
+      const style = await showroom.find('//style');
+      const text = await showroom.getTextContent(style);
+      const result = text.includes('--color-scheme: #ffc107');
+      assert.deepEqual(result.toString(), 'true');
+    });
+    it('Button danger', async () => {
+      await showroom.setProperty('class', 'btn-danger');
+      const style = await showroom.find('//style');
+      const text = await showroom.getTextContent(style);
+      const result = text.includes('--color-scheme: #dc3545');
+      assert.deepEqual(result.toString(), 'true');
+    });
+    it('Button dark', async () => {
+      await showroom.setProperty('class', 'btn-dark');
+      const style = await showroom.find('//style');
+      const text = await showroom.getTextContent(style);
+      const result = text.includes('--color-scheme: #343a40');
+      assert.deepEqual(result.toString(), 'true');
+    });
+  });
   describe('Test all getters and setters', async () => {
     it('Testing get/set anchor', async () => {
       await showroom.setProperty('anchor', 'tester');
@@ -33,6 +85,12 @@ describe('CustomPopover', function() {
     it('Testing get/set color', async () => {
       await showroom.setProperty('color', 'red');
       const prop = await showroom.getProperty('color');
+      assert.deepEqual(prop, 'red');
+    });
+
+    it('Testing get/set text color', async () => {
+      await showroom.setProperty('textColor', 'red');
+      const prop = await showroom.getProperty('textColor');
       assert.deepEqual(prop, 'red');
     });
 
@@ -58,6 +116,12 @@ describe('CustomPopover', function() {
       await showroom.setProperty('style', 'color: red;');
       const prop = await showroom.getProperty('style');
       assert.deepEqual(prop, 'color: red;');
+    });
+
+    it('Testing get/set class', async () => {
+      await showroom.setProperty('class', 'testClass');
+      const prop = await showroom.getProperty('class');
+      assert.deepEqual(prop, 'testClass');
     });
 
     it('Testing get/set textcolor', async () => {
@@ -136,6 +200,25 @@ describe('CustomPopover', function() {
       const text = await showroom.getTextContent(style);
       const result = text.includes('--color-scheme: #007bff');
       assert.deepEqual(result.toString(), 'true');
+    });
+  });
+
+  describe('Attribute list checks', function() {
+    it('should be able to return observed attributes', async () => {
+      const result = await showroom.utils.page.evaluate(function(target) {
+        const obAttr = target.constructor.observedAttributes;
+        const expAttr = [
+          'class',
+          'style',
+          'color',
+          'text-color',
+          'anchor',
+          'placement',
+          'font',
+        ];
+        return (JSON.stringify(obAttr) === JSON.stringify(expAttr));
+      }, component);
+      assert(result === true);
     });
   });
 });
