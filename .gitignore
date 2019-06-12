@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 coverage
+coverage_test
 .nyc_output
 tests_output
 *.log
