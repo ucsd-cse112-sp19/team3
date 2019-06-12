@@ -10,11 +10,14 @@
     "csslint_fix": "stylelint --config .csslintrc **/\\*.css --ignore-pattern=docs **/\\*.html --fix",
     "eslint": "eslint **/\\*.html **/\\*.js",
     "eslint_fix": "eslint **/\\*.html **/\\*.js --fix",
-    "test": "nyc --reporter=lcovonly --exclude Utils/ --exclude Tests/  mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit && npm run pathrewrite",
+    "test": "npm run pre_test && nyc --reporter=lcovonly --report-dir coverage_test --exclude Utils/ --exclude Tests/  mocha --bail --inline-diffs ./Tests/tests.js --timeout 10000 --exit && npm run post_test",
     "browserstack": "node ./local.runner.js",
     "all": "npm run htmlhint && npm run csslint && npm run eslint && npm run test",
     "fix": "npm run csslint_fix && npm run eslint_fix",
-    "pathrewrite": "node ./Utils/path.rewrite.js"
+    "pathrewrite": "node ./Utils/path.rewrite.js",
+    "cov_merge": "node ./Utils/coverage.merge.js",
+    "pre_test": "nyc --reporter=lcovonly --exclude Utils/ node Utils/htmlMock.js",
+    "post_test": "npm run pathrewrite && npm run cov_merge"
   },
   "repository": {
     "type": "git",

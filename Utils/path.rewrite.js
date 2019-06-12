@@ -7,6 +7,8 @@ const components = [
   'CustomPopover',
   'CustomSlider',
 ];
+const coverageFileName = 'coverage_test/lcov.info';
+
 
 const isMatchLine = function(line) {
   for (const comp of components) {
@@ -17,7 +19,6 @@ const isMatchLine = function(line) {
   return null;
 };
 
-const coverageFileName = 'coverage/lcov.info';
 const fileStream = fs.createReadStream(coverageFileName);
 
 const lineReader = readline.createInterface({
