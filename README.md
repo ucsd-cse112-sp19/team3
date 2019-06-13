@@ -67,7 +67,7 @@ Acknowledgement to all of our team members who have contributed to this project.
 | Team Roles    | Name              |
 |:--------------|:------------------|
 | Team Lead     | Alex Zhou         |
-| Co-Lead       | Ishankumar (Ish) Patel  |
+| Co-Lead       | Ishankumar Patel  |
 | Coder         | Gabriel Ruiz      |
 | Coder         | Moxuan Yang       |
 | Coder         | Rix Lai           |
