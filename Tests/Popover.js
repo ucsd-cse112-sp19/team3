@@ -197,15 +197,11 @@ describe('CustomPopover', function() {
       // Setup anchor
       await page.evaluate(function() {
         document._mouseOver = 0;
-        document._mouseOut = 0;
         // Initialize anchor
         const anchorTarget = document.createElement('button');
         anchorTarget.setAttribute('id', 'test-anchor');
         anchorTarget.addEventListener('mouseover', function() {
           document._mouseOver = 1;
-        }, false);
-        anchorTarget.addEventListener('mouseout', function() {
-          document._mouseOut = 1;
         }, false);
         document.body.appendChild(anchorTarget);
       });
@@ -217,7 +213,7 @@ describe('CustomPopover', function() {
       await page.click('button');
       // Check anchor clicked
       const result = await page.evaluate(function() {
-        return (document._mouseOver === 1 && document._mouseOut === 1);
+        return (document._mouseOver === 1);
       });
       assert(result === true);
       // TODO: Check anchor after clicked effect
