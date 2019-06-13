@@ -117,7 +117,6 @@ describe('CustomSlider', function() {
       const has = await showroom.hasAttribute('showinput');
       assert.deepEqual(has.toString(), 'true');
     });
-
   });
 
   describe('Testing the attributes of the slider', async () => {
