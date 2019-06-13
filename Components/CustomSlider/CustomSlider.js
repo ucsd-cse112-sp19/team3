@@ -60,15 +60,64 @@ class CustomSlider extends HTMLElement {
     CustomSlider.template = document.createElement('template');
     const templateContent = CustomSlider.template.content;
 
+    const defaultStyle = `
+    <style>
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 500px;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+    }
+    
+    input[type=range]::-moz-focus-outer {
+      border: none;
+    }
+    
+    input[type="range"]:not([disabled])::-moz-range-thumb:hover {
+      height: 25px;
+      width: 25px;
+    }
+    
+    input[type="range"]::-moz-range-thumb {
+      -webkit-appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      border: 1px solid rgb(112, 120, 126);
+      background: #fff;
+      -webkit-transition: width 0.1s, height 0.1s ease-in-out;
+      transition: width 0.1s, height 0.1s ease-in-out;
+    }
+    
+    input[type="range"]:not([disabled])::-webkit-slider-thumb:hover {
+      height: 25px;
+      width: 25px;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      border: 1px solid rgb(112, 120, 126);
+      background: #fff;
+      -webkit-transition: width 0.1s, height 0.1s ease-in-out;
+      transition: width 0.1s, height 0.1s ease-in-out;
+    }
+    </style>
+    `;
+
     CustomSlider.template.innerHTML = `
-      <link rel="stylesheet" href="./CustomSlider.css"/>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <input type="range" />
       <div id="valueDisplay"/>
-    `;
+    ` + defaultStyle;
 
     shadowRoot.appendChild(templateContent.cloneNode(true));
     this.onValueChange = this.onValueChange.bind(this);
@@ -119,6 +168,7 @@ class CustomSlider extends HTMLElement {
       'slider-class',
       'input-class',
       'showinput',
+      'onchange',
     ];
   }
 
@@ -175,6 +225,8 @@ class CustomSlider extends HTMLElement {
     if (this.hasAttribute('input-class')) {
       valueDisplay.setAttribute('class', this.getAttribute('input-class'));
     }
+
+    this.onValueChange(slider.value);
   }
 
   /**

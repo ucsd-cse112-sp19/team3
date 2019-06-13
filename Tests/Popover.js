@@ -191,6 +191,35 @@ describe('CustomPopover', function() {
       const anchor = await showroom.getProperty('anchor');
       assert.deepEqual(anchor, 'default-btn');
     });
+
+    it('Testing popover anchor interaction', async () => {
+      const page = showroom.page;
+      // Setup anchor
+      await page.evaluate(function() {
+        document._mouseOver = 0;
+        // Initialize anchor
+        const anchorTarget = document.createElement('button');
+        anchorTarget.setAttribute('id', 'test-anchor');
+        anchorTarget.addEventListener('mouseover', function() {
+          document._mouseOver = 1;
+        }, false);
+        document.body.appendChild(anchorTarget);
+      });
+      // Hook anchor
+      await showroom.utils.page.evaluate(function(target) {
+        target.anchor = 'test-anchor';
+      }, component);
+      // Click on anchor
+      await page.click('button');
+      // Check anchor clicked
+      const result = await page.evaluate(function() {
+        return (document._mouseOver === 1);
+      });
+      assert(result === true);
+      // TODO: Check anchor after clicked effect
+      // Put stuff in the event listener to store the css somewhere if needed
+      // Same thing as the global mouseOver flag
+    });
   });
 
   describe('bootstrap', async () => {
