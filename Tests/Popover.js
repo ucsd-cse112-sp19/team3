@@ -215,6 +215,10 @@ describe('CustomPopover', function() {
       }, component);
       // Click on anchor
       await page.click('button');
+      // Manual delay after click
+      await new Promise(function(resolve) { 
+        setTimeout(resolve, 500);
+      });
       // Check anchor clicked
       const result = await page.evaluate(function() {
         return (document._mouseOver === 1 && document._mouseOut === 1);

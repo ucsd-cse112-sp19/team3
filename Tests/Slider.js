@@ -150,6 +150,32 @@ describe('CustomSlider', function() {
       obj = await showroom.find('//input', component);
       assert.deepEqual(obj._remoteObject.description, 'input.test2');
     });
+    it('Testing onchange attribute', async () => {
+      const page = showroom.page;
+      // Set initial value
+      await showroom.setAttribute('value', '50');
+      // Setup onchange hook
+      await page.evaluate(function() {
+        document._onchange = 0;
+        /* eslint-disable-next-line */
+        function _test_on_change(value) {
+          document._onchange = value;
+        }
+        /* eslint-disable-next-line */
+        window['_test_on_change'] = _test_on_change;
+      });
+      // Apply onchange hook
+      await showroom.utils.page.evaluate(function(target) {
+        target.setAttribute('onchange', '_test_on_change');
+      }, component);
+      // Set value to new number
+      await showroom.setAttribute('value', '51');
+      // Retrieve updated value
+      const newValue = await page.evaluate(function() {
+        return document._onchange;
+      });
+      assert.equal(newValue, 51);
+    });
   });
 
   describe('Attribute list checks', function() {
@@ -164,6 +190,7 @@ describe('CustomSlider', function() {
           'slider-class',
           'input-class',
           'showinput',
+          'onchange',
           'disabled',
           'readonly',
           'required',
@@ -179,6 +206,7 @@ describe('CustomSlider', function() {
           'slider-class',
           'input-class',
           'showinput',
+          'onchange',
         ];
         return (JSON.stringify(cuAttr) === JSON.stringify(expAttr));
       }, component);
