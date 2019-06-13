@@ -93,6 +93,32 @@ describe('CustomSlider', function() {
     });
   });
 
+  describe('Testing has attributes of the tagAttributes', async () => {
+    it('Testing has disabled attribute', async () => {
+      await showroom.setAttribute('disabled', 1);
+      const has = await showroom.hasAttribute('disabled');
+      assert.deepEqual(has.toString(), 'true');
+    });
+    it('Testing has disabled attribute', async () => {
+      await showroom.setAttribute('readonly', 1);
+      const has = await showroom.hasAttribute('readonly');
+      assert.deepEqual(has.toString(), 'true');
+    });
+    it('Testing has disabled attribute', async () => {
+      await showroom.setAttribute('required', 1);
+      const has = await showroom.hasAttribute('required');
+      assert.deepEqual(has.toString(), 'true');
+    });
+  });
+
+  describe('Testing showinput', async () => {
+    it('Testing has showinput attribute', async () => {
+      await showroom.setAttribute('showinput', 1);
+      const has = await showroom.hasAttribute('showinput');
+      assert.deepEqual(has.toString(), 'true');
+    });
+  });
+
   describe('Testing the attributes of the slider', async () => {
     it('Testing min attribute', async () => {
       await showroom.setAttribute('min', 25);
@@ -149,6 +175,11 @@ describe('CustomSlider', function() {
       await showroom.setAttribute('slider-class', 'test2');
       obj = await showroom.find('//input', component);
       assert.deepEqual(obj._remoteObject.description, 'input.test2');
+    });
+    it('Testing input-class attribute', async () => {
+      await showroom.setAttribute('input-class', '1');
+      const has = await showroom.hasAttribute('input-class');
+      assert.deepEqual(has.toString(), 'true');
     });
   });
 
