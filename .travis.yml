@@ -18,7 +18,7 @@ script:
     - commitlint-travis
     - npm run test
     - npm run browserstack
-    - npm generate-docs
+    - npm run generate-docs
 
 after_script:
     - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
