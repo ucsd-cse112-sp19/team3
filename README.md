@@ -31,6 +31,7 @@ Include any of the following scripts in your HTML file for the web component of 
 Download the repository to local, and setup all the Node.js packages dependencies,
 ```
 git clone https://github.com/ucsd-cse112/Team3.git
+cd team3
 npm install
 ```
 If you decide to start fresh again,
