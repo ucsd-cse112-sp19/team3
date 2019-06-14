@@ -3,7 +3,7 @@
 go to root directory of repo, run script with our configuration file,
 > source directory, destination directory, and all other configs are specified in this file
 ```
-jsdoc -c docs/conf/conf.json
+jsdoc -c ./docsconf.json
 ```
 
 ### What to do next
