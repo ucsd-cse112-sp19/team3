@@ -16,6 +16,7 @@ We are Team SPECS! This is a library of customizable web components.
 ## User Installation
   [**Download the components with this link**](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ucsd-cse112/team3/tree/master/Components). Unzip the directory to a location of your choice.  <br/> <br/>
 Alternatively, you can **download individual components here**:
+
 | Component | 
 |:--------------|
 | [CoreHello](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ucsd-cse112/team3/tree/master/Components/CoreHello) |
