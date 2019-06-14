@@ -11,13 +11,14 @@ before_install:
 install:
     - npm install
 script:
-    - rm -rf ./docs
+    - rm -rf ./docs/*.html
     - npm run htmlhint
     - npm run csslint
     - npm run eslint
     - commitlint-travis
     - npm run test
     - npm run browserstack
+    - npm run generate-docs
 
 after_script:
     - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
