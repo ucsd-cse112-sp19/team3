@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team SPECS</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+
+    <style>
+        .main-header {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          outline: none;
+        }
+
+        .main-header-component {
+          display: flex;
+          justify-content: center;
+        }
+
+        .center {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .sa {
+          width: 250px;
+        }
+
+        .bs {
+          width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <script src="../CustomButton/CustomButton.js"></script>
+    <script src="./CustomPopover.js"></script>
+    <div class="main-header">
+        <div class="main-header-component">
+            <h1>Team 3's Popover Component!</h1>
+        </div>
+        <h2 style="text-align: center;">&lt;custom-popover&gt;</h2><br />
+        
+        <table class="center" style="text-align: center;">
+                <tr>
+                  <td class="sa"><h2>default</h2></td>
+                  <td class="sa"><h2>color</h2></td>
+                  <td class="sa"><h2>text-color</h2></td>
+                  <td class="sa"><h2>font</h2></td>
+
+                </tr>
+                <tr>
+                  <td class="sa"><custom-button id="default-btn"><custom-popover anchor="default-btn">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                  <td class="sa"><custom-button id="color-btn"><custom-popover anchor="color-btn" color="hotpink">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                  <td class="sa"><custom-button id="textcolor-btn"><custom-popover anchor="textcolor-btn" text-color="black">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                  <td class="sa"><custom-button id="font-btn"><custom-popover anchor="font-btn" font="Courier New">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                </tr>
+                <tr>
+                  <td class="sa"><h2>top</h2></td>
+                  <td class="sa"><h2>bottom</h2></td>
+                  <td class="sa"><h2>left</h2></td>
+                  <td class="sa"><h2>right</h2></td>
+                </tr>
+                <tr>
+                  <td class="sa"><custom-button id="top-btn"><custom-popover anchor="top-btn" placement="top">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                  <td class="sa"><custom-button id="bottom-btn"><custom-popover anchor="bottom-btn" placement="bottom">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                  <td class="sa"><custom-button id="left-btn"><custom-popover anchor="left-btn" placement="left">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                  <td class="sa"><custom-button id="right-brn"><custom-popover anchor="right-brn" placement="right">Popover Body Text</custom-popover>Click Me</custom-button></td>
+                </tr>
+                </table>
+                <br />
+                <br />
+                <br />
+                <h2 class="center">Bootstrap Support!</h2>
+                <br />
+                <br />
+                <table class="center"><tr>
+                  <td class="bs"><custom-button class="btn-primary" id="btn-primary"><custom-popover class="btn-primary" anchor="btn-primary" placement="top">Popover Body Text</custom-popover>Primary</custom-button></td>
+                  <td class="bs"><custom-button class="btn-secondary" id="btn-secondary"><custom-popover class="btn-secondary" anchor="btn-secondary" placement="top">Popover Body Text</custom-popover>Secondary</custom-button></td>
+                  <td class="bs"><custom-button class="btn-success" id="btn-success"><custom-popover class="btn-success" anchor="btn-success" placement="top">Popover Body Text</custom-popover>Success</custom-button></td>
+                  <td class="bs"><custom-button class="btn-info" id="btn-info"><custom-popover class="btn-info" anchor="btn-info" placement="top">Popover Body Text</custom-popover>Info</custom-button></td>
+                  <td class="bs"><custom-button class="btn-warning" id="btn-warning"><custom-popover class="btn-warning" anchor="btn-warning" placement="top">Popover Body Text</custom-popover>Warning</custom-button></td>
+                  <td class="bs"><custom-button class="btn-danger" id="btn-danger"><custom-popover class="btn-danger" anchor="btn-danger" placement="top">Popover Body Text</custom-popover>Danger</custom-button></td>
+                  <td class="bs"><custom-button class="btn-dark" id="btn-dark"><custom-popover class="btn-dark" anchor="btn-dark" placement="top">Popover Body Text</custom-popover>Dark</custom-button></td>
+                </tr></table>
+    </div>
+</body>
+
+</html>
