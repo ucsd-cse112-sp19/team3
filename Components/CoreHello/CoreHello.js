@@ -24,12 +24,12 @@ class CoreHello extends HTMLElement {
    *
    * @example
    * <core-hello>
-   *     Powell
+   *     Peter
    * </core-hello>
    *
    * @example
    * <core-hello lang="es" rainbow>
-   *     Powell
+   *     Peter
    * </core-hello>
    *
    * @see [CoreHello Demo]{@link https://ucsd-cse112.github.io/team3/demo_components/CoreHello/CoreHello.html} for all listing examples.
