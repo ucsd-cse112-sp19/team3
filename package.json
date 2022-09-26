@@ -49,7 +49,7 @@
     "jsdoc-to-markdown": "^5.0.0",
     "minami": "^1.2.3",
     "mocha": "^6.1.4",
-    "nightwatch": "^1.0.19",
+    "nightwatch": "^1.7.13",
     "nyc": "^14.0.0",
     "puppeteer-to-istanbul": "^1.2.2",
     "showroom": "^0.9.3",
