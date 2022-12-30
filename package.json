@@ -48,7 +48,7 @@
     "jsdoc-export-default-interop": "^0.3.1",
     "jsdoc-to-markdown": "^5.0.0",
     "minami": "^1.2.3",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "nightwatch": "^1.0.19",
     "nyc": "^14.0.0",
     "puppeteer-to-istanbul": "^1.2.2",
